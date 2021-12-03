@@ -66,6 +66,11 @@ Fishing effort directed toward a specific species or species complex
 
 This paper focuses on methods to determine the appropriate trips to represent effort and the resulting indices of relative abundance from a fishery-dependent survey of the recreational fishing fleet. We apply multiple methods to learn how abundance indices change with available information, as well as look at the inclusion of supplement data collected by Cal Poly.  Cal Poly began an onboard observer program following the same methods as CDFW in 2001.  
 
+#### Groundfish Management 
+
+There are a number of management changes that have affected West Coast groundfish species over the last few decades.
+In 2000, West Coast groundfish fisheries were declared a disaster (citation) as a number of stocks were declared overfished with overfishing occurring.  In response to federal management measures, the CDFW implemented fishing gear regulations of 3-hooks per line and one-line maximum per angler in 2000, and that changed to a 2-hook per line and one-line maximum in 2001.  CDFW also bagan temporal and spatial management in the forms of closures and depth restrictions in 2004. Boundaries of the regional management units have changed over time and are accounted for in our analyses.  In 2007, California enacted a network of Marine Protected Areas that encompass approximately 23% of state waters. As groundfish stock have rebuilt over the last few years, CDFW eased depth restrictions in some management areas and the recreational groundfish fleet had access to depths outsdie of state waters.
+
 
 
 Methods
@@ -74,69 +79,96 @@ Methods
 #### Survey Data
 The California Department of Fish and Wildlife (CDFW) has conducted a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel (CPFV or party/charter boat) fleet since 1999. Since 2004, the survey became part of the California Recreational Fisheries Survey (CFRS). Groundfish-targeted CPFV trips were sampled opportunistically as CPFV participation is voluntary and sampling effort was distributed in proportion to fishing effort. In California, xx% of the recreational CPFV effort is north of Point Conception. Observers may not be allowed on a vessel if the vessel is at full capacity, which is more common in northern California where a number of charter boats are smaller 6-pack vessels with limited capacity.
 
-On a trip, observers recorded information for each fishing drop, each time lines were in the water.  Just prior to the start of each fishing drop, the sampler selected a subset of anglers to observe, at maximum of 15 anglers per fishing drop. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group.  Samplers also recorded the time fished (starting when the captain announced “Lines down” to when the captain instructed anglers to reel lines up), GPS coordinates of the fishing drop (start and/or end latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the species level as either retained or discarded, providing a count of each species at a particular location. Discarded fish were measured for length and some portion of retained fish were measured as part of a different CRFS Sampling program. The catch and fishing time of an individual angler were not recorded.
+On a trip, observers recorded information for each fishing drop, each time lines were in the water.  Just prior to the start of each fishing drop, the sampler selected a subset of anglers to observe, at maximum of 15 anglers per fishing drop. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group.  Samplers also recorded the time fished (starting when the captain announced “Lines down” to when the captain instructed anglers to reel lines up), GPS coordinates of the fishing drop (start and/or end latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the species level as either retained or discarded, providing a count of each species at a particular location. Discarded fish were measured for length and some portion of retained fish were measured as part of a different CRFS Sampling program. The catch and fishing time of an individual angler were not recorded. Additional details can be found in  Monk et al. [-@Monk2014].
 
-Cal Poly conducts a similar onboard observer program, 
+In 2001, the California Polytechnic State University Institute of Marine Science, San Luis Obispo (Cal Poly) conducts a similar onboard observer program of the CPFV fleet based in Port Avila and Port San Luis along the Central Coast. Protocols for the Cal Poly survey are the same as the CDFW survey, with the exception that Cal Poly measures retained and discarded fish from observed anglers.
 
-
-
-In 2000, CDFW implemented fishing gear regulations of 3-hooks per line and one-line maximum per angler, and that changed to a 2-hook per line and one-line maximum in 2001.  We begin analyses of the onboard observer data in 2000 to reduce any bias introduced from these changes.   Spatial management and depth closures did not begin until 2004.
+A common phenomenon of ecological data is the high proportion of zero observations across samples and the question as to whether the sampling occurred within the species’ habitat and the species was not observed or if the sampling occurred outside of the species’ habitat (structural zeroes).  Fisheries survey data are often subset to exclude structural zeroes using the Stephens-MacCall method, which looks at the species composition of co-occurring species.  However, the onboard observer survey collected location-specific information on each observer fish encounter.  To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations as a proxy for suitable habitat.  
 
 
-Standardized indices of abundance were generated for each survey and the data selection process was completed for each species individually.  A common phenomenon of ecological data is the high proportion of zero observations across samples and the question as to whether the sampling occurred within the species’ habitat and the species was not observed or if the sampling occurred outside of the species’ habitat (structural zeroes).  Fisheries survey data are often subset to exclude structural zeroes using the Stephens-MacCall method, which looks at the species composition of co-occurring species.  However, the onboard observer survey collected location-specific information on each observer fish encounter.  To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations as a proxy for suitable habitat.  For a given species, we plotted drop locations of positive encounters created α-shapes (cite).  An α-shape is a generalization of a convex hull where α controls the detail of the shape, with an α of 0 returns the original points and alpha of ∞ returns the convex hull.  We specified the α-shape so that the area surrounding a single fishing drop had a radius of 0.01 decimal degree (corresponding to an ellipsoid area of  3.22km2) in ArcGIS using the buffer tool in the analysis toolbox.  Alpha-shapes intersecting land were cropped.  An example of the resulting α-shapes is in Figure xx (location and species descriptors were removed to protect confidentiality).  Fishing drops that did not intersect with an α-shape were considered structural zeroes, i.e., outside of the species’ habitat, and excluded from analyses.  
+#### Species
+
+We explored the methods described in the following sections indices of abundance for fourteen species or species complexes of management interest: black rockfish (*Sebastes melanops*), blue and deacon rockfish complex (*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish	(*Sebastes nebulosus*), copper rockfish	(*Sebastes caurinus*), gopher and black-and-yellow rockfish complex	(*Sebastes carnatus*, *Sebastes chrysomelas*), greenspotted rockfish	(*Sebastes chlorostictus*), olive rockfish	(*Sebastes serranoides*), quillback rockfish	(*Sebastes maliger*), rosy rockfish	(*Sebastes rosaceus*), starry rockfish (*Sebastes constellatus*), vermilion and sunset rockfish complex	(*Sebastes miniatus*/*Sebastes crocotulus*), yellowtail rockfish (*Sebastes flavidus*). Species complexes consist of two cryptic species that may or may not be genetically distinct, but cannot be assessed separately for various reasons including the inability to separate catch histories between species or difficulty of visual species identification. Versions of the area-weighted habitat index of relative abundance were approved by the Pacific Fisheries Management Council's SSC for use in stock assessments in 2013 have been used in xxx assessments accepted for management (China, gopher/black-and-yellow, vermilion/sunset, blue/deacon, black, lingcod  - cite assessments).    
+
+#### Treatment of Data
+
+The onboard observer data provide a high-resolution of catch, effort and the ability to map the fishing drops to fine-scale habitat data. This paper explores methodological differences in data treatment to see what we gain by having the high-resolution data.  To do this, we first mimic the collection of dockside data by aggregating all of the fish encountered within a single trip and summing the effort among drifts.  Trip level data were then filtered using the Stephens-MacCall approach and three different data selection methods were applied using the Stephens-MacCall results (see description below), and only county was used as a spatial covariate in the indices. 
+
+The second approach used the high resolution trip data, but assumed no available habitat data.  The percent of groundfish encountered during a drift was assumed as a proxy for habitat.  
+
+The third approached used the fishing drop level data, incorporated habitat as a filter for data selection, and applied an area-weighted index using the area of the reef within a region as a proxy for habitat. 
+
+In addition, all of these approaches were applied with and with out the supplemental data from the Cal Poly observer program to illustrate the effect of additional data on indices for species with a distirbution centered in central California.
+
+All indices of abundance were coded in R and the Bayesian analyses were conducted using the rstanarm package.
+
+Analyses were limited to the California coast north of Point Conception ($34^\circ 27^\prime N$).  The composition of the fish communities in southern California differ, and the recreational fisheries are fundamentally different, with a higher percentage of trips targeting mixed species and pelagic and highly migratory species, as well as more limited access to rocky habitat nearshore. Point Conception is a biogeographic break (citation) and a number of stock assessments In addition, complete habitat data are not available for areas in southern California. The data were also temporally restricted to the years 2001-2016.  Earlier and more recent data were excluded to preserve a dataset with the most consistent gera and depth regulations.  
+
+##### Stephens-MacCall Filering
+The Stephens-MacCall [-@Stephens2004] filtering approach was used to predict the 
+probability of encountering a target species, based on the species composition of the catch in a given trip.  The method uses presence/absence data wthin a logistic regression to identify the proability of encountering a target species given the presence or abance of other predictor species. This method is commonly used to filter data that are collected 
+dockside after a vessel returns to port. Prior to applying the Stephens-MacCall filter, we identified potentially informative 
+predictor species, i.e., species with sufficient sample sizes and temporal coverage 
+(present in at least 5\% of all trips) to inform the binomial model.  The remaining 
+ species all co-occurred with the target species in at least one trip 
+and were retained for the Stephens-MacCall logistic regression. Coefficients 
+from the Stephens-MacCall analysis (a binomial GLM) are positive 
+for species that are more likely to co-occur with the target species, 
+and negative for species that are less likely to be caught with target species.
 
 
+While the filter is useful in identifying co-occurring or non-occurring species 
+assuming all effort was exerted in pursuit of a single target, the targeting of 
+more than one species or species complex ("mixed trips") can result in 
+co-occurrence of species in the catch that do not truly co-occur in terms of habitat
+associations informative for an index of abundance. Stephens and MacCall 
+[-@Stephens2004] recommended including all trips above a threshold where the 
+false negatives and false positives are equally balanced.  However, this does 
+not have any biological relevance and for this data set, and we assume that if 
+the target species was encountered, the vessel fished in appropriate habitat.
 
-To ensure that we were using data from both surveys from the same areas, we filtered both datasets.  To determine which NWFSC hook and line survey sites and α-shapes to retain for a given species, we looked at the distribution of distances hook and line survey sites to the nearest α-shape.  Xxxxx.  NWFSC hook and line survey sites within 2 km of an α-shape were retained.  While high resolution habitat maps are not consistently available for the entire SCB, other work has shown the α-shape method to be a reasonable proxy for hard rocky habitat (Melissa Monk, unpublished data).
+
+Stephens and MacCall [-@Stephens2004] proposed filtering (excluding) trips from the index 
+standardization based on a criterion of balancing the number of false positives 
+and false negatives. False positives (FP) are trips that are predicted to encounter the target species 
+based on the species composition of the catch, but did not. False 
+negatives (FN) are trips that were not predicted to encounter the target species, given the 
+catch composition, but caught at least one. The 
+trips selected using this criteria were compared to an alternative method 
+including all the "false positive" trips, regardless of the probability of 
+encountering the target species. The catch included in this index and in the dockside data collected by CDFW is 
+sampler-examined and the samplers are well trained in species identification. Therefore, we make the assumption that 
+species were positively and correctly identified.
+ Three data selection methods were applied to the Stephens-MacCall method , the data selection method proposed in the original manuscript to balance the false negatives and the false positives, retention of all positive encounters and exclude of only false negatives, and the method described in (xxxx).
+
+#### Indices of Abundance
+
+Standardized indices of abundance were generated for each data filtering method. Indices of abundance modeled 
+the catch per unit effort (angler hours) and possible covariates trip-level data were 3-month wave and county of landing.
+Covariates considerd for the drop-level data included, aggregated reef area, 3-month wave, depth, and xxxx.
 
 
- Neither the NWFSC hook and line survey nor the onboard survey data used to develop the indices encompass the entire range of the species.  However, the point of the exercise is to compare the two methods and these surveys are sampling the same habitats in the SCB.
-We explored the possibility of area-weighted indices, using the area of the α-shapes as the weighting scheme.  Neighboring α-shapes were aggregated to increase sample sizes.  
+All indices were modeled using a Bayesian genearlized linear models (GLMs). Species with high positive encounter rates were modeled with a negative biniomals 
+
 
 The onboard observer data were analyzed using the delta method with two generalized linear models (delta-GLM).  The first GLM models the probability of encountering the species of interest with a binomial likelihood and a logit link function.  The second GLM models the positive encounters with either gamma or lognormal errors structure.
 
-Composition data from recreational surveys had the largest impact on simulation results, but individual survey components did not have individual effects on benchmarks (Siegfried et al. 2016).  
-The onboard observer surveys decrease the amount of uncertainty, but relative to a fishery-independent survey, is still high…. 
-
-North of Point Conception only
-
-#### Treatment of the data
+We explored the possibility of area-weighted indices, using the area of the reefs as the weighting scheme. 
 
 
 
-CDFW only
---Trip level stephens-maccall and use only county as a spatial indicator
---Habitat based
-
-
-CDFW + Cal Poly
---Habitat, area-weighted
-
-Species
-brown
-blue/deacon
-vermilion
-gopher
-China
-lingcod
-copper
-greenspotted
-black?
-quillback?
-rosy?
-starry?
-yellowtail
-olive
-
-
-#### Habitat
-Reef Delineation We identified reefs as potential habitat for China rockfish in California, Oregon and Washington using a variety of newly available spatial data sources, including 2, 3 and 5 m bathymetry, substrate, lithology and Habitat Suitability geodatabases. Available data sources varied by latitude. To delineate reefs from Point Conception to the Oregon border we used a 2 m binary raster layer (3 m for Cordell Bank) for substrate, where 1 = rough, and 0 = smooth habitat (California Seafloor Mapping Project “Tier 2” GIS Products, accessed 03.18.2013, data available from: http://seafloor.otterlabs.org/index.html). Rough and smooth substrate was identified by CSMP using 2 rugosity indices based upon bathymetric data, surface:planar area (SA:PA), and vector ruggedness measure (VRM). We considered areas identified as ‘rough’ as reef habitat. For reefs named Asilomar, Cypress Point, Portuguese Ledge, and Point Joe only a portion of the reefs were mapped at the 2 m resolution, therefore to identify the remaining reef, we used either a 5 m resolution VRM dataset, where the VRM cutoff was greater than 0.001 (Young et al. 2010). For all reefs derived from either 2 m, 3 m or 5 m resolution, we applied a 5 m buffer around each reef habitat for potential error in positional accuracy and all reefs with an area greater than or equal to 100 m2 were included. We identified seven reefs outside of the 2 m layer that contained a significant number of CPFV points, which we decided to include in the indices. Big Reef, Blunts Reef, Isle of St. James, Point Sur Deep, Sandhill Ledge, portions of San Gregario and Soap Bank reefs were located just outside of 2 m, 3 m and 5 m ‘footprint’, therefore for these reefs we used the 2005 Habitat Suitability Probability (HSP) geodatabase for China rockfish (NMFS 2005). The HSP is a modeled output from Essential Fish Habitat geodatabase and is based upon habitat data, depth, and location, where input data are NMFS trawl datasets. In order to identify reef habitats from the Oregon border to Washington, we used a lithology shapefile (Goldfinger et al. 2014) that was based upon multiple seafloor mapping surveys including multibeam and sidescan sonar, sediment grab and core samples, and images. Seafloor types were classified according to established classification schemes (Greene et al. 1999). We considered the following lithology types as ‘reef habitat:’ Boulder, cobble, cobble mix, hard, rock, and rock mix. All spatial data was projected to NAD 1983 UTM Zone 10. Reef systems were grouped and stratified by depth at a spatial scale biologically meaningful to China rockfish. China rockfish are typically sedentary and have high site fidelity, therefore we grouped reefs in consideration of how a China rockfish would experience its surroundings. Lea (1999) recaptured China rockfish in the same general location as where they were released, however a few individuals of other rockfish species (copper (Sebastes caurinus), gopher (Sebastes carnatus), olive (Sebastes serranoides) and yellowtail (Sebastes flavidus)) demonstrated movement up to 1.5 nautical miles (about 2,700 m), but all were captured within the same reef system. In the Puget Sound copper, brown and quillback were found to have a home range less than 30m2 in high relief rocky areas (Matthews 1990). In other rockfish movement studies, China rockfish were tagged but never recaptured, or there was a F-1 sample size of 1 (Hannah and Rankin 2011), Hannah 2012). Using this limited information, we considered that China rockfish would swim no more than 200 m over smooth, sand, or muddy habitat to a neighboring reef, therefore if a reef was greater than ~200 m from rocky reef habitat it was considered a different reef system. If a reef system has contiguous habitat (no channels greater than 200 m) it remained intact, no matter how large the reef (Figures F1 and F2). A small number of reefs were merged into ‘super reefs’ to accommodate 1980s1990s CDFW location codes that overlapped multiple reefs [. Reef areas were calculated using the zonal stats tool in ArcGIS, stratified by the depth bins 0-19 m, 20-39 m, 40-59 m, 60-79 m, 80-99 m and greater than 100 m using the CSMP depth raster (2 m, 3 m or 5 m resolution). To get depths for those reefs outside the CSMP ‘footprint’ we used the NOAA Coastal Relief Model raster dataset (90 m) for California, and 100 m digital elevation model (DEM) bathymetry from the Active Tectonics and Seafloor Mapping Lab for Oregon.
 
 
 
-Regions were designated to gain appropriate sample sizes needed for modelling. For Oregon, region differences north and south of Florence were explored. In California, 12 regions north of Pt. Conception were defined as follows: Region 1: Pt. Conception to Pt. Arguello Region 2: Purisima Point to Pt. Sal Region 3: San Luis Obispo Bay to Mill Creek (39.959◦ N) Region 4: Lopez Point to Monterey Peninsula Region 5: Moss Landing to San Francisco Bay Region 6: Farallon Islands Region 7: Point Bonita to Drakes Bay Region 8: Point Reyes to Point Arena Region 9: Point Arena to south of Ten Mile River Region 10: north of Ten Mile River to Cape Mendocino (40.16667◦ N) Region 11: Cape Mendocino to Eel River Region 12: Trinidad Head to CA/OR border CPFV drift selection During the 1987-1998 CDFW onboard observer program, fishing location was recorded as one of 459 location codes. When available, the observer also recorded coordinates, either latitude/longitude or Loran. The SWFSC converted all Loran coordinates to latitude/longitude. Using the fishing stops with available coordinates, we assigned a fishing location code to a reef. A handful of fishing location codes were obviously not associated with a reef, or a reef as identified in the above methods, and were not selected in the final dataset. If the coordinates spanned two reefs and we were unable to tell which reef F-3 was consistently fished for a given location code, we created aggregated the reefs. This most commonly occurred around the Monterey Bay peninsula. This was necessary as two-thirds of the fishing stops encountering China rockfish had no recorded coordinates and allowed us to retain all fishing location data. Therefore, for the 1987-1998 CDFW data, any fishing location that was assigned to a reef was included in the analyses as one of the filters applied to the data. For each CPFV location in the California 1999-2014 and Oregon 2001-2014 data we calculated depth, nearest reef, distance from reef, nearest MPA, distance from MPA using ArcGIS. Geoprocessing steps used were ‘near’ and ‘extract values to points.’ For consistency across databases, we used the starting location of the drift to determine if the drift was targeting fish associated with a reef. Drifts that had a distance of 0 m, i.e., were fishing directly on the reef, were included in analyses. Recognizing that some drifts begin adjacent to a reef with the intention of drifting on to the reef, as well as the fact that the starting location may not be recorded at the very start of a drift, we devised a method for including drifts within a certain distance of a reef. We compiled a list of rockfish species that are strictly reef associated (black and yellow rockfish (Sebastes chrysomelas), canary rockfish (Sebastes pinniger), China rockfish (Sebastes nebulosus), cowcod (Sebastes levis), flag rockfish (Sebastes rubrivinctus), gopher rockfish (Sebastes carnatus), grass rockfish (Sebastes rastrelliger), greenblotched rockfish (Sebastes rosenblatti), kelp rockfish (Sebastes atrovirens), quillback rockfish (Sebastes maliger), rosy rockfish (Sebastes rosaceus), starry rockfish (Sebastes constellatus), Treefish (Sebastes serriceps), vermilion rockfish (Sebastes miniatus), yelloweye rockfish (Sebastes ruberrimus)) (personal communication John Field and Tom Laidig, NMFS SWFSC). Using drifts that were greater than 0m from a reef and encountered one at least one of the fifteen species listed above, we calculated the depth for which 75% of the drifts were included. For Oregon this was 83 m, and for California it was 34 m for drifts within the ‘footprint’ and 141 m for drifts outside the ‘footprint.’ Any drift (with or without catch) greater than 83 m from a reef was excluded from the analyses.
 
 
+#### Habitat Data
+
+We identified rocky habitat and defined reefs as potential habitat for rockfish in California from multiple bathymetic data sources. Bathymetry within California state waters north of Point Conception ($34^\circ 27^\prime N$) was mapped at a resolution of 2 m by the California Seafloor Mapping Program (CSMP).Rough and smooth substrate was identified by CSMP using 2 rugosity indices based upon bathymetric data, surface:planar area, and vector ruggedness measure (VRM). We considered areas identified as ‘rough’ as reef habitat. While there were fishing drops outside of state waters, we limited data for the comparisons presented in this paper to state waters with known habitat.
+
+Individual reefs at the finest scale were defined as raster cells of rough habitat greater than 200 m apart.  The distance was chosen based on evidence that a number of nearshore rockfish exchit site fidelit and a number of tagging studies have recaptured close to original capture sites [@Lea1999; @Matthew1990; @Hannah2011; @Hannah2012]. If raster cells representing hard substrate were contiguous (not separated by soft habitat by greater than 200 m) it remained intact, no matter how large the reef. Reefs were further defined with a 5 m buffer to account for potential error in positional accuracy. 
+
+Fishing drops were assigned to reefs based on the recorded start location, given that the end locations were not always available.  Reefs within predetermined larger regions were designated to gain appropriate sample sizes needed for modelling and the areas of the hard habitat were summed.
 
 
 Results
@@ -160,11 +192,13 @@ Starr et al. [-@Starr2010] compared SCUBA methods to commercial fishing gear, bu
 
 CDFW sampler manual - “10 anglers should be the target number of observed anglers”
 
-
+encompass the entire range of the species.  However, the point of the exercise is to compare the two methods and these surveys are sampling the same habitats in the SCB
 
 Survey indices can be either absolute or relative.  In the case of an absolute index of abundance, the entire population within the sampling area is accounted for and the index also provides information on the density of the fish species within that area  as well as aid in scaling the population size within the stock assessment model.  Most indices of abundance are relative due to the fact that the entire population within the survey area was not observed.  Estimates of absolute abundance are difficult to obtain, especially for cryptic rockfishes.  The cowcod (*Sebastes levis*) stock assessments is one of the only West Coast stock assessments that has incorporated an estimate of absolute abundance, derived from a visual survey [@Piner et al. 2005).  The majority of stock assessments include one or more index of relative abundance.   
 
 
+Composition data from recreational surveys had the largest impact on simulation results, but individual survey components did not have individual effects on benchmarks (Siegfried et al. 2016).  
+The onboard observer surveys decrease the amount of uncertainty, but relative to a fishery-independent survey, is still high…. 
 
 
 Assume fishing behavior is remains the same when observers are no onboard the vessel.
