@@ -1,199 +1,261 @@
-\documentclass[]{elsarticle} %review=doublespace preprint=single 5p=2 column
-%%% Begin My package additions %%%%%%%%%%%%%%%%%%%
-\usepackage[hyphens]{url}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  authoryear,
+  preprint,
+  3p]{elsarticle}
 
-  \journal{Fisheries Research} % Sets Journal name
-
-
-\usepackage{lineno} % add
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\usepackage{graphicx}
-%%%%%%%%%%%%%%%% end my additions to header
-
-\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \usepackage{fontspec}
-  \ifxetex
-    \usepackage{xltxtra,xunicode}
-  \fi
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \newcommand{\euro}{€}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\bibliographystyle{elsarticle-harv}
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex]{hyperref}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
 \else
-  \usepackage[unicode=true]{hyperref}
+  \newcommand\contentsname{Table of contents}
 \fi
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={},
-            pdftitle={Comparison of indices of relative abundance from recreational fishery-dependent surveys},
-            colorlinks=false,
-            urlcolor=blue,
-            linkcolor=magenta,
-            pdfborder={0 0 0}}
-\urlstyle{same}  % don't use monospace font for urls
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\journal{Fisheries Research}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-harv}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Comparison of data filtering methods for indices of abundance from a recreational fishery survey},
+  pdfauthor={Melissa Hedges Monk; Rebecca R. Miller; Cat Memes; Derek Zoolander},
+  pdfkeywords={keyword1, keyword2},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
-\setcounter{secnumdepth}{0}
-% Pandoc toggle for numbering sections (defaults to be off)
-\setcounter{secnumdepth}{0}
-
-% Pandoc citation processing
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-% for Pandoc 2.8 to 2.10.1
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-% For Pandoc 2.11+
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-% Pandoc header
-
-
-
+\setlength{\parindent}{6pt}
 \begin{document}
+
 \begin{frontmatter}
+\title{Comparison of data filtering methods for indices of abundance
+from a recreational fishery survey}
+\author[1]{Melissa Hedges Monk%
+\corref{cor1}%
+\fnref{fn1}}
+ \ead{melissa.monk@noaa.gov} 
+\author[2]{Rebecca R. Miller%
+%
+\fnref{fn2}}
+ \ead{bob@example.com} 
+\author[2]{Cat Memes%
+%
+\fnref{fn3}}
+ \ead{cat@example.com} 
+\author[]{Derek Zoolander%
+%
+}
+ \ead{derek@example.com} 
 
-  \title{Comparison of indices of relative abundance from recreational
-fishery-dependent surveys}
-    \author[Southwest Fisheries Science Center]{Melissa Hedges Monk}
-   \ead{melissa.monk@noaa.gov} 
-    \author[University of California Santa Cruz]{Rebecca R. Miller}
-   \ead{rebecca.miller@noaa.gov} 
-    \author[Another University]{E.J. Dick}
-   \ead{edward.dick@noaa.gov} 
-    \author[Southwest Fisheries Science Center]{Derek Zoolander}
-   \ead{derek@example.com} 
-      \address[Southwest Fisheries Science Center]{Fisheries Ecology
-Division, Southwest Fisheries Science Center, National Marine Fisheries
-Service, NOAA, 110 McAllister Way, Santa Cruz, CA 95066}
-    \address[University of California Santa Cruz]{Department, Street,
-City, State, Zip}
-    
-  \begin{abstract}
-  This is the abstract.
+\affiliation[1]{organization={Southwest Fisheries Science
+Center}, addressline={110 McAllister Way}, city={Santa
+Cruz}, country={}, postcode={95060}}
 
-  It consists of two paragraphs.
-  \end{abstract}
-  
- \end{frontmatter}
+\affiliation[2]{organization={Another University}, addressline={Street
+Address}, city={City}, country={}, postcode={Postal Code}}
+
+
+\cortext[cor1]{Corresponding author}
+\fntext[fn1]{This is the first author footnote.}
+\fntext[fn2]{Another author footnote, this is a very long footnote and
+it should be a really long footnote. But this footnote is not yet
+sufficiently long enough to make two lines of footnote text.}
+\fntext[fn3]{Yet another author footnote.}
+
+        
+\begin{abstract}
+This is the abstract.
+\end{abstract}
+
+
+
+
+
+\begin{keyword}
+    keyword1 \sep 
+    keyword2
+\end{keyword}
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, boxrule=0pt, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Fisheries stock assessments rely on a wide range of data to model a
-population to fully understand the dynamics. When fishery-independent
-data are not available, assessors try to make best used of the best
-available data, which may often only include fishery-dependent data. The
-West Coast groundfish Fishery Management Plan (FMP) includes 64 rockfish
-species, \_\_\_ of which do not have full stock assessments. Fisheries
-survey and catch data are used to develop standardized indices of
-abundance that inform fisheries stock assessment models (Maunder and
-Punt, 2004). Catch per unit effort (CPUE) is a common metric collected
-from fishery-dependent or fishery-independent surveys, with the latter
-providing unbiased data. However, fishery-independent surveys can be
-costly, labor intensive and often require a long time series to be
-considered informative in fisheries stock assessments. Advantages of
-fishery-dependent data is that it is collected directly from the the
-fishery whose operations are not constrained by sampling designs, but
-dependent on the behaviors of the captain and, in the case of
-recreational trips, customer preference. Fishery-dependent are only
-collected from areas legally open areas can be collected, i.e., areas
-closed to fishing are not sampled. In California, this includes a
-network of marine protected areas (MPAs), rockfish conservation areas
-(RCAs) developed based on depth closures, and varying seasonal and depth
-closures that vary temporally and spatially along California's
-coastline. Fishery-independent surveys are conducted using a scientific
-study design and, depending on the study, are not always confined to the
-same regulations as the commercial and recreational fishing sectors. In
-an ideal situation, both fishery-dependent and fishery-independent
-surveys would used to inform the stock assessment model.
+Integrated fisheries stock assessment models utilize a variety of data
+sources to develop the most complete picture of the stock and current
+status in relation to management thresholds. Catch data is a primary
+input to stock assessments and informs the overall magnitude of the
+stock. Catch data are often input with the assumption that the removals
+are known with absolute precision, i.e., there is no error associated
+with removals. Fisheries survey and catch data are used to develop
+standardized indices of abundance that inform fisheries stock assessment
+models \citep{Maunder:2004:SCE}. A standardized index of abundance
+informs the model on the size of the population during a particular year
+or years, either as an absolute value or a relative value. An absolute
+index of abundance is an estimate of the true density of fish in a
+particular area and is most commonly estimated from visual survey data.
+An absolute index is oftentimes input as a single year due to the high
+cost associated with determining total fish abundance within an area
+\citep{Love:2009:DFA}.
 
-Depending on the stock assessment model and the available data for the
-fish stock, the index can have large influence on the assessment results
-(find examples).
+More often, an index of abundance is a relative measure of the
+population and requires a time series to inform the stock assessment
+model. An index of relative abundance assumes that changes in the index
+are proportional to changes of abundance in the population
+\citep{Harley:2001:CUE}. Fishery-independent data collected from
+standardized survey designs provide a more unbiased estimation of the
+trend in a fisheries population. However, fishery-independent surveys
+are costly, labor intensive and often require a long time series to be
+considered informative in fisheries stock assessments. When
+fishery-independent data are not available, stock assessment scientists
+make use of the best available data, which may often only include
+fishery-dependent data.
 
-There are only two long-term fishery-independent surveys that span the
-U.S. West Coast that survey groundfish populations and neither are
-informative for nearshore rockfish species. The National Marine
-Fisheries Service Southwest Fisheries Science center conducts a juvenile
-rockfish and ecosystem survey using a midwater trawl and the West Coast
-Bottomfish Trawl (WCGBT) survey utilizes a xxx trawl to sample
-groundfish populations deeper than 55 m. However, many of the important
-rockfish species inhabit untrawlable habitat and in depths shallower
-than the 55 m sampled by the WCGBT survey. The California Collaborative
-Fisheries Research Program (CCFRP), a fishery-independent hook-and-line
-survey, was designed to monitor California's network of Marine Protected
-Areas. The CCFRP was limited to the central coast of California from
-2007-2016, and expanded to cover the entire California coast in 2017.
-Indices of abundance developed from this program have informed nearshore
-rockfish stock assessments in recent years (\textbf{Monk2019?};
-\textbf{Monk2021?}). The CCFRP is not without its limitations in terms
-of spatial coverage and
+Catch per unit effort (CPUE) is a common metric available from fisheries
+and collected on surveys. Depending on the stock assessment model and
+the available data for a particular fish stock, an index of stock status
+can have a large influence on end year estimation of stock status (find
+examples).
 
-An index of relative abundance assumes that changes in the index are
-proportional to changes of abundance in the population, which does not
-always hold or may not be linear (\textbf{Harley2001?}).
+There are both advantages and disadvantages that must be considered when
+using to fishery-dependent data. Fishery-dependent data are collected
+directly from the the fishery and are less costly than the whose
+operations are not constrained by sampling designs, but dependent on the
+behaviors of the captain and vessel and, in the case of recreational
+trips, customer preference.
 
-Along the U.S. West Coast, even if the stock assessment is categorized
-as data rich, oftentimes the the only index of abundance available is
-from a fishery-dependent CPUE time series of observed recreational
-angler catch rates (Cope, 2013).
-
-There is currently no coastwide fishery-independent survey for the
-nearshore fisheries on the West Coast. The National Marine Fisheries
-Service (NMFS) conducts an annual trawl survey, but the survey extends
-to a minimum depth of \_\_\_ (cite) and is known not to select for all
-rockfish species due to the inability to trawl in rocky habitats.
-Several scientists are developing methods to survey untrawlable habitat
-and small areas of fishery-independent survey work are available.
-Propose survey methods include the use of stereo video landers (cite),
-acoustic surveys (cite), remotely operated vehicles (ROVs), as well as
-hook and line surveys. There are three ongoing hook and line surveys on
-the West Coast, two of which were designed to monitor MPA networks in
-central California (CCFRP) and Oregon (ODFW Marine Reserves Program). T
-
-In California, approximately 70\% of the recreational fishing effort is
-in the SCB, and since the survey effort distributed proportional to
-effort, there are a large number of fishery-dependent data available for
-the SCB that overlap with the NWFSC hook and line survey fixed stations.
-
-This data series is part of the onboard observer program, which collects
-location- and species-specific CPUE information for the recreational
-fishing fleet (Monk et al.~2014)
+Fishery-dependent data are only collected from areas legally open areas
+can be collected, i.e., areas closed to fishing are not sampled. In
+California, this includes a network of marine protected areas (MPAs),
+rockfish conservation areas (RCAs) developed based on depth closures,
+and varying seasonal and depth closures that vary temporally and
+spatially along California's coastline. Fishery-independent surveys are
+conducted using a scientific study design and, depending on the study,
+are not always confined to the same regulations as the commercial and
+recreational fishing sectors. In an ideal situation, both
+fishery-dependent and fishery-independent surveys would used to inform
+the stock assessment model.
 
 Fishery-dependent surveys sample the fishing fleets and are subject to
 potential sampling biases. The sampling is dependent on the fishing
@@ -208,262 +270,296 @@ fairly new network of Marine Protected Areas (MPAs) designated from
 2007-2012 that prohibit recreational fishing, and are therefore areas no
 longer sampled by the recreational fishing fleet. However, the advantage
 to fishery-dependent sampling the reduced program cost compared to a
-more intensive scientific fishery-independent survey.
+more intensive fishery-independent survey.
 
-Fishing effort directed toward a specific species or species complex
+The Pacific Fishery Management Council manages groundfish off the West
+Coast of the United States under the Groundfish Fishery Management Plan
+(FMP). The FMP includes 64 species of rockfish, \_\_\_ of which do not
+have full stock assessments. Many of these species, especially those
+nearshore, are assessed using multiple assessment models to represent
+areas with distinct fishing histories, communities regulations. Along
+the U.S. West Coast, even if the stock assessment is categorized as data
+rich, oftentimes the only index of abundance available is from a
+fishery-dependent CPUE time series of observed recreational angler catch
+rates \citep{Cope:2013:ISC}.
 
-This paper focuses on methods to determine the appropriate trips to
-represent effort and the resulting indices of relative abundance from a
-fishery-dependent survey of the recreational fishing fleet. We apply
-multiple methods to learn how abundance indices change with available
-information, as well as look at the inclusion of supplement data
-collected by Cal Poly. Cal Poly began an onboard observer program
-following the same methods as CDFW in 2001.
+A common characteristic of ecological data is a high proportion of zero
+observations across samples and the question as to whether the sampling
+occurred within the species' habitat and the species was not observed or
+if the sampling occurred outside of the species' habitat (structural
+zeroes). Fisheries survey data are often subset to exclude structural
+zeroes using the Stephens-MacCall method
+\citeyearpar{Stephens:2004:MAS}, which models the probability of
+observing the target species given the other the presence/absence of
+other species. However, the onboard observer survey collected
+location-specific information on each observer fish encounter. To subset
+the onboard observer survey data and exclude structural zeroes, we used
+the positive catch locations as a proxy for suitable habitat.
 
-\hypertarget{groundfish-management}{%
-\paragraph{Groundfish Management}\label{groundfish-management}}
+We evaluated data from a recreational onboard observer program, which
+collects location- and species-specific CPUE information from the
+commercial passenger fishing vessel (CPFV; also know as party boat)
+fleet \citep{Monk:2014:DRD}. The data are collected at the level of a
+fishing drop and fine-scale habitat data are available for a large
+fraction of California state waters. To determine the impact and effect
+of developing indices with data from known fishing locations mapped to
+rocky reef habitat to indices without known habitat information, we used
+the same data set to develop standardized indices of relative abundance
+based on three different data filtering methods. The three data
+treatment methods included an aggregation of the catches at the
+drop-level data to a trip, treating the drop-level data as if specific
+locations were not available, and lastly filtering the drop-level data
+based on known locations. In addition, for the model filtered based on
+known rocky reef substrate, we weighted the index by area of habitat
+within pre-defined regions.
 
-There are a number of management changes that have affected West Coast
-groundfish species over the last few decades. In 2000, West Coast
-groundfish fisheries were declared a disaster (citation) as a number of
-stocks were declared overfished with overfishing occurring. In response
-to federal management measures, the CDFW implemented fishing gear
-regulations of 3-hooks per line and one-line maximum per angler in 2000,
-and that changed to a 2-hook per line and one-line maximum in 2001. CDFW
-also bagan temporal and spatial management in the forms of closures and
-depth restrictions in 2004. Boundaries of the regional management units
-have changed over time and are accounted for in our analyses. In 2007,
-California enacted a network of Marine Protected Areas that encompass
-approximately 23\% of state waters. As groundfish stock have rebuilt
-over the last few years, CDFW eased depth restrictions in some
-management areas and the recreational groundfish fleet had access to
-depths outsdie of state waters.
+\emph{cut from another place: The onboard observer data provide a
+high-resolution of catch, effort and the ability to map the fishing
+drops to fine-scale habitat data. This paper explores methodological
+differences in data treatment to see what we gain by having the
+high-resolution habitat data and using that as a mechanism to filter out
+trips that are not targeting the species of interest}
+
+\emph{This paper explores methodological differences in data treatment
+to determine changes in trends in indices and the associated error among
+three alternative assumptions and data filtering strategies. All of the
+methods described below started with the same subset of drifts from the
+onboard observer data, restricted to state waters and the years
+2004-2016. In the case of application to stock assessments, all
+potential data are explored, which may be why trends in indices differ
+in this paper than what has previously been published in stock
+assessments. Since the most recent stock assessments in 2021, the data
+have undergone a major quality assurance effort by the authors.}
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
 \hypertarget{survey-data}{%
-\paragraph{Survey Data}\label{survey-data}}
+\subsection{Survey Data}\label{survey-data}}
 
-The California Department of Fish and Wildlife (CDFW) has conducted a
+The California Department of Fish and Wildlife (CDFW) began a
 fishery-dependent onboard observer survey of the Commercial Passenger
-Fishing Vessel (CPFV or party/charter boat) fleet since 1999. Since
-2004, the survey became part of the California Recreational Fisheries
-Survey (CFRS). Groundfish-targeted CPFV trips were sampled
-opportunistically as CPFV participation is voluntary and sampling effort
-was distributed in proportion to fishing effort. In California, xx\% of
-the recreational CPFV effort is north of Point Conception. Observers may
-not be allowed on a vessel if the vessel is at full capacity, which is
-more common in northern California where a number of charter boats are
-smaller 6-pack vessels with limited capacity.
+Fishing Vessel (CPFV or party/charter boat) fleet in 1999. In 2004, the
+survey became part of the California Recreational Fisheries Survey
+(CFRS) that includes additional surveys to quantify the catches and
+effort of the recreational fleet. Sampling effort for
+groundfish-targeted CPFV trips was distributed in proportion to fishing
+effort, and approximately 21\% of the CDFW observed groundfish trips
+were north of Point Conception. North of Bodega Bay, California the
+majority of charter boats are smaller 6-pack vessel that may not have
+the capacity to carry an observer onboard. In 2001, the California
+Polytechnic State University Institute of Marine Science, San Luis
+Obispo (Cal Poly) began a supplemental onboard observer program of the
+CPFV fleet based in Port Avila and Port San Luis along the Central
+Coast. Protocols for the Cal Poly survey were the same as the CDFW
+survey, with the exception that Cal Poly measured retained and discarded
+fish from observed anglers. The additional of the Cal Poly data to the
+CDFW survey increases the sample sizes of observed trips out of San Luis
+Obispo county by an average of 58\% since 2004.
 
 On a trip, observers recorded information for each fishing drop, each
 time lines were in the water. Just prior to the start of each fishing
 drop, the sampler selected a subset of anglers to observe, at maximum of
-15 anglers per fishing drop. The sampler recorded all fish encountered
-(retained and discarded) by the subset of anglers as a group. Samplers
-also recorded the time fished (starting when the captain announced
-``Lines down'' to when the captain instructed anglers to reel lines up),
-GPS coordinates of the fishing drop (start and/or end
-latitude/longitude), and minimum and maximum bottom depth. Fish
-encountered by the group of observed anglers were recorded to the
+10-15 anglers per fishing drop. The sampler recorded all fish
+encountered (retained and discarded) by the subset of anglers as a
+group. Samplers also recorded the time fished (starting when the captain
+announced ``Lines down'' to when the captain instructed anglers to reel
+lines up), coordinates of the fishing drop (start latitude/longitude
+and/or end latitude/longitude), and minimum and maximum bottom depth.
+Fish encountered by the group of observed anglers were recorded to the
 species level as either retained or discarded, providing a count of each
-species at a particular location. Discarded fish were measured for
-length and some portion of retained fish were measured as part of a
-different CRFS Sampling program. The catch and fishing time of an
-individual angler were not recorded. Additional details can be found in
-Monk et al. (\textbf{Monk2014?}).
+species at a particular location. For these analyses we modeled only the
+retained catch. The catch and fishing time of an individual angler were
+not recorded. Additional details can be found in Monk et al.
+\citeyearpar{Monk:2014:DRD}.
 
-In 2001, the California Polytechnic State University Institute of Marine
-Science, San Luis Obispo (Cal Poly) conducts a similar onboard observer
-program of the CPFV fleet based in Port Avila and Port San Luis along
-the Central Coast. Protocols for the Cal Poly survey are the same as the
-CDFW survey, with the exception that Cal Poly measures retained and
-discarded fish from observed anglers.
-
-A common phenomenon of ecological data is the high proportion of zero
-observations across samples and the question as to whether the sampling
-occurred within the species' habitat and the species was not observed or
-if the sampling occurred outside of the species' habitat (structural
-zeroes). Fisheries survey data are often subset to exclude structural
-zeroes using the Stephens-MacCall method, which looks at the species
-composition of co-occurring species. However, the onboard observer
-survey collected location-specific information on each observer fish
-encounter. To subset the onboard observer survey data and exclude
-structural zeroes, we used the positive catch locations as a proxy for
-suitable habitat.
-
-\hypertarget{species}{%
-\paragraph{Species}\label{species}}
-
-We explored the methods described in the following sections indices of
-abundance for fourteen species or species complexes of management
+We explored the methods described in the following sections to develop
+indices of abundance for six species or species complexes of management
 interest: black rockfish (\emph{Sebastes melanops}), blue and deacon
 rockfish complex (\emph{Sebastes mystinus}, \emph{Sebastes diaconus}),
 brown rockfish (\emph{Sebastes auriculatus}), China rockfish
-(\emph{Sebastes nebulosus}), copper rockfish (\emph{Sebastes caurinus}),
-gopher and black-and-yellow rockfish complex (\emph{Sebastes carnatus},
-\emph{Sebastes chrysomelas}), greenspotted rockfish (\emph{Sebastes
-chlorostictus}), olive rockfish (\emph{Sebastes serranoides}), quillback
-rockfish (\emph{Sebastes maliger}), rosy rockfish (\emph{Sebastes
-rosaceus}), starry rockfish (\emph{Sebastes constellatus}), vermilion
-and sunset rockfish complex (\emph{Sebastes miniatus}/\emph{Sebastes
-crocotulus}), yellowtail rockfish (\emph{Sebastes flavidus}). Species
-complexes consist of two cryptic species that may or may not be
-genetically distinct, but cannot be assessed separately for various
-reasons including the inability to separate catch histories between
-species or difficulty of visual species identification. Versions of the
-area-weighted habitat index of relative abundance were approved by the
-Pacific Fisheries Management Council's SSC for use in stock assessments
-in 2013 have been used in xxx assessments accepted for management
-(China, gopher/black-and-yellow, vermilion/sunset, blue/deacon, black,
-lingcod - cite assessments).
+(\emph{Sebastes nebulosus}), gopher rockfish (\emph{Sebastes carnatus}),
+and vermilion and sunset rockfish complex (\emph{Sebastes
+miniatus}/\emph{Sebastes crocotulus}). Two genetically distinct species
+compose a cryptic species pair that are often visually
+indistinguishable, or for other reasons, were not recorded separately in
+surveys or catch histories. Gopher rockfish was assessed as part of a
+species complex with black-and-yellow rockfish (\emph{Sebastes
+chrysomelus}) in 2019, but were visually identifiable and the data in
+this paper represents only gopher rockfish \citep{Monk:2019:CSG}.
 
-\hypertarget{treatment-of-data}{%
-\paragraph{Treatment of Data}\label{treatment-of-data}}
+\hypertarget{stephens-maccall-data-filtering}{%
+\paragraph{Stephens-MacCall Data
+Filtering}\label{stephens-maccall-data-filtering}}
 
-The onboard observer data provide a high-resolution of catch, effort and
-the ability to map the fishing drops to fine-scale habitat data. This
-paper explores methodological differences in data treatment to see what
-we gain by having the high-resolution data. To do this, we first mimic
-the collection of dockside data by aggregating all of the fish
-encountered within a single trip and summing the effort among drifts.
-Trip level data were then filtered using the Stephens-MacCall approach
-and three different data selection methods were applied using the
-Stephens-MacCall results (see description below), and only county was
-used as a spatial covariate in the indices.
+We used the Stephens-MacCall approach to filter data for the trip-level
+data and also the drop-level data assuming no location information. To
+create a trip from the drop-level data, we aggregated the retained fish
+catches within a trip. The trip-level effort was calculated as angler
+days, using the average number of observed anglers across all drifts on
+a trip. The trip-level index used all available data before any
+filtering was done to exclude individual drifts with missing effort or
+location data.
 
-The second approach used the high resolution trip data, but assumed no
-available habitat data. The percent of groundfish encountered during a
-drift was assumed as a proxy for habitat.
+The second filtering approach retained data a the drop-level, but
+assumed no knowledge of the fishing location, besides the port of
+landing and the data were filtered using the Stephens-MacCall approach.
 
-The third approached used the fishing drop level data, incorporated
-habitat as a filter for data selection, and applied an area-weighted
-index using the area of the reef within a region as a proxy for habitat.
-
-In addition, all of these approaches were applied with and with out the
-supplemental data from the Cal Poly observer program to illustrate the
-effect of additional data on indices for species with a distirbution
-centered in central California.
-
-All indices of abundance were coded in R and the Bayesian analyses were
-conducted using the rstanarm package.
-
-Analyses were limited to the California coast north of Point Conception
-(\(34^\circ 27^\prime N\)). The composition of the fish communities in
-southern California differ, and the recreational fisheries are
-fundamentally different, with a higher percentage of trips targeting
-mixed species and pelagic and highly migratory species, as well as more
-limited access to rocky habitat nearshore. Point Conception is a
-biogeographic break (citation) and a number of stock assessments In
-addition, complete habitat data are not available for areas in southern
-California. The data were also temporally restricted to the years
-2001-2016. Earlier and more recent data were excluded to preserve a
-dataset with the most consistent gera and depth regulations.
-
-\hypertarget{stephens-maccall-filering}{%
-\subparagraph{Stephens-MacCall
-Filering}\label{stephens-maccall-filering}}
-
-The Stephens-MacCall (2004) filtering approach was used to predict the
-probability of encountering a target species, based on the species
-composition of the catch in a given trip. The method uses
-presence/absence data wthin a logistic regression to identify the
-proability of encountering a target species given the presence or abance
-of other predictor species. This method is commonly used to filter data
-that are collected dockside after a vessel returns to port. Prior to
-applying the Stephens-MacCall filter, we identified potentially
-informative predictor species, i.e., species with sufficient sample
-sizes and temporal coverage (present in at least 5\% of all trips) to
-inform the binomial model. The remaining species all co-occurred with
-the target species in at least one trip and were retained for the
-Stephens-MacCall logistic regression. Coefficients from the
-Stephens-MacCall analysis (a binomial GLM) are positive for species that
-are more likely to co-occur with the target species, and negative for
-species that are less likely to be caught with target species.
+The Stephens-MacCall \citeyearpar{Stephens:2004:MAS} filtering approach
+was used to predict the probability of encountering the target species,
+based on the species composition of the catch in a given trip. The
+method uses presence/absence data within a logistic regression to
+identify the probability of encountering a target species given the
+presence or absence of other predictor species. This method is commonly
+used to filter data that are collected dockside after a vessel returns
+to port. Prior to applying the Stephens-MacCall filter, we identified
+potentially informative predictor species, i.e., species with sufficient
+sample sizes and temporal coverage (present in at least 5\% of all
+trips) to inform the binomial model. The remaining species all
+co-occurred with the target species in at least one trip and were
+retained for the Stephens-MacCall logistic regression. Coefficients from
+the Stephens-MacCall analysis (a binomial GLM) are positive for species
+that are more likely to co-occur with the target species, and negative
+for species that are less likely to be caught with target species.
 
 While the filter is useful in identifying co-occurring or non-occurring
 species assuming all effort was exerted in pursuit of a single target,
 the targeting of more than one species or species complex (``mixed
 trips'') can result in co-occurrence of species in the catch that do not
 truly co-occur in terms of habitat associations informative for an index
-of abundance. Stephens and MacCall (2004) recommended including all
-trips above a threshold where the false negatives and false positives
-are equally balanced. However, this does not have any biological
-relevance and for this data set, and we assume that if the target
+of abundance. Stephens and MacCall \citeyearpar{Stephens:2004:MAS}
+recommended including all trips above a threshold where the false
+negatives and false positives are equally balanced. However, this does
+not have any biological relevance and for this particular data set where
+trained observers identify all fish. We assumed that if the target
 species was encountered, the vessel fished in appropriate habitat.
-
-Stephens and MacCall (2004) proposed filtering (excluding) trips from
-the index standardization based on a criterion of balancing the number
-of false positives and false negatives. False positives (FP) are trips
-that are predicted to encounter the target species based on the species
+Stephens and MacCall \citeyearpar{Stephens:2004:MAS} proposed filtering
+(excluding) samples from index standardization based on a criterion of
+balancing the number of false positives and false negatives from the
+predicted probability of encounter. False positives (FP) are trips that
+are predicted to encounter the target species based on the species
 composition of the catch, but did not. False negatives (FN) are trips
 that were not predicted to encounter the target species, given the catch
-composition, but caught at least one. The trips selected using this
-criteria were compared to an alternative method including all the
-``false positive'' trips, regardless of the probability of encountering
-the target species. The catch included in this index and in the dockside
-data collected by CDFW is sampler-examined and the samplers are well
-trained in species identification. Therefore, we make the assumption
-that species were positively and correctly identified. Three data
-selection methods were applied to the Stephens-MacCall method , the data
-selection method proposed in the original manuscript to balance the
-false negatives and the false positives, retention of all positive
-encounters and exclude of only false negatives, and the method described
-in (xxxx).
+composition, but caught at least one target species.
+
+Of interest for the index of abundance is the elimination of trips that
+had a low probability of catching the target species given the other
+species caught on the trip. Therefore, we retained all of the trips that
+caught the target species and those trips that did not catch the target
+species, but had a probability higher than the threshold balancing the
+false negatives and false positives. This practice has commonly been
+used in recent stock assessments of rockfish on the West Coast.
+
+The full data from 2004-2016 contained 2,252 trips that retained at
+least one fish. Species that never co-occurred with the target species
+and species present in fewer than 3\% of all trips were excluded from
+the Stephens-MacCall analysis.
+
+For the drop-level data that assumed no knowledge of habitat
+information, the Stephens-MacCall filter was applied with each
+individual drop as a sample. Species that never co-occurred with the
+target species and those present in fewer than 1\% of all drops were
+removed to reduce the number of species to those that were informative.
+
+\hypertarget{habitat-informed-data-filtering}{%
+\paragraph{Habitat-informed Data
+Filtering}\label{habitat-informed-data-filtering}}
+
+This paper limited the data to observations within California state
+waters north of Point Conception (\(34^\circ 27^\prime N\)), which were
+mapped at a resolution of 2 m by the California Seafloor Mapping Program
+(CSMP). Rough and smooth substrate was identified by CSMP using two
+rugosity indices based upon bathymetric data, surface:planar area, and
+vector ruggedness measure (VRM). We considered areas identified as
+`rough' as reef habitat. Individual reefs at the finest scale were
+defined as raster cells of rough habitat greater than 200 m apart. The
+distance was chosen based on evidence that a number of nearshore
+rockfish exhibit site fidelity and a number of tagging studies have
+recaptured close to original capture sites
+\citep{Lea:1999:BAM, Matthews:1985:SSM, Hannah:2011:SF, Hannah:2012:UNC}.
+Contiguous raster cells classified as hard substrate remained as a
+singular reef, regardless of size. Reefs were further defined with a 5 m
+buffer to account for potential error in positional accuracy. The area
+of a reef was calculated to exclude portions of the reef that extended
+outside of California state waters (further than 3 nm from shore). The
+mapped area does not include the white zones close to shore.
+
+Individual fishing drops were assigned to reefs based on the recorded
+start location, given that the drop end locations were not always
+recorded. The data contained a total of 19,425 fishing drops and after
+removing drops with missing effort information (time fished or observed
+anglers), 19,180 remained. To further remove drifts that may not
+accurately define a successful fishing drop or data errors, the upper
+and lower 1\% of the recorded fish time and observed anglers were
+removed. This resulted in fishing drops lasting between three and 96
+minutes fished with three to 15 observed anglers, reducing the data to
+18,591 fishing drops.
+
+For indices incorporating habitat information, we filtered the data on
+depth to retain 99\% of drops, which resulted in a depth cutoff of 46.6
+fathoms and retained 18,405 drops. We did not use depth as a predictor
+in the indices. The fishery was closed deeper than 40 fathoms for the
+entire time period from 2004-2016, and the additional 6 fathoms is
+within the scope of error given the rugous bottom habitat.
+
+The distance from rocky reef composed the last filter for indices
+including habitat. Using the drops with the target species, we retained
+90\% of drop from the cumulative frequency of distance to rocky habitat.
+The cutoff for blue, China and gopher rockfish was six meters, eight
+meters for vermilion rockfish, 14 meters for black rockfish and 16
+meters for brown rockfish.
 
 \hypertarget{indices-of-abundance}{%
 \paragraph{Indices of Abundance}\label{indices-of-abundance}}
 
 Standardized indices of abundance were generated for each data filtering
-method. Indices of abundance modeled the catch per unit effort (angler
-hours) and possible covariates trip-level data were 3-month wave and
-county of landing. Covariates considerd for the drop-level data
-included, aggregated reef area, 3-month wave, depth, and xxxx.
+method and an area-weighted index was developed from the drop-level
+habitat data. All indices were modeled using Bayesian generalized linear
+models (GLMs) and the delta method \citep{Lo:1992:IRA}. The delta method
+models the data with two separate GLMs; one for the probability of
+encountering the species of interest from a binomial likelihood and a
+logit link function and the second GLM models the positive encounters
+with either gamma or lognormal error structure.
 
-All indices were modeled using a Bayesian genearlized linear models
-(GLMs). Species with high positive encounter rates were modeled with a
-negative biniomals
+The response variable for the positive models was catch per unit effort.
+Covariates for the trip-level data and drop-level data without habitat
+included 3-month wave and county of landing. Covariates considered for
+the drop-level data with habitat filters included, aggregated reef area
+and wave (3-month aggregated periods of time). Each drop-level index
+with habitat information was also run to include a year/reef iteration
+and weighted based on reef area.
 
-The onboard observer data were analyzed using the delta method with two
-generalized linear models (delta-GLM). The first GLM models the
-probability of encountering the species of interest with a binomial
-likelihood and a logit link function. The second GLM models the positive
-encounters with either gamma or lognormal errors structure.
+Year was always included in the trip-level data were 3-month wave and
+county of landing. Covariates considered for the drop-level data
+included, aggregated reef area, 3-month wave, and xxxx.
 
-We explored the possibility of area-weighted indices, using the area of
-the reefs as the weighting scheme.
+The gamma or lognormal error distribution was chosen via maximum
+likelihood AIC from the full model with all covariates. Model selection
+for the binomial and positive observation models were also selected
+using AIC and unless very different predictors were selected, the same
+predictors were used in each of the two Bayesian models. The Bayesian
+models were run with 5,000 iterations and uninformative priors.
+Posterior predictive model checks were examined for both the binomial
+and positive observation models. including xxxxxxx. We constructed the
+final year index by multiplying the back-transformed posterior draws
+from the binomial model with the exponentiated positive model draws, and
+taking the mean and standard deviation for each year.
 
-\hypertarget{habitat-data}{%
-\paragraph{Habitat Data}\label{habitat-data}}
+The area-weighted index was developed by extracting the posterior draws
+of from each year and area combination of the binomial and positive
+posterior predictions, and then summing across the product of the
+posteriors weighted by the fraction of total area within each reef.
 
-We identified rocky habitat and defined reefs as potential habitat for
-rockfish in California from multiple bathymetic data sources. Bathymetry
-within California state waters north of Point Conception
-(\(34^\circ 27^\prime N\)) was mapped at a resolution of 2 m by the
-California Seafloor Mapping Program (CSMP).Rough and smooth substrate
-was identified by CSMP using 2 rugosity indices based upon bathymetric
-data, surface:planar area, and vector ruggedness measure (VRM). We
-considered areas identified as `rough' as reef habitat. While there were
-fishing drops outside of state waters, we limited data for the
-comparisons presented in this paper to state waters with known habitat.
+To better compare the resulting indices across the three data filtering
+methods and the area-weighted index, each index was scaled to its mean.
 
-Individual reefs at the finest scale were defined as raster cells of
-rough habitat greater than 200 m apart. The distance was chosen based on
-evidence that a number of nearshore rockfish exchit site fidelit and a
-number of tagging studies have recaptured close to original capture
-sites (Hannah et al., 2012; Hannah and Rankin, 2011; Lea et al., 1999;
-\textbf{Matthew1990?}). If raster cells representing hard substrate were
-contiguous (not separated by soft habitat by greater than 200 m) it
-remained intact, no matter how large the reef. Reefs were further
-defined with a 5 m buffer to account for potential error in positional
-accuracy.
-
-Fishing drops were assigned to reefs based on the recorded start
-location, given that the end locations were not always available. Reefs
-within predetermined larger regions were designated to gain appropriate
-sample sizes needed for modelling and the areas of the hard habitat were
-summed.
+Versions of the indices filtered based on habitat were approved by the
+Pacific Fisheries Management Council's Science and Statistical Committee
+for use in the 2013 stock assessments and have been used all of the
+stock assessment process since. Comparisons should not be drawn between
+the indices presented here and the stock assessment documents as the
+indices in this paper were simplified to develop direct comparison among
+methods.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -473,22 +569,14 @@ summed.
 
 Recent studies have identified the need to investigate the assumptions
 and uncertainty in relative indices of abundance from visual surveys
-(Bacheler and Shertzer 2015, Campbell et al.~2015, Schobernd et
-al.~2013) and simulation studies (Siegfried et al.~2016).
+\citep{Bacheler:2015:ERA, Campbell:2015:CRA} and simulation studies
+\citep{Siegfried:2016:ISA}.
 
-Linear relationship between density from SCUBA surveys and a
-fishery-independent survey for rockfish when in the species preferred
-habitat and gear (Haggarty and King 2006) and for the more abundance
-species (Richards and Schnute 1986).
-
-Magnusson and Hilborn 2007 - prioritize data for stock assessments
+Prioritize data for stock assessments \citep{Magnusson:2007:WMF}.
 
 Stock synthesis weighting of indices based on CVs - is the CV tighter
 for the fishery-independent survey to give it have an edge over the
 onboard observer survey?
-
-Starr et al. (2010) compared SCUBA methods to commercial fishing gear,
-but only sampled for two year.
 
 CDFW sampler manual - ``10 anglers should be the target number of
 observed anglers''
@@ -496,6 +584,9 @@ observed anglers''
 encompass the entire range of the species. However, the point of the
 exercise is to compare the two methods and these surveys are sampling
 the same habitats in the SCB
+
+accepted for management (China, gopher/black-and-yellow,
+vermilion/sunset, blue/deacon, black, lingcod - cite assessments).
 
 Survey indices can be either absolute or relative. In the case of an
 absolute index of abundance, the entire population within the sampling
@@ -507,68 +598,130 @@ the survey area was not observed. Estimates of absolute abundance are
 difficult to obtain, especially for cryptic rockfishes. The cowcod
 (\emph{Sebastes levis}) stock assessments is one of the only West Coast
 stock assessments that has incorporated an estimate of absolute
-abundance, derived from a visual survey {[}(\textbf{Piner?}) et
-al.~2005). The majority of stock assessments include one or more index
+abundance, derived from a visual survey \citep{Love:2009:DFA} add
+assessment. The majority of stock assessments include one or more index
 of relative abundance.
+
+Data were limited to the California coast north of Point Conception
+(\(34^\circ 27^\prime N\)). The composition of the fish communities in
+southern California differ, and the recreational fisheries are
+fundamentally different, with a higher percentage of trips targeting
+mixed species and pelagic and highly migratory species, as well as more
+limited access to rocky habitat nearshore. Point Conception is a
+biogeographic break (citation) and a number of stock assessments In
+addition, complete habitat data are not available for areas in southern
+California. The data were also temporally restricted to the years
+2001-2016. Earlier and more recent data were excluded to preserve a
+dataset with the most consistent gear and depth regulations.
 
 Composition data from recreational surveys had the largest impact on
 simulation results, but individual survey components did not have
-individual effects on benchmarks (Siegfried et al.~2016).\\
+individual effects on benchmarks \citep{Siegfried:2016:ISA}.\\
 The onboard observer surveys decrease the amount of uncertainty, but
 relative to a fishery-independent survey, is still high\ldots.
 
-Assume fishing behavior is remains the same when observers are no
-onboard the vessel.
+A key assumption of the onboard observer programs is that fishing
+behavior remains the same when observers are not onboard the vessel. If
+a captain only fishes particular locations or targets a different suite
+of species when an observer is onboard the vessel, additional bias is
+introduced in the data
 
-\hypertarget{references}{%
-\section*{References}\label{references}}
-\addcontentsline{toc}{section}{References}
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-Cope2013}{}}%
-Cope, J.M., 2013. {Implementing a statistical catch-at-age model (stock
-synthesis) as a tool for deriving overfishing limits in data-limited
-situations}. Fisheries Research 142, 3--14.
-doi:\href{https://doi.org/10.1016/j.fishres.2012.03.006}{10.1016/j.fishres.2012.03.006}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2532}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1519}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3165}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2785}}@{}}
+\caption{The average fraction of positive observations across years
+after applying each filtering
+method.\{\#tbl-percentpos\}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (habitat)
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (habitat)
+\end{minipage} \\
+\midrule()
+\endhead
+Black rockfish & 0.753 & 0.557 & 0.158 \\
+Blue rockfish & 0.916 & 0.699 & 0.444 \\
+Brown rockfish & 0.727 & 0.605 & 0.160 \\
+China rockfish & 0.699 & 0.552 & 0.083 \\
+Gopher rockfish & 0.843 & 0.648 & 0.310 \\
+Vermilion rockfish & 0.869 & 0.623 & 0.295 \\
+\bottomrule()
+\end{longtable}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Hannah2011}{}}%
-Hannah, R.W., Rankin, P.S., 2011. {Site fidelity and movement of eight
-species of pacific rockfish at a high-relief rocky reef on the oregon
-coast}. North American Journal of Fisheries Management 31, 483--494.
-doi:\href{https://doi.org/10.1080/02755947.2011.591239}{10.1080/02755947.2011.591239}
+\hypertarget{tbl-avgcv}{}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1143}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2381}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2095}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2476}}@{}}
+\caption{\label{tbl-avgcv}The average Coefficient of Variation (CV) for
+each index of abundance. }\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level Area-weighted
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level (habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drop level Area-weighted
+\end{minipage} \\
+\midrule()
+\endhead
+Black rockfish & 0.671 & 0.364 & 0.449 & 0.443 \\
+Blue rockfish & 0.257 & 0.099 & 0.142 & 0.134 \\
+Brown rockfish & 0.858 & 0.679 & 0.240 & 0.242 \\
+China rockfish & 0.151 & 0.233 & 0.301 & 0.320 \\
+Gopher rockfish & 0.626 & 0.138 & 0.183 & 0.179 \\
+Vermilion rockfish & 0.238 & 0.133 & 0.178 & 0.152 \\
+\bottomrule()
+\end{longtable}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Hannah2012}{}}%
-Hannah, R.W., Rankin, P.S., Blume, M.T.O., 2012. {Use of a novel cage
-system to measure postrecompression survival of Northeast Pacific
-rockfish}. Marine and Coastal Fisheries 4, 46--56.
-doi:\href{https://doi.org/10.1080/19425120.2012.655849}{10.1080/19425120.2012.655849}
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Lea1999}{}}%
-Lea, R.N., McAllister, R.D., VenTresca, D.A., 1999. {Biological aspects
-of nearshore rockfishes of the genus
-genus\(\backslash\)emph{\{}Sebastes{\}} from central California: with
-notes on ecologically related sport fishes}. Fish Bulletin No. 177 112.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Maunder2004}{}}%
-Maunder, M.N., Punt, A.E., 2004. {Standardizing catch and effort data: A
-review of recent approaches}. Fisheries Research 70, 141--159.
-doi:\href{https://doi.org/10.1016/j.fishres.2004.08.002}{10.1016/j.fishres.2004.08.002}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Starr2010}{}}%
-Starr, R.M., Carr, M., Malone, D., Greenley, A., McMillan, S., 2010.
-{Complementary sampling methods to inform ecosystem-based management of
-nearshore fisheries}. Marine and Coastal Fisheries: Dynamics,
-Management, and Ecosystem Science 2, 159--179.
-doi:\href{https://doi.org/10.1577/C08-056.1}{10.1577/C08-056.1}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Stephens2004}{}}%
-Stephens, A., MacCall, A., 2004. {A multispecies approach to subsetting
-logbook data for purposes of estimating CPUE}. Fisheries Research 70,
-299--310.
-doi:\href{https://doi.org/10.1016/j.fishres.2004.08.009}{10.1016/j.fishres.2004.08.009}
-
-\end{CSLReferences}
+\renewcommand\refname{References}
+  \bibliography{bibliography.bib}
 
 
 \end{document}
