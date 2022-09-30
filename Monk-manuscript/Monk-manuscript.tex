@@ -49,6 +49,46 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -75,6 +115,21 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{placeins}
 \makeatletter
 \makeatother
 \makeatletter
@@ -197,7 +252,7 @@ This is the abstract.
     keyword1 \sep 
     keyword2
 \end{keyword}
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, boxrule=0pt, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, sharp corners, frame hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, breakable, enhanced]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -300,22 +355,22 @@ We evaluated data from a recreational onboard observer program, which
 collects location- and species-specific CPUE information from the
 commercial passenger fishing vessel (CPFV; also know as party boat)
 fleet \citep{Monk:2014:DRD}. The data are collected at the level of a
-fishing drop and fine-scale habitat data are available for a large
+fishing drift and fine-scale habitat data are available for a large
 fraction of California state waters. To determine the impact and effect
 of developing indices with data from known fishing locations mapped to
 rocky reef habitat to indices without known habitat information, we used
 the same data set to develop standardized indices of relative abundance
 based on three different data filtering methods. The three data
 treatment methods included an aggregation of the catches at the
-drop-level data to a trip, treating the drop-level data as if specific
-locations were not available, and lastly filtering the drop-level data
+drift-level data to a trip, treating the drift-level data as if specific
+locations were not available, and lastly filtering the drift-level data
 based on known locations. In addition, for the model filtered based on
 known rocky reef substrate, we weighted the index by area of habitat
 within pre-defined regions.
 
 \emph{cut from another place: The onboard observer data provide a
 high-resolution of catch, effort and the ability to map the fishing
-drops to fine-scale habitat data. This paper explores methodological
+drifts to fine-scale habitat data. This paper explores methodological
 differences in data treatment to see what we gain by having the
 high-resolution habitat data and using that as a mechanism to filter out
 trips that are not targeting the species of interest}
@@ -357,16 +412,16 @@ fish from observed anglers. The additional of the Cal Poly data to the
 CDFW survey increases the sample sizes of observed trips out of San Luis
 Obispo county by an average of 58\% since 2004.
 
-On a trip, observers recorded information for each fishing drop, each
-time lines were in the water. Just prior to the start of each fishing
-drop, the sampler selected a subset of anglers to observe, at maximum of
-10-15 anglers per fishing drop. The sampler recorded all fish
-encountered (retained and discarded) by the subset of anglers as a
-group. Samplers also recorded the time fished (starting when the captain
-announced ``Lines down'' to when the captain instructed anglers to reel
-lines up), coordinates of the fishing drop (start latitude/longitude
-and/or end latitude/longitude), and minimum and maximum bottom depth.
-Fish encountered by the group of observed anglers were recorded to the
+On a trip, observers recorded information for each drift, each time
+lines were in the water. Just prior to the start of each fishing drift,
+the sampler selected a subset of anglers to observe, at maximum of 10-15
+anglers per drift. The sampler recorded all fish encountered (retained
+and discarded) by the subset of anglers as a group. Samplers also
+recorded the time fished (starting when the captain announced ``Lines
+down'' to when the captain instructed anglers to reel lines up),
+coordinates of the fishing drift (start latitude/longitude and/or end
+latitude/longitude), and minimum and maximum bottom depth. Fish
+encountered by the group of observed anglers were recorded to the
 species level as either retained or discarded, providing a count of each
 species at a particular location. For these analyses we modeled only the
 retained catch. The catch and fishing time of an individual angler were
@@ -393,15 +448,15 @@ this paper represents only gopher rockfish \citep{Monk:2019:CSG}.
 Filtering}\label{stephens-maccall-data-filtering}}
 
 We used the Stephens-MacCall approach to filter data for the trip-level
-data and also the drop-level data assuming no location information. To
-create a trip from the drop-level data, we aggregated the retained fish
+data and also the drift-level data assuming no location information. To
+create a trip from the drift-level data, we aggregated the retained fish
 catches within a trip. The trip-level effort was calculated as angler
 days, using the average number of observed anglers across all drifts on
 a trip. The trip-level index used all available data before any
 filtering was done to exclude individual drifts with missing effort or
 location data.
 
-The second filtering approach retained data a the drop-level, but
+The second filtering approach retained data a the drift-level, but
 assumed no knowledge of the fishing location, besides the port of
 landing and the data were filtered using the Stephens-MacCall approach.
 
@@ -455,10 +510,10 @@ least one fish. Species that never co-occurred with the target species
 and species present in fewer than 3\% of all trips were excluded from
 the Stephens-MacCall analysis.
 
-For the drop-level data that assumed no knowledge of habitat
+For the drift-level data that assumed no knowledge of habitat
 information, the Stephens-MacCall filter was applied with each
-individual drop as a sample. Species that never co-occurred with the
-target species and those present in fewer than 1\% of all drops were
+individual drift as a sample. Species that never co-occurred with the
+target species and those present in fewer than 1\% of all drifts were
 removed to reduce the number of species to those that were informative.
 
 \hypertarget{habitat-informed-data-filtering}{%
@@ -484,36 +539,36 @@ of a reef was calculated to exclude portions of the reef that extended
 outside of California state waters (further than 3 nm from shore). The
 mapped area does not include the white zones close to shore.
 
-Individual fishing drops were assigned to reefs based on the recorded
-start location, given that the drop end locations were not always
-recorded. The data contained a total of 19,425 fishing drops and after
-removing drops with missing effort information (time fished or observed
+Individual fishing drifts were assigned to reefs based on the recorded
+start location, given that the drift end locations were not always
+recorded. The data contained a total of 19,425 fishing drifts and after
+removing drifts with missing effort information (time fished or observed
 anglers), 19,180 remained. To further remove drifts that may not
-accurately define a successful fishing drop or data errors, the upper
+accurately define a successful fishing drift or data errors, the upper
 and lower 1\% of the recorded fish time and observed anglers were
-removed. This resulted in fishing drops lasting between three and 96
+removed. This resulted in fishing drifts lasting between three and 96
 minutes fished with three to 15 observed anglers, reducing the data to
-18,591 fishing drops.
+18,591 fishing drifts.
 
 For indices incorporating habitat information, we filtered the data on
-depth to retain 99\% of drops, which resulted in a depth cutoff of 46.6
-fathoms and retained 18,405 drops. We did not use depth as a predictor
+depth to retain 99\% of drifts, which resulted in a depth cutoff of 46.6
+fathoms and retained 18,405 drifts. We did not use depth as a predictor
 in the indices. The fishery was closed deeper than 40 fathoms for the
 entire time period from 2004-2016, and the additional 6 fathoms is
 within the scope of error given the rugous bottom habitat.
 
 The distance from rocky reef composed the last filter for indices
-including habitat. Using the drops with the target species, we retained
-90\% of drop from the cumulative frequency of distance to rocky habitat.
-The cutoff for blue, China and gopher rockfish was six meters, eight
-meters for vermilion rockfish, 14 meters for black rockfish and 16
+including habitat. Using the drifts with the target species, we retained
+90\% of drift from the cumulative frequency of distance to rocky
+habitat. The cutoff for blue, China and gopher rockfish was six meters,
+eight meters for vermilion rockfish, 14 meters for black rockfish and 16
 meters for brown rockfish.
 
 \hypertarget{indices-of-abundance}{%
 \paragraph{Indices of Abundance}\label{indices-of-abundance}}
 
 Standardized indices of abundance were generated for each data filtering
-method and an area-weighted index was developed from the drop-level
+method and an area-weighted index was developed from the drift-level
 habitat data. All indices were modeled using Bayesian generalized linear
 models (GLMs) and the delta method \citep{Lo:1992:IRA}. The delta method
 models the data with two separate GLMs; one for the probability of
@@ -522,15 +577,15 @@ logit link function and the second GLM models the positive encounters
 with either gamma or lognormal error structure.
 
 The response variable for the positive models was catch per unit effort.
-Covariates for the trip-level data and drop-level data without habitat
+Covariates for the trip-level data and drift-level data without habitat
 included 3-month wave and county of landing. Covariates considered for
-the drop-level data with habitat filters included, aggregated reef area
-and wave (3-month aggregated periods of time). Each drop-level index
+the drift-level data with habitat filters included, aggregated reef area
+and wave (3-month aggregated periods of time). Each drift-level index
 with habitat information was also run to include a year/reef iteration
 and weighted based on reef area.
 
 Year was always included in the trip-level data were 3-month wave and
-county of landing. Covariates considered for the drop-level data
+county of landing. Covariates considered for the drift-level data
 included, aggregated reef area, 3-month wave, and xxxx.
 
 The gamma or lognormal error distribution was chosen via maximum
@@ -564,8 +619,16 @@ methods.
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
+Stephens-MacCall differences and similarities
+
+Changed in the CV (error) among the four indices for each species
+
+\FloatBarrier
+
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+Lots to discuss!
 
 Recent studies have identified the need to investigate the assumptions
 and uncertainty in relative indices of abundance from visual surveys
@@ -626,14 +689,16 @@ a captain only fishes particular locations or targets a different suite
 of species when an observer is onboard the vessel, additional bias is
 introduced in the data
 
+\FloatBarrier
+
 \hypertarget{tables}{%
 \section{Tables}\label{tables}}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2532}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1519}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3165}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2785}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2469}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1481}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3210}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2840}}@{}}
 \caption{The average fraction of positive observations across years
 after applying each filtering
 method.\{\#tbl-percentpos\}}\tabularnewline
@@ -643,9 +708,9 @@ Species
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trip level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (no habitat)
+Drift level (no habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (habitat)
+Drift level (habitat)
 \end{minipage} \\
 \midrule()
 \endfirsthead
@@ -655,9 +720,9 @@ Species
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trip level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (no habitat)
+Drift level (no habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (habitat)
+Drift level (habitat)
 \end{minipage} \\
 \midrule()
 \endhead
@@ -672,24 +737,24 @@ Vermilion rockfish & 0.869 & 0.623 & 0.295 \\
 
 \hypertarget{tbl-avgcv}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1905}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1143}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2381}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2095}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2476}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
 \caption{\label{tbl-avgcv}The average Coefficient of Variation (CV) for
-each index of abundance. }\tabularnewline
+each index of abundance.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Species
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trip level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (no habitat)
+Drift level (no habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (habitat)
+Drift level (habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level Area-weighted
+Drift level Area-weighted
 \end{minipage} \\
 \midrule()
 \endfirsthead
@@ -699,11 +764,11 @@ Species
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Trip level
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (no habitat)
+Drift level (no habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level (habitat)
+Drift level (habitat)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drop level Area-weighted
+Drift level Area-weighted
 \end{minipage} \\
 \midrule()
 \endhead
@@ -716,11 +781,380 @@ Vermilion rockfish & 0.238 & 0.133 & 0.178 & 0.152 \\
 \bottomrule()
 \end{longtable}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{kableExtra}\SpecialCharTok{::}\FunctionTok{kbl}\NormalTok{(readxl}\SpecialCharTok{::}\FunctionTok{read\_xlsx}\NormalTok{(}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{melissa.monk}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Documents}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{GitHub}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{habitat{-}indices{-}paper}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Monk{-}manuscript}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{reef\_areas.xlsx"}\NormalTok{),}
+                \AttributeTok{booktabs =} \ConstantTok{TRUE}\NormalTok{,}
+                \AttributeTok{caption =} \StringTok{"Area of rocky habitat in state waters aggregated to }
+\StringTok{                levels appropriate for each species. The shaded }
+\StringTok{                blocks for each species indicate which areas were aggregated to}
+\StringTok{                ensure appropriate samples sizes to explore an area{-}weighted index."}
+\NormalTok{                ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{width =} \StringTok{"1.8in"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{width =} \StringTok{".8in"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{collapse\_rows}\NormalTok{(}\AttributeTok{columns =} \DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{Area of rocky habitat in state waters aggregated to 
+                levels appropriate for each species. The shaded 
+                blocks for each species indicate which areas were aggregated to
+                ensure appropriate samples sizes to explore an area-weighted index.}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}}
+\toprule
+Rocky Reef Desginations & Blue rockfish \& Vermilion rockfish & Black rockfish & Brown rockfish & China rockfish & Gopher rockfish\\
+\midrule
+California border to San Francisco & 439.546 & 439.546 & 439.546 &  & \\
+\cmidrule{1-4}
+San Francisco to Santa Cruz & 108.424 & 108.424 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 547.970} & \\
+\cmidrule{1-3}
+\cmidrule{5-5}
+Deeper rocky habitat & 50.252 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 158.676} & 50.252 & \\
+\cmidrule{1-2}
+\cmidrule{4-5}
+Moss Landing to Big Sur & 87.351 &  &  & 87.351 & \multirow{-4}{.8in}{\raggedleft\arraybackslash 685.573}\\
+\cmidrule{1-2}
+\cmidrule{5-6}
+Big Sur to Morro Bay & 90.424 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 177.775} &  & 90.424\\
+\cmidrule{1-2}
+\cmidrule{4-4}
+\cmidrule{6-6}
+Morro Bay to Point Conception & 112.264 & \multirow{-4}{.8in}{\raggedleft\arraybackslash 340.291} & 112.264 & \multirow{-2}{.8in}{\raggedleft\arraybackslash 202.688} & 112.264\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
 \hypertarget{figures}{%
 \section{Figures}\label{figures}}
 
+\begin{figure}
 
-\renewcommand\refname{References}
+{\centering \includegraphics{figures/map.png}
+
+}
+
+\caption{\label{fig-map}An example of the mapped rocky habitat in
+California state waters north of Point Conception and an inset of the
+state showing the 3 nm state water boundary}
+
+\end{figure}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/black_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-black-tripsm}Black rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/black_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-black-driftsm}Black rockfish drift level}
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.52\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=0.03125in,height=\textheight]{figures/blue_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-blue-tripsm}Blue rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.48\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/blue_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-blue-driftsm}Blue rockfish drift level}
+\end{minipage}%
+
+\caption{\label{fig-sm}SM figure 1}
+
+\end{figure}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/brown_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-brown-tripsm}Brown rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/brown_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-brown-driftsm}Brown rockfish drift level}
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/china_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-china-tripsm}China rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/china_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-china-driftsm}China rockfish drift level}
+\end{minipage}%
+
+\caption{\label{fig-sm2}Sm figure 2}
+
+\end{figure}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/gopher_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-gopher-trips}Gopher rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/gopher_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-gopher-drifts}Gopher rockfish drift level}
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/vermilion_trip_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-vermilion-trips}Vermilion rockfish trip level}
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=2.75in,height=\textheight]{figures/vermilion_drift_sm.png}
+
+}
+
+}
+
+\subcaption{\label{fig-vermilion-drifts}Vermilion rockfish driftlevel}
+\end{minipage}%
+
+\caption{\label{fig-sm3}SM3}
+
+\end{figure}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/black_indices.png}
+
+}
+
+\caption{\label{fig-black-indices}Black rockfish}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/blue_indices.png}
+
+}
+
+\caption{\label{fig-blue-indices}Blue rockfish}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/brown_indices.png}
+
+}
+
+\caption{\label{fig-brown-indices}Brown rockfish}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/china_indices.png}
+
+}
+
+\caption{\label{fig-china-indices}China rockfish}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/gopher_indices.png}
+
+}
+
+\caption{\label{fig-gopher-indices}Gopher rockfish}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics[width=3in,height=\textheight]{figures/vermilion_indices.png}
+
+}
+
+\caption{\label{fig-vermilion-indices}Vermilion rockfish}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+Indices of abundance for four iterations\ldots{}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\FloatBarrier
+
+
   \bibliography{bibliography.bib}
 
 
