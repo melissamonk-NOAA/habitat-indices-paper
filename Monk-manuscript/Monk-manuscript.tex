@@ -49,46 +49,6 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -252,7 +212,7 @@ This is the abstract.
     keyword1 \sep 
     keyword2
 \end{keyword}
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, sharp corners, frame hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, breakable, enhanced]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, sharp corners, interior hidden]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -410,11 +370,11 @@ Coast. Protocols for the Cal Poly survey were the same as the CDFW
 survey, with the exception that Cal Poly measured retained and discarded
 fish from observed anglers. The additional of the Cal Poly data to the
 CDFW survey increases the sample sizes of observed trips out of San Luis
-Obispo county by an average of 58\% since 2004.
+Obispo county by an average of 155\% from 2004-2016.
 
 On a trip, observers recorded information for each drift, each time
 lines were in the water. Just prior to the start of each fishing drift,
-the sampler selected a subset of anglers to observe, at maximum of 10-15
+the sampler selected a subset of anglers to observe, at a maximum of 15
 anglers per drift. The sampler recorded all fish encountered (retained
 and discarded) by the subset of anglers as a group. Samplers also
 recorded the time fished (starting when the captain announced ``Lines
@@ -473,9 +433,10 @@ sample sizes and temporal coverage (present in at least 5\% of all
 trips) to inform the binomial model. The remaining species all
 co-occurred with the target species in at least one trip and were
 retained for the Stephens-MacCall logistic regression. Coefficients from
-the Stephens-MacCall analysis (a binomial GLM) are positive for species
-that are more likely to co-occur with the target species, and negative
-for species that are less likely to be caught with target species.
+the Stephens-MacCall analysis (a binomial generalized linear model) are
+positive for species that are more likely to co-occur with the target
+species, and negative for species that are less likely to be caught with
+target species.
 
 While the filter is useful in identifying co-occurring or non-occurring
 species assuming all effort was exerted in pursuit of a single target,
@@ -505,16 +466,18 @@ species, but had a probability higher than the threshold balancing the
 false negatives and false positives. This practice has commonly been
 used in recent stock assessments of rockfish on the West Coast.
 
-The full data from 2004-2016 contained 2,252 trips that retained at
-least one fish. Species that never co-occurred with the target species
-and species present in fewer than 3\% of all trips were excluded from
-the Stephens-MacCall analysis.
+The fe fish. Species that never co-occurred with the target species and
+species present in fewer than 3\% of alull data from 2004-2016 contained
+19,425 drifts that aggregated to 2,252 trips that retained at least only
+trips were excluded from the Stephens-MacCall analysis.
 
 For the drift-level data that assumed no knowledge of habitat
 information, the Stephens-MacCall filter was applied with each
 individual drift as a sample. Species that never co-occurred with the
 target species and those present in fewer than 1\% of all drifts were
 removed to reduce the number of species to those that were informative.
+
+CPUE angler day for the drift level no habitat
 
 \hypertarget{habitat-informed-data-filtering}{%
 \paragraph{Habitat-informed Data
@@ -531,18 +494,111 @@ defined as raster cells of rough habitat greater than 200 m apart. The
 distance was chosen based on evidence that a number of nearshore
 rockfish exhibit site fidelity and a number of tagging studies have
 recaptured close to original capture sites
-\citep{Lea:1999:BAM, Matthews:1985:SSM, Hannah:2011:SF, Hannah:2012:UNC}.
+\citep{Lea:1999:BAM, Matthews:1985:SSM, Hannah:2011:SFM, Hannah:2012:UNC}.
 Contiguous raster cells classified as hard substrate remained as a
 singular reef, regardless of size. Reefs were further defined with a 5 m
 buffer to account for potential error in positional accuracy. The area
 of a reef was calculated to exclude portions of the reef that extended
 outside of California state waters (further than 3 nm from shore). The
-mapped area does not include the white zones close to shore.
+mapped area does not include the white zones close to shore. Individual
+fishing drifts were assigned to reefs based on the recorded start
+location, given that the drift end locations were not always recorded.
 
-Individual fishing drifts were assigned to reefs based on the recorded
-start location, given that the drift end locations were not always
-recorded. The data contained a total of 19,425 fishing drifts and after
-removing drifts with missing effort information (time fished or observed
+\hypertarget{indices-of-abundance}{%
+\paragraph{Indices of Abundance}\label{indices-of-abundance}}
+
+Standardized indices of abundance were generated for each data filtering
+method and an area-weighted index was developed from the drift-level
+habitat data. All indices were modeled using Bayesian generalized linear
+models (GLMs) and the delta method \citep{Lo:1992:IRA}. The delta method
+models the data with two separate GLMs; one for the probability of
+encountering the species of interest from a binomial likelihood and a
+logit link function and the second GLM models the positive encounters
+with either gamma or lognormal error structure.
+
+The response variable for the positive models was angler-retained catch
+per unit effort. Year was always included in model selection, even if it
+was found to not be significant, because the goal of the index of
+abundance was to extract the year effect.
+
+Covariates for the trip-level data and drift-level data without habitat
+included wave (a 3-month aggregated period of time) and county of
+landing. Covariates considered for the drift-level data with habitat
+filters included, aggregated reef area and wave. Each drift-level index
+with habitat information was also modeled to include a year/reef
+iteration and weighted based on reef area.
+
+Year was always included in the trip-level data were 3-month wave and
+county of landing. Covariates considered for the drift-level data
+included, region, 3-month wave, and xxxx.
+
+The gamma or lognormal error distribution was chosen via maximum
+likelihood AIC from the full model with all covariates. Model selection
+for the binomial and positive observation models were also selected
+using AIC and unless very different predictors were selected, the same
+predictors were used in each of the two Bayesian models. The Bayesian
+models were run with 5,000 iterations and uninformative priors.
+Posterior predictive model checks were examined for both the binomial
+and positive observation models. including xxxxxxx. We constructed the
+final year index by multiplying the back-transformed posterior draws
+from the binomial model with the exponentiated positive model draws, and
+taking the mean and standard deviation for each year.
+
+The area-weighted index was developed by extracting the posterior draws
+of from each year and area combination of the binomial and positive
+posterior predictions, and then summing across the product of the
+posteriors weighted by the fraction of total area within each reef.
+
+To better compare the resulting indices across the three data filtering
+methods and the area-weighted index, each index was scaled to its mean
+value.
+
+Versions of the indices filtered based on habitat were approved by the
+Pacific Fisheries Management Council's Science and Statistical Committee
+for use in the 2013 stock assessments and have been used all of the
+stock assessment process since. Comparisons should not be drawn between
+the indices presented here and the stock assessment documents as the
+indices in this paper were simplified to develop direct comparisons
+among methods.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{reef-delineation-and-sampling-effort}{%
+\subsection{Reef Delineation and Sampling
+Effort}\label{reef-delineation-and-sampling-effort}}
+
+At the finest scale, a total of 108 individual reefs of rocky habitat
+were defined in California state waters from Point Conception to the
+California/Oregon border. After exploratory analyses and considering the
+the availability of data, the reefs were grouped into eight regions. The
+areas of the Farallon Islands off the coast of San Francisco and the
+deeper areas of Monterey Bay were aggregated for modeling due to the
+deeper areas fished within these two regions and the nature of depth as
+an important descriptor of nearshore rockfish distributions. The rocky
+reef habitat was aggregated to ensure adequate samples for modeling the
+indices of abundance. The region defined from the California/Oregon
+encompasses 49\% of the total rocky habitat in state waters by area, but
+only 12\% of the observed drifts fished in this area. Each of the four
+remaining nearshore regions San Francisco to Point Conception averaged
+11\% of the available habitat, with the number of drifts from Big Sur to
+Point Conception increased by 155\% with the inclusion of data from Cal
+Poly's onboard observer program.
+
+The regions of rocky habitat were further aggregated depending on
+available data for each species in order to model the GLM with positive
+encounters. Black rockfish is distributed more towards the north and
+reflected in the aggregation of data from Santa Cruz and south, whereas
+brown rockfish is distributed across the coast, but not as common in all
+areas.
+
+\hypertarget{data-filtering}{%
+\subsection{Data Filtering}\label{data-filtering}}
+
+Trip level data resulted in xxxx trips
+
+The data contained a total of 19,425 fishing drifts and after removing
+drifts with missing effort information (time fished or observed
 anglers), 19,180 remained. To further remove drifts that may not
 accurately define a successful fishing drift or data errors, the upper
 and lower 1\% of the recorded fish time and observed anglers were
@@ -564,62 +620,26 @@ habitat. The cutoff for blue, China and gopher rockfish was six meters,
 eight meters for vermilion rockfish, 14 meters for black rockfish and 16
 meters for brown rockfish.
 
-\hypertarget{indices-of-abundance}{%
-\paragraph{Indices of Abundance}\label{indices-of-abundance}}
+The percent of the samples retained for each data method differed by
+species, but followed the general trend that the lowest percent of
+samples were retained from the Stephens-MacCall filtering at the drift
+level, ranging from 12\% of samples retained for China rockfish and 54\%
+for blue rockfish. A much higher percent of samples were retained both
+from the other two methods, with an average of 83\% of drifts retained
+when habitat was included as a filter. The species retained for the
+trip-level and drift-level Stephens-MacCall filtering were similar
+across species
 
-Standardized indices of abundance were generated for each data filtering
-method and an area-weighted index was developed from the drift-level
-habitat data. All indices were modeled using Bayesian generalized linear
-models (GLMs) and the delta method \citep{Lo:1992:IRA}. The delta method
-models the data with two separate GLMs; one for the probability of
-encountering the species of interest from a binomial likelihood and a
-logit link function and the second GLM models the positive encounters
-with either gamma or lognormal error structure.
+For the drfit level data, the Stephens-MacCall data does retain drifts
+off the reefs
 
-The response variable for the positive models was catch per unit effort.
-Covariates for the trip-level data and drift-level data without habitat
-included 3-month wave and county of landing. Covariates considered for
-the drift-level data with habitat filters included, aggregated reef area
-and wave (3-month aggregated periods of time). Each drift-level index
-with habitat information was also run to include a year/reef iteration
-and weighted based on reef area.
+Data filtering for the indices with data aggregated to the trip-level
+and using the status quo of retaining all positive observations resulted
+in a high proportion of positive samples (0.70 - 0.86) for all species.
 
-Year was always included in the trip-level data were 3-month wave and
-county of landing. Covariates considered for the drift-level data
-included, aggregated reef area, 3-month wave, and xxxx.
+The Stephens-MacCall data selection met c differences and similarities
 
-The gamma or lognormal error distribution was chosen via maximum
-likelihood AIC from the full model with all covariates. Model selection
-for the binomial and positive observation models were also selected
-using AIC and unless very different predictors were selected, the same
-predictors were used in each of the two Bayesian models. The Bayesian
-models were run with 5,000 iterations and uninformative priors.
-Posterior predictive model checks were examined for both the binomial
-and positive observation models. including xxxxxxx. We constructed the
-final year index by multiplying the back-transformed posterior draws
-from the binomial model with the exponentiated positive model draws, and
-taking the mean and standard deviation for each year.
-
-The area-weighted index was developed by extracting the posterior draws
-of from each year and area combination of the binomial and positive
-posterior predictions, and then summing across the product of the
-posteriors weighted by the fraction of total area within each reef.
-
-To better compare the resulting indices across the three data filtering
-methods and the area-weighted index, each index was scaled to its mean.
-
-Versions of the indices filtered based on habitat were approved by the
-Pacific Fisheries Management Council's Science and Statistical Committee
-for use in the 2013 stock assessments and have been used all of the
-stock assessment process since. Comparisons should not be drawn between
-the indices presented here and the stock assessment documents as the
-indices in this paper were simplified to develop direct comparison among
-methods.
-
-\hypertarget{results}{%
-\section{Results}\label{results}}
-
-Stephens-MacCall differences and similarities
+Indices and how they differed by species
 
 Changed in the CV (error) among the four indices for each species
 
@@ -629,6 +649,55 @@ Changed in the CV (error) among the four indices for each species
 \section{Discussion}\label{discussion}}
 
 Lots to discuss!
+
+When filtering and modelling data for a stock assessment, additional
+filtering steps would be taken, such as excluding areas where species
+are rare, e.e., south of Santa Cruz for black rockfish. However, this is
+also a function of the lower sampling rates along the coast north of San
+Francisco.
+
+These models also do not account for distance to the nearest port, which
+has been shown to significantly impact the access to fish as well as
+historical fishing pressure\ldots.In addition, in 2004 the CDFW
+implements spatial and temporal closures to the recreational nearshore
+groundfish fishery. There are currently XX management areas and
+recreational fishing is restricted shoreward of 20 fathoms in the
+northern regions of the state to a deep as 40 fathoms in areas north of
+Point Conception.
+
+The CRFS onboard observer program prioritizes trips with groundfish
+target species. There is not a mixed fishery in California north of
+Point Conception. The main bottom fish target is sanddabs
+
+The recreational fishery in southern California is more of a mixed
+fishery and a trip is often not purely groundfish.
+
+This is one
+
+The high proportion of retained drifts across species when using habitat
+as a data filter indicates that hate majority of drifts occurred over,
+or very close to, rocky habitat.
+
+Oftentimes a captain will position the vessel adjacent to rocky habitat
+so that the current allows the vessel to drift over the rocky habitat.
+
+The fishery-dependent indices of abundance undergo higher levels of
+scrutiny during stock assessment reviews due to the nature of the data
+being driven by fisher behavior. The one fishery-independent survey for
+nearshore groundfish in California north of California tends to have
+similar trends to the fishery-dependent indices for the shallower
+nearshore species like gopher and China rockfish.
+
+Both blue and black rockfish have high affinity to rocky habitat, but
+occur higher off the bottom and are both schooling species. It is not
+uncommon to have a a drift dominated by blue rockfish.
+
+However, the Stephen-MacCall approach does not account for this by
+modeling presence/absence.
+
+The choice of a threshold value to use as a data filter from the
+Stephen-MacCall method should be reviewed to determine how sensitive an
+index of abundance is to that method. The
 
 Recent studies have identified the need to investigate the assumptions
 and uncertainty in relative indices of abundance from visual surveys
@@ -650,6 +719,9 @@ the same habitats in the SCB
 
 accepted for management (China, gopher/black-and-yellow,
 vermilion/sunset, blue/deacon, black, lingcod - cite assessments).
+
+The characteristics and classification of the rocky habitat are not yet
+avaialble and this results all rock types treated as equ
 
 Survey indices can be either absolute or relative. In the case of an
 absolute index of abundance, the entire population within the sampling
@@ -693,6 +765,49 @@ introduced in the data
 
 \hypertarget{tables}{%
 \section{Tables}\label{tables}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2469}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1481}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3210}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2840}}@{}}
+\caption{The fraction of samples retained to develop indices of
+abundance after the filtering steps for each method from the where the
+trip level data started with 2,252 samples, the drift level (no habitat)
+started with 19,425 samples and the drift level with habitat started
+with 18,405 samples.\{\#tbl-samplesize\}}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drift level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drift level (habitat)
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Trip level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drift level (no habitat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Drift level (habitat)
+\end{minipage} \\
+\midrule()
+\endhead
+Black rockfish & 0.408 & 0.252 & 0.886 \\
+Blue rockfish & 0.871 & 0.538 & 0.830 \\
+Brown rockfish & 0.490 & 0.243 & 0.855 \\
+China rockfish & 0.515 & 0.121 & 0.808 \\
+Gopher rockfish & 0.755 & 0.401 & 0.787 \\
+Vermilion rockfish & 0.821 & 0.382 & 0.799 \\
+\bottomrule()
+\end{longtable}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2469}}
@@ -781,29 +896,15 @@ Vermilion rockfish & 0.238 & 0.133 & 0.178 & 0.152 \\
 \bottomrule()
 \end{longtable}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{kableExtra}\SpecialCharTok{::}\FunctionTok{kbl}\NormalTok{(readxl}\SpecialCharTok{::}\FunctionTok{read\_xlsx}\NormalTok{(}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{melissa.monk}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Documents}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{GitHub}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{habitat{-}indices{-}paper}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Monk{-}manuscript}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{reef\_areas.xlsx"}\NormalTok{),}
-                \AttributeTok{booktabs =} \ConstantTok{TRUE}\NormalTok{,}
-                \AttributeTok{caption =} \StringTok{"Area of rocky habitat in state waters aggregated to }
-\StringTok{                levels appropriate for each species. The shaded }
-\StringTok{                blocks for each species indicate which areas were aggregated to}
-\StringTok{                ensure appropriate samples sizes to explore an area{-}weighted index."}
-\NormalTok{                ) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{width =} \StringTok{"1.8in"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{width =} \StringTok{".8in"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{collapse\_rows}\NormalTok{(}\AttributeTok{columns =} \DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{table}
 
-\caption{Area of rocky habitat in state waters aggregated to 
-                levels appropriate for each species. The shaded 
-                blocks for each species indicate which areas were aggregated to
-                ensure appropriate samples sizes to explore an area-weighted index.}
+\caption{Area of rocky habitat in state waters 
+                    aggregated to levels modelled for each species. 
+                  The shaded blocks for each species indicate which areas 
+                  ere aggregated to ensure appropriate samples sizes to explore 
+                  an area-weighted index.}
 \centering
-\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}>{\raggedleft\arraybackslash}p{.8in}}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}}
 \toprule
 Rocky Reef Desginations & Blue rockfish \& Vermilion rockfish & Black rockfish & Brown rockfish & China rockfish & Gopher rockfish\\
 \midrule
@@ -834,7 +935,7 @@ Morro Bay to Point Conception & 112.264 & \multirow{-4}{.8in}{\raggedleft\arrayb
 
 \begin{figure}
 
-{\centering \includegraphics{figures/map.png}
+{\centering \includegraphics{figures/map.jpg}
 
 }
 
@@ -876,13 +977,13 @@ state showing the 3 nm state water boundary}
 \subcaption{\label{fig-black-driftsm}Black rockfish drift level}
 \end{minipage}%
 \newline
-\begin{minipage}[t]{0.52\linewidth}
+\begin{minipage}[t]{0.50\linewidth}
 
 {\centering 
 
 \raisebox{-\height}{
 
-\includegraphics[width=0.03125in,height=\textheight]{figures/blue_trip_sm.png}
+\includegraphics[width=2.75in,height=\textheight]{figures/blue_trip_sm.png}
 
 }
 
@@ -891,7 +992,7 @@ state showing the 3 nm state water boundary}
 \subcaption{\label{fig-blue-tripsm}Blue rockfish trip level}
 \end{minipage}%
 %
-\begin{minipage}[t]{0.48\linewidth}
+\begin{minipage}[t]{0.50\linewidth}
 
 {\centering 
 
