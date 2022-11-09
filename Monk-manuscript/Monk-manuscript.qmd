@@ -122,10 +122,23 @@ and xxx, where data were filtered using positive species observations and an alp
 The availability of high-resolution bathymetry data described in (xxx), provided an opportunity to overlay each individual drift onto known habitat type (hard vs. soft substrate), and has been the
 method utilized since 2015.
 
+The Stephens-MacCall [-@Stephens:2004:MAS] filtering approach was used to predict the probability of encountering the target species, based on the species composition of the catch in a given trip. The
+method uses presence/absence data within a logistic regression to identify the probability of encountering a target species given the presence or absence of other predictor species.
+
 We applied three methods of data filtering to determine how each affected a standardized index of abundance across six species with varying life histories, habitat preference and prevelence in the
 data. All of the drift-level catches were aggregated to the trip-level to explore how the resolution of the same dataset affects the selection of samples based on the Stephens-MacCall method. The
 Stephens-MacCall method was then applied to the catch at each drift, but no habitat information was used in the development of the index. The third method filtered the data based on the proximity to
 rocky habitat, and we
+
+This method is commonly used to filter data that are collected dockside after a vessel returns to port.
+
+We utilized the availability of high resolution onboard observed fishing catch and effort data at the drift-level and habitat data at a 2 m resolution to explore how data selection methos and the
+resulting indices would change if the data were only available at a courser resolution, or habitat data were not available. We accomplished this by aggregate the high resolution drift-level data back
+to a trip and applying a commonly used method for subsetting data, the Stephens-MacCall method. As an intermediate step between mapping the drifts to habitat and aggregating the data to a trip and
+ingoring habitat, we applied the Stephens-MacCall method to the drift-level data and assumed no habitat data were available.
+
+After each dataset was filtered, an index of relative abundance was created. In addition, for the high-resolution drift level data filtered with known habitat, we took the same dataset and created an
+area-weighted index.
 
 *cut from another place: The onboard observer data provide a high-resolution of catch, effort and the ability to map the fishing drifts to fine-scale habitat data. This paper explores methodological
 differences in data treatment to see what we gain by having the high-resolution habitat data and using that as a mechanism to filter out trips that are not targeting the species of interest*
@@ -137,88 +150,67 @@ assessments in 2021, the data have undergone a major quality assurance effort by
 
 # Methods
 
-## Survey Data
+## Survey Data and Habitat Assignment
 
 The California Department of Fish and Wildlife (CDFW) began a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel (CPFV or party/charter boat) fleet in 1999. In 2004,
 the survey became part of the California Recreational Fisheries Survey (CFRS) that includes additional surveys to quantify the catches and effort of the recreational fleet. Sampling effort for
 groundfish-targeted CPFV trips was distributed in proportion to fishing effort, and approximately 21% of the CDFW observed groundfish trips were north of Point Conception. North of Bodega Bay,
 California the majority of charter boats are smaller 6-pack vessel that may not have the capacity to carry an observer onboard. In 2001, the California Polytechnic State University Institute of Marine
-Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program of the CPFV fleet based in Port Avila and Port San Luis along the Central Coast. Protocols for the Cal Poly survey
-were the same as the CDFW survey, with the exception that Cal Poly measured retained and discarded fish from observed anglers. The additional of the Cal Poly data to the CDFW survey increased the
-sample sizes of observed trips out of San Luis Obispo county by an average of 155% from 2004-2016.
+Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program of the CPFV fleet based in Port Avila and Port San Luis along the Central Coast \[#fig-map\].
 
-On a trip, observers recorded information for each fishing drift, the period of time lines were in the water. Just prior to the start of each fishing drift, the sampler selected a subset of anglers to
-observe, at a maximum of 15 anglers per drift. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group. Samplers also recorded the time fished (starting
-when the captain announced "Lines down" to when the captain instructed anglers to reel lines up), coordinates of the fishing drift (start latitude/longitude and/or end latitude/longitude), and minimum
-and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the species level as either retained or discarded, providing a count of each species at a particular
-location. The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 [-@Monk:2014:DRD], and received more current data from the CDFW. The Cal Poly data were provided to the
-SWFSC annually, and all data were checked for errors at the drift-level by SWFSC staff. Where identifiable errors could be corrected within the CDFW database (i.e., transcription of latitude or
+During an trip, observers recorded information for each fishing drift, defined as a period starting when the captain announced "Lines down" to when the captain instructed anglers to reel lines up.
+Just prior to the start of each fishing drift, the sampler selected a subset of anglers to observe, at a maximum of 15 anglers per drift. The sampler recorded all fish encountered (retained and
+discarded) by the subset of anglers as a group, i.e., catch cannot be attributed to an individual angler. Samplers also recorded the start and end times of the drift, coordinates of the fishing drift
+(start latitude/longitude and for most drifts, end latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the species level as
+either retained or discarded, providing a count of each species at a particular location. The CDFW measured all of the discarded fish during an observed trip, while the retained fish were measured
+during an angler interview. Protocols for the Cal Poly survey were the same as the CDFW survey, with the exception that Cal Poly measured retained and discarded fish from observed anglers.
+
+The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 [-@Monk:2014:DRD], and received more current data from the CDFW. The Cal Poly data were provided to the SWFSC
+annually. All data were checked for errors at the drift-level by SWFSC staff. Where identifiable errors could be corrected within the CDFW database (i.e., obvious transcription of latitude or
 longitude), we made those changes and denoted them in the database. Errors identified in the Cal Poly database were checked against the original datasheets and corrected when appropriate.
 
-For instances when depth was not recorded .....
+All of the drifts with a starting latitude and longitude were overlaid with the identified rocky habitat from the California Seafloor Mapping Program (CSMP) (citation). The CSMP collected bathymetry
+in California state waters (3 nm from shore) north of of Point Conception ($34^\circ 27^\prime N$). Rough (rocky) and smooth (sandy) substrate were identified by CSMP using two rugosity indices,
+surface:planar area, and vector ruggedness measure (VRM). Becky can you add a bit more here?
 
-We explored the methods described in the following sections to develop indices of abundance for six species or species complexes of management interest: black rockfish (*Sebastes melanops*), blue and
-deacon rockfish complex (*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish (*Sebastes nebulosus*), gopher rockfish (*Sebastes carnatus*), and vermilion
-and sunset rockfish complex (*Sebastes miniatus*/*Sebastes crocotulus*). Two genetically distinct species compose a cryptic species pair that are often visually indistinguishable, or for other
-reasons, were not recorded separately in surveys or catch histories. Gopher rockfish was assessed as part of a species complex with black-and-yellow rockfish (*Sebastes chrysomelus*) in 2019, but were
-visually identifiable and the data in this paper represents only gopher rockfish [@Monk:2019:CSG]. Add in a sentence with species characteristics??
+We considered raster cells identified as rough as rocky reef habitat. Individual reefs at the finest scale were defined as raster cells of rough with 200 m of another raster cell. The 200 m distance
+was chosen based on evidence that a number of nearshore rockfish exhibit site fidelity and tagging studies have recaptured close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM;
+@Hannah:2011:SFM; @Hannah:2012:UNC]. Contiguous raster cells classified as hard substrate remained as a singular rocky reef, regardless of size. Reefs were further defined with a 5 m buffer to account
+for potential error in positional accuracy. The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm
+from shore). The mapped area does not include the white zones close to shore, which extends approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is usually limited in the white zone
+due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start location of a drift, given that the end locations of drifts were not always recorded, and in the
+interest of maximizing effort, we did not quality check the end locations. The distance from the recorded drift start location to the nearest raster cell of rocky habitat was calculated in meters.
 
-## Habitat Mapping
+## Data Filtering
 
-This paper limited the data to observations within California state waters north of Point Conception ($34^\circ 27^\prime N$), which were mapped at a resolution of 2 m by the California Seafloor
-Mapping Program (CSMP) (citation). Rough and smooth substrate were identified by CSMP using two rugosity indices based upon bathymetric data, surface:planar area, and vector ruggedness measure (VRM).
-We considered areas identified as 'rough' as reef habitat. Individual reefs at the finest scale were defined as raster cells of rough habitat greater than 200 m apart. The distance was chosen based on
-evidence that a number of nearshore rockfish exhibit site fidelity and a number of tagging studies have recaptured close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM;
-@Hannah:2012:UNC]. Contiguous raster cells classified as hard substrate remained as a singular rockfy reef, regardless of size. Reefs were further defined with a 5 m buffer to account for potential
-error in positional accuracy. The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm from shore).
-The mapped area does not include the white zones close to shore, but fishing by the CPFV fleet is usually limited in the white zone due to shallow depths and kelp beds. We assigned fishing drifts to
-reefs based on the recorded start location, given that the drift end locations were not always recorded, and in the interest of maximizing the effort, we did not quality check the end locations. Cal
-Poly did not record end locations for xxxx years. The distance from the drift start location to the nearest point of a rocky reef was calculated in meters.
+Data filtering methods were applied to both the drift-level data and the trip-level data. We aggregated the retained fish caught during a single trip. Discarded with were not included in this analysis
+as they often represent a different size structure of fish, either due to size limits or angler preference. Prior to any filtering a total of 19,425 drifts that aggregated to 2,270 trips were
+available for the analyses north of Point Conception.
 
-## Data Filters
+Before applying the Stephens-MacCall method, we identified potentially informative predictor species, i.e., species with sufficient sample sizes and temporal coverage to inform the binomial model.
 
-We applied the Stephens-MacCall method to both the trip-level data and the drift-level data, with only county as a proxy for habitat. We then used habitat to determine data to retain for each species
-based on proximity to rocky habitat.
+For the drift-level data that assumed no knowledge of habitat information, the Stephens-MacCall filter was applied with each individual drift as a sample. Species that never co-occurred with the
+target species and those present in fewer than 1% of all drifts and 3% of all trips were removed to reduce the number of species to those that were informative. A lower threshold was selected for the
+drift-level data to the change in magnitude of the number of samples when using drifts vs trips.
 
-#### Stephens-MacCall Data Filtering
+The remaining species all co-occurred with the target species in at least one trip and were retained for the Stephens-MacCall logistic regression. Coefficients from the Stephens-MacCall analysis (a
+binomial generalized linear model) were positive for species that are more likely to co-occur with the target species, and negative for species that were less likely to be caught with target species.
+The intercept represented the probability of observing only the target species in a sample. We also calculated the 95% confidence interval for each coefficient.
 
-We used the Stephens-MacCall approach to filter data for the trip-level data and also the drift-level data assuming no known fishing location information, except for county of landing. To create a
-trip from the drift-level data, we aggregated the retained fish catches within a trip. The trip-level effort was calculated as angler days, using the average number of observed anglers across all
-drifts on a trip. The trip-level index used all available data before any filtering was done to exclude individual drifts with missing effort or location data, which allowed us to retain as much
-information about a trip as possible.
-
-The second filtering approach retained data a the drift-level, but assumed no knowledge of the fishing location, besides the port of landing and the data were filtered using the Stephens-MacCall
-approach. We filtered data at the drift-level to remove drifts with missing effort data so that this could be incorporated in the index standardization.
-
-The Stephens-MacCall [-@Stephens:2004:MAS] filtering approach was used to predict the probability of encountering the target species, based on the species composition of the catch in a given trip. The
-method uses presence/absence data within a logistic regression to identify the probability of encountering a target species given the presence or absence of other predictor species. This method is
-commonly used to filter data that are collected dockside after a vessel returns to port. Prior to applying the Stephens-MacCall filter, we identified potentially informative predictor species, i.e.,
-species with sufficient sample sizes and temporal coverage (present in at least 5% of all trips) to inform the binomial model. The remaining species all co-occurred with the target species in at least
-one trip and were retained for the Stephens-MacCall logistic regression. Coefficients from the Stephens-MacCall analysis (a binomial generalized linear model) are positive for species that are more
-likely to co-occur with the target species, and negative for species that are less likely to be caught with target species.
-
-While the filter is useful in identifying co-occurring or non-occurring species assuming all effort was exerted in pursuit of a single target, the targeting of more than one species or species complex
-("mixed trips") can result in co-occurrence of species in the catch that do not truly co-occur in terms of habitat associations informative for an index of abundance. Stephens and MacCall
-[-@Stephens:2004:MAS] recommended including all trips above a threshold where the false negatives and false positives are equally balanced. However, this does not have any biological relevance and for
-this particular data set where trained observers identify all fish. We assumed that if the target species was encountered, the vessel fished in appropriate habitat. Stephens and MacCall
-[-@Stephens:2004:MAS] proposed filtering (excluding) samples from index standardization based on a criterion of balancing the number of false positives and false negatives from the predicted
-probability of encounter. False positives (FP) are trips that are predicted to encounter the target species based on the species composition of the catch, but did not. False negatives (FN) are trips
-that were not predicted to encounter the target species, given the catch composition, but caught at least one target species.
+Stephens and MacCall [-@Stephens:2004:MAS] recommended including all trips above a threshold where the false negatives and false positives are equally balanced. However, this does not have any
+biological relevance and for this particular data set where trained observers identify all fish. We assumed that if the target species was encountered, the vessel fished in appropriate habitat.
+Stephens and MacCall [-@Stephens:2004:MAS] proposed filtering (excluding) samples from index standardization based on a criterion of balancing the number of false positives and false negatives from
+the predicted probability of encounter. False positives (FP) are trips that are predicted to encounter the target species based on the species composition of the catch, but did not. False negatives
+(FN) are trips that were not predicted to encounter the target species, given the catch composition, but caught at least one target species.
 
 Of interest for the index of abundance is the elimination of trips that had a low probability of catching the target species given the other species caught on the trip. Therefore, we retained all of
 the trips that caught the target species and those trips that did not catch the target species, but had a probability higher than the threshold balancing the false negatives and false positives. This
 practice has commonly been used in recent stock assessments of rockfish on the West Coast.
 
-Species that never co-occurred with the target species and species present in fewer than 3% of all samples from 2004-2016 contained 1
-
-9,425 drifts that aggregated to 2,252 trips that retained at least only trips were excluded from the Stephens-MacCall analysis.
-
-For the drift-level data that assumed no knowledge of habitat information, the Stephens-MacCall filter was applied with each individual drift as a sample. Species that never co-occurred with the
-target species and those present in fewer than 1% of all drifts were removed to reduce the number of species to those that were informative.
-
-#### Habitat-informed Data Filtering
-
 #### Indices of Abundance
+
+The trip-level effort was calculated as angler days, using the average number of observed anglers across all drifts on a trip. The trip-level index used all available data before any filtering was
+done to exclude individual drifts with missing effort or location data, which allowed us to retain as much information about a trip as possible.
 
 Standardized indices of abundance were generated for each data filtering method and an area-weighted index was developed from the drift-level habitat data. All indices were modeled using Bayesian
 generalized linear models (GLMs) and the delta method [@Lo:1992:IRA]. The delta method models the data with two separate GLMs; one for the probability of encountering the species of interest from a
@@ -246,7 +238,39 @@ Versions of the indices filtered based on habitat were approved by the Pacific F
 all of the stock assessment process since. Comparisons should not be drawn between the indices presented here and the stock assessment documents as the indices in this paper were simplified to develop
 direct comparisons among methods.
 
+We explored the methods described in the following sections to develop indices of abundance for six species or species complexes of management interest: black rockfish (*Sebastes melanops*), blue and
+deacon rockfish complex (*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish (*Sebastes nebulosus*), gopher rockfish (*Sebastes carnatus*), and vermilion
+and sunset rockfish complex (*Sebastes miniatus*/*Sebastes crocotulus*). Two genetically distinct species compose a cryptic species pair that are often visually indistinguishable, or for other
+reasons, were not recorded separately in surveys or catch histories. Gopher rockfish was assessed as part of a species complex with black-and-yellow rockfish (*Sebastes chrysomelus*) in 2019, but were
+visually identifiable and the data in this paper represents only gopher rockfish [@Monk:2019:CSG]. Add in a sentence with species characteristics??
+
 # Results
+
+## Survey Data and Habitat Assignment
+
+The dataset was filtered for errors within the relational database before
+
+The additional of the Cal Poly data to the CDFW survey increased the sample sizes of observed trips out of San Luis Obispo county by an average of 155% from 2004-2016.
+
+We defined 108 areas of rocky habitat on the finest scale within California state waters from Point Conception to the California/Oregon border. After exploratory analyses and considering the the
+availability of data, the areas rocky habitat was grouped into six regions to ensure adequate sample sizes for developing indices of abundance (Figure \@fig-map). For the methods comparisons, we
+aggregated the areas of deeper waters near the Farallon Islands off the coast of San Francisco and Monterey Bay. Depth was not considered as a covariate in the indices, but is often a significant
+factor in index development for nearshore rockfish, with rockfish communities separated by depth \[Love et al\].
+
+The region defined from the California/Oregon to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts fished in this area. Each of the
+four remaining nearshore regions from San Francisco to Point Conception contained an average of 11% of the available habitat. The Cal Poly onboard observer program increased the number of observed
+drifts from Big Sur to Point Conception by 155%, all years combined.
+
+The regions of rocky habitat were further aggregated depending on available data for each species in order to model the GLM with positive encounters, i.e., black rockfish has a more northerly
+distribution reflected in the aggregation of data from Santa Cruz and south, whereas brown rockfish is distributed across coastal California (Figure xxx).
+
+The distribution of the speci
+
+While the filter is useful in identifying co-occurring or non-occurring species assuming all effort was exerted in pursuit of a single target, the targeting of more than one species or species complex
+("mixed trips") can result in co-occurrence of species in the catch that do not truly co-occur in terms of habitat associations informative for an index of abundance.
+
+A look at the distirbution of each species by the percent of positive observations (over all years) and the average CPUE at the drift-level by aggregated areas of rocky habitat are presented in Figure
+xxx.
 
 Look at which of the same drift were selected in the two methods!
 
@@ -258,11 +282,13 @@ The drift-level data with no habitat
 
 The drift-level data with habitat and then area-weighted
 
-## Survey Data
+## Data Filtering
 
-#### Stephens-MacCall Data Filtering
+The data remaining after filtering at the drift-level for each
 
-#### Habitat-informed Data Filtering
+Species that never co-occurred with the target species and species present in less than 3% of all from 2004-2016 contained
+
+9,425 drifts that aggregated to 2,252 trips that retained at least only trips were excluded from the
 
 Trip level data resulted in xxxx trips
 
@@ -292,25 +318,16 @@ Indices and how they differed by species
 
 Changed in the CV (error) among the four indices for each species
 
-## Reef Delineation and Sampling Effort
-
-We defined 108 areas of rocky habitat on the finest scale within California state waters from Point Conception to the California/Oregon border. After exploratory analyses and considering the the
-availability of data, the areas rocky habitat was grouped into six regions to ensure adequate sample sizes for developing indices of abundance (Figure xxx). For this effort we aggregated the areas of
-deeper waters near the Farallon Islands off the coast of San Francisco and Monterey Bay since depth was not considered as a covariate, but is often a significant factor in index development for
-nearshore rockfish. The region defined from the California/Oregon to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts fished in
-this area. Each of the four remaining nearshore regions from San Francisco to Point Conception contained an average of 11% of the available habitat. The Cal Poly onboard observer program increased the
-number of observed drifts from Big Sur to Point Conception by 155%, all years combined.
-
-The regions of rocky habitat were further aggregated depending on available data for each species in order to model the GLM with positive encounters, i.e., black rockfish has a more northerly
-distribution reflected in the aggregation of data from Santa Cruz and south, whereas brown rockfish is distributed across coastal California (Figure xxx).
-
-The distribution of the speci
-
-## Effects of Data Filtering on Estimated Precision
+## Indices of Abundance
 
 \FloatBarrier
 
 # Discussion
+
+The majority of groundfish species targeted by the CPFV fleet north of Point Conception during the time period of this study all have high associations to rocky habitat. In this case, the
+Stephens-MacCall method can be considered a proxy for habitat when the species of interest has known associations
+
+Soutern California
 
 Look at the CAPAM journal issue
 
