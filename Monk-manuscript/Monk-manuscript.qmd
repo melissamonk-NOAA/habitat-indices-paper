@@ -68,13 +68,26 @@ library(tidyr)
 
 # Introduction
 
-Integrated fisheries stock assessment models utilize a variety of data sources to develop the most complete picture of the stock and current status in relation to management thresholds. More often, an
-index of abundance is a relative measure of the population and requires a time series to inform the stock assessment model. An index of relative abundance assumes that changes in the index are
-proportional to changes of abundance in the population [@Harley:2001:CUE]. Fishery-independent data collected from standardized survey designs provide a more unbiased estimation of the trend in a
-fisheries population. However, fishery-independent surveys are costly, labor intensive and often require a long time series to be considered informative in fisheries stock assessments. In an ideal
-situation, both fishery-dependent and fishery-independent surveys would used to inform the stock assessment model. However, there are cases when only fishery-dependent data are available an the
-caveats of each data stream must be considered (cite assessments). Fishery-dependent data are collected directly from the the fishery and are less costly than the whose operations are not constrained
-by sampling designs, but dependent on the behaviors of the captain and vessel and, in the case of recreational trips, customer preference.
+Integrated fisheries stock assessment models utilize a variety of data sources 
+to develop the most complete picture of the stock and current status in relation 
+to management thresholds. More often, an
+index of abundance is a relative measure of the population and requires a time 
+series to inform the stock assessment model. An index of relative abundance 
+assumes that changes in the index are
+proportional to changes of abundance in the population [@Harley:2001:CUE]. 
+Fishery-independent data collected from standardized survey designs provide 
+a more unbiased estimation of the trend in a
+fisheries population. However, fishery-independent surveys are costly, labor 
+intensive and often require a long time series to be considered informative 
+in fisheries stock assessments. In an ideal
+situation, both fishery-dependent and fishery-independent surveys would used 
+to inform the stock assessment model. However, there are cases when only 
+fishery-dependent data are available an the
+caveats of each data stream must be considered (cite assessments). 
+Fishery-dependent data are collected directly from the the fishery and are less 
+costly than the whose operations are not constrained
+by sampling designs, but dependent on the behaviors of the captain and vessel 
+and, in the case of recreational trips, customer preference.
 
 Fishery-dependent surveys sample the fishing fleets and are subject to potential sampling biases. The sampling is dependent on the fishing boat's behavior, which is to maximize catch. Sampling of the
 fishing fleet is often opportunistic based on the availability of samplers and the availability of trips to sample. Sampling the fisheries can also be constrained to the current regulations, which may
