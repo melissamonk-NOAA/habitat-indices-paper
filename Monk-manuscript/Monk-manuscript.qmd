@@ -68,45 +68,39 @@ library(tidyr)
 
 # Introduction
 
-Integrated fisheries stock assessment models utilize a variety of data sources 
-to develop the most complete picture of the stock and current status in relation 
-to management thresholds. More often, an
-index of abundance is a relative measure of the population and requires a time 
-series to inform the stock assessment model. An index of relative abundance 
-assumes that changes in the index are
-proportional to changes of abundance in the population [@Harley:2001:CUE]. 
-Fishery-independent data collected from standardized survey designs provide 
-a more unbiased estimation of the trend in a
-fisheries population. However, fishery-independent surveys are costly, labor 
-intensive and often require a long time series to be considered informative 
-in fisheries stock assessments. In an ideal
-situation, both fishery-dependent and fishery-independent surveys would used 
-to inform the stock assessment model. However, there are cases when only 
-fishery-dependent data are available an the
-caveats of each data stream must be considered (cite assessments). 
-Fishery-dependent data are collected directly from the the fishery and are less 
-costly than the whose operations are not constrained
-by sampling designs, but dependent on the behaviors of the captain and vessel 
-and, in the case of recreational trips, customer preference.
+Integrated fisheries stock assessment models utilize a variety of data sources to develop the most complete picture of the stock and current status in relation 
+to management thresholds. More often(TYPICALLY??), an index of abundance is used as a relative measure of the population and requires a time 
+series to inform the stock assessment model. An index of relative abundance assumes that changes in the index are proportional to changes of
+abundance in the population [@Harley:2001:CUE]. Fishery-independent data collected from standardized survey designs provide 
+a more unbiased estimation of the trend in a fisheries population. However, fishery-independent surveys are costly, labor 
+intensive and often require a long time series to be considered informative in fisheries stock assessments. In an ideal
+situation, both fishery-dependent and fishery-independent surveys would be used to inform the stock assessment model. However, there are cases when only 
+fishery-dependent data are available and the caveats of each data stream must be considered (cite assessments).  Fishery-dependent data are collected directly
+from the the fishery and are less costly than (than what????) the whose operations are not constrained by sampling designs, but dependent 
+on the behaviors of the captain and vessel and, in the case of recreational trips, customer preference.
+
 
 Fishery-dependent surveys sample the fishing fleets and are subject to potential sampling biases. The sampling is dependent on the fishing boat's behavior, which is to maximize catch. Sampling of the
 fishing fleet is often opportunistic based on the availability of samplers and the availability of trips to sample. Sampling the fisheries can also be constrained to the current regulations, which may
 prohibit the retention of a species or fishing at certain depths, i.e., California Department of Fish and Wildlife has varying spatial and temporal depth and season closures implemented through six
-management regions. There is also a fairly new network of Marine Protected Areas (MPAs) designated from 2007-2012 that prohibit recreational fishing, and are therefore areas no longer sampled by the
+management regions. There is also a network of Marine Protected Areas (MPAs) designated from 2007-2012 that prohibit recreational fishing, and are therefore areas no longer sampled by the
 recreational fishing fleet.
 
 *Catch per unit effort (CPUE) is a common metric available from fishery-dependent surveys [@Maunder:2004:SCE].*
 
-In addition, a common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred within the species' habitat and
-the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes). Fisheries survey data are often subset to exclude structural zeroes using the
+In addition, a common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred within the species' habitat and the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes). Fisheries survey data are often subset to exclude structural zeroes using the
 Stephens-MacCall method [-@Stephens:2004:MAS], which models the probability of observing the target species given the other the presence/absence of other species. However, the onboard observer survey
-collected location-specific information on each observer fish encounter. To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations as a proxy for
+collected location-specific information on each observer fish encounter. To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations (I DON"T TOTALLY UNDERSTAND THIS - only postiive catches are included?) this sentence seems like it is in the wrong place? more of a methods?) as a proxy for
 suitable habitat.
+
 
 The Pacific Fishery Management Council's Groundfish Fishery Management Plan (FMP) contains 64 groundfish species off the West Coast of the United States. The data needs are large and as of 2022, xx xx
 species have not had a full age-structured stock assessment in at least one area of the coast, e.g., yellowtail rockfish (*Sebastes flavidus*)and kelp greenling (*Hexagrammos decagrammus*) do not have
 accepted stock assessments for California. In some cases a stock assessment may be categorized as data rich, but the only index of abundance available is from a fishery-dependent CPUE time series of
-observed recreational angler catch rates [@Cope:2013:ISC]. To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery survey and bathymetry data. We
+observed recreational angler catch rates [@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in to the next paragraph??)
+
+
+To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery sampling and bathymetry data. We
 evaluated data from a recreational party boat onboard observer program, which collects location- and species-specific CPUE information from the commercial passenger fishing vessel (CPFV; also know as
 party boat) fleet [@Monk:2014:DRD]. The data were collected at the level of a fishing drift and fine-scale habitat data are available for a large fraction of California state waters. Paired with
 recently available high-resolution bathymetry data provided an opportunity to overlay each individual fishing drift onto known habitat type (hard vs. soft substrate), and has been the method utilized
@@ -159,7 +153,7 @@ annually. All data were cross-checked for potential errors at the drift-level by
 latitude or longitude), we made those changes and noted them in the database. Potential errors identified in the Cal Poly database were checked against the original datasheets and corrected when
 appropriate.
 
-While only a small portion of the total trips taken were observed, the onboard observer program collected a large amount of data during each trip. During each trip the sampler recorded information for
+While only a small portion of the total CPFV trips taken were observed, the onboard observer program collected a large amount of data during each trip. During each trip the sampler recorded information for
 each fishing drift, defined as a period starting when the captain announced "Lines down" to when the captain instructed anglers to reel their lines up. Just prior to the start of each fishing drift,
 the sampler selected a subset of anglers to observe, at a maximum of 15 anglers per drift. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group, i.e.,
 catch cannot be attributed to an individual angler. Samplers also recorded the start and end times of the drift, coordinates of the fishing drift (start latitude/longitude and for most drifts, end
@@ -168,10 +162,10 @@ each species at a particular location. The CDFW measured all of the discarded fi
 survey were the same as the CDFW survey, with the exception that Cal Poly measured retained and discarded fish from observed anglers. While both surveys included records of discarded fish, we only
 used the retained catch in these analyses. Discarded fish can often represent a different size structure than retained fish, either due to size limits or angler preference.
 
-In order to map the data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP).
+In order to map(OVERLAY??) the data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP).
 The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The CSMP mapped California state waters (3 nm from shore) north of of Point
-Conception ($34^\circ 27^\prime N$) to the California-Oregon border. Rough (rocky) and smooth (sandy) substrate were identified by CSMP using two rugosity indices, surface:planar area, and vector
-ruggedness measure (VRM). Becky can you add a bit more here?
+Conception ($34^\circ 27^\prime N$) to the California-Oregon border.  Rough (rocky) and smooth (sandy) substrate were identified by CSMP using two rugosity indices, surface:planar area, and vector
+ruggedness measure (VRM). The CSMP set a varying VRM threshold for each block. A total of XXX VRM substrate blocks were produced by CSMP, and mosaicked together by authors. 
 
 We considered raster cells identified as rough as rocky reef habitat. Individual reefs at the finest scale were defined as raster cells of rough with 200 m of another raster cell. The 200 m distance
 was chosen based on evidence that a number of nearshore rockfish exhibit site fidelity and tagging studies have recaptured close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM;
