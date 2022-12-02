@@ -97,7 +97,7 @@ suitable habitat.
 The Pacific Fishery Management Council's Groundfish Fishery Management Plan (FMP) contains 64 groundfish species off the West Coast of the United States. The data needs are large and as of 2022, xx xx
 species have not had a full age-structured stock assessment in at least one area of the coast, e.g., yellowtail rockfish (*Sebastes flavidus*)and kelp greenling (*Hexagrammos decagrammus*) do not have
 accepted stock assessments for California. In some cases a stock assessment may be categorized as data rich, but the only index of abundance available is from a fishery-dependent CPUE time series of
-observed recreational angler catch rates [@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in to the next paragraph??)
+observed recreational angler catch rates [@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in to the next paragraph??  How do stock assessments typcially filter data? **Is that the stevensMacall method??**  As a lead in to the next paragraph??)
 
 
 To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery sampling and bathymetry data. We
@@ -162,18 +162,18 @@ each species at a particular location. The CDFW measured all of the discarded fi
 survey were the same as the CDFW survey, with the exception that Cal Poly measured retained and discarded fish from observed anglers. While both surveys included records of discarded fish, we only
 used the retained catch in these analyses. Discarded fish can often represent a different size structure than retained fish, either due to size limits or angler preference.
 
-In order to map(OVERLAY??) the data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP).
-The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The CSMP mapped California state waters (3 nm from shore) north of of Point
-Conception ($34^\circ 27^\prime N$) to the California-Oregon border.  Rough (rocky) and smooth (sandy) substrate were identified by CSMP using two rugosity indices, surface:planar area, and vector
-ruggedness measure (VRM). The CSMP set a varying VRM threshold for each block. A total of XXX VRM substrate blocks were produced by CSMP, and mosaicked together by authors. 
-
-We considered raster cells identified as rough as rocky reef habitat. Individual reefs at the finest scale were defined as raster cells of rough with 200 m of another raster cell. The 200 m distance
-was chosen based on evidence that a number of nearshore rockfish exhibit site fidelity and tagging studies have recaptured close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM;
-@Hannah:2011:SFM; @Hannah:2012:UNC]. Contiguous raster cells classified as hard substrate remained as a singular rocky reef, regardless of size. Reefs were further defined with a 5 m buffer to account
-for potential error in positional accuracy. The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm
+In order to overlay the fishing data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP).
+The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The CSMP mapped California state waters (3 nm from shore) at a 2 m resolution north of of Point
+Conception ($34^\circ 27^\prime N$) to the California-Oregon border.  Rough and smooth substrates were identified by CSMP using two rugosity indices, surface:planar area, and vector
+ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block, removed any artifacts, and is considered a conservative estimate of rough habitat. 
+A total of XXX substrate blocks were produced by CSMP, and mosaicked together by authors. Authors then converted the rough habitat (rocky habitat proxy) from a raster format to polygon, and performed
+5 m buffer to the rough habitat polygon to allow for any potential inadvertant error in positional accuracy. Reef polygons greater than or equal to 100 m2 were included. Contiguous polygons identified
+as rocky substrate remained as a singular rocky reef, regardless of size. Reefs were grouped (and stratfied?) where any reef polygon greater than a distance of 200 m was considered a seperate reef.  
+The 200 m distance criteria was based on a spatial scale meaningful for nearshore rockfish that exhibit site high fidelity, where tagging studies have recaptured rockfish close to original capture sites 
+[@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM; @Hannah:2012:UNC].  The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm
 from shore). The mapped area does not include the white zones close to shore, which extends approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is usually limited in the white zone
 due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start location of a drift, given that the end locations of drifts were not always recorded, and in the
-interest of maximizing effort, we did not quality check the end locations. The distance from the recorded drift start location to the nearest raster cell of rocky habitat was calculated in meters.
+interest of maximizing effort, we did not quality check the end locations. The distance from the recorded drift start location to the nearest rocky habitat was calculated in meters.
 
 The data contained a total of 19,425 fishing drifts and after removing drifts with missing effort information (time fished or observed anglers), 19,180 remained. To further remove drifts that may not
 accurately define a successful fishing drift or data errors, the upper and lower 1% of the recorded fish time and observed anglers were removed. This resulted in fishing drifts lasting between three
@@ -182,8 +182,8 @@ and 96 minutes fished with three to 15 observed anglers, reducing the data to 18
 For indices incorporating habitat information, we filtered the data on depth to retain 99% of drifts, which resulted in a depth cutoff of 46.6 fathoms and retained 18,405 drifts. The fishery was
 closed deeper than 40 fathoms for the entire time period from 2004-2016, and the additional 6 fathoms is within the scope of error given the rugous bottom habitat.
 
-The distance from rocky reef composed the last filter for indices including habitat. Using the drifts with the target species, we retained 90% of drift from the cumulative frequency of distance to
-rocky habitat. The cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. For each species, the
+The drift distance from rocky reef composed the last filter for indices including habitat. Using the drifts with the target species, we retained 90% of drift from the cumulative frequency of distance to
+rocky habitat. The distance cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. For each species, the
 regions of rocky habitat were further aggregated depending on available data for each species to ensure sufficient data to model the positive encounters.
 
 ## Stephens-MacCall Data Filtering
