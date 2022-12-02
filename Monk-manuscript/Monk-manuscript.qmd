@@ -71,55 +71,62 @@ library(tidyr)
 Integrated fisheries stock assessment models utilize a variety of data sources to develop the most complete picture of the stock and current status in relation 
 to management thresholds. More often(TYPICALLY??), an index of abundance is used as a relative measure of the population and requires a time 
 series to inform the stock assessment model. An index of relative abundance assumes that changes in the index are proportional to changes of
-abundance in the population [@Harley:2001:CUE]. Fishery-independent data collected from standardized survey designs provide 
-a more unbiased estimation of the trend in a fisheries population. However, fishery-independent surveys are costly, labor 
-intensive and often require a long time series to be considered informative in fisheries stock assessments. In an ideal
-situation, both fishery-dependent and fishery-independent surveys would be used to inform the stock assessment model. However, there are cases when only 
-fishery-dependent data are available and the caveats of each data stream must be considered (cite assessments).  Fishery-dependent data are collected directly
-from the the fishery and are less costly than (than what????) the whose operations are not constrained by sampling designs, but dependent 
-on the behaviors of the captain and vessel and, in the case of recreational trips, customer preference.
+abundance in the population [@Harley:2001:CUE]. Fishery-independent data collected from standardized survey designs provide a more unbiased estimation of the
+trend in a fisheries population. However, fishery-independent surveys are costly, labor intensive and often require a long time series to be considered informative
+in fisheries stock assessments. In an ideal situation, both fishery-dependent and fishery-independent surveys would be used to inform the stock assessment model.
+However, there are cases when only fishery-dependent data are available and the caveats of each data stream must be considered (cite assessments). 
+Fishery-dependent data are collected directly from the the fishery and are less costly than (than what????) the whose operations are not constrained by 
+sampling designs, but dependent on the behaviors of the captain and vessel and, in the case of recreational trips, customer preference.
 
 
-Fishery-dependent surveys sample the fishing fleets and are subject to potential sampling biases. The sampling is dependent on the fishing boat's behavior, which is to maximize catch. Sampling of the
-fishing fleet is often opportunistic based on the availability of samplers and the availability of trips to sample. Sampling the fisheries can also be constrained to the current regulations, which may
-prohibit the retention of a species or fishing at certain depths, i.e., California Department of Fish and Wildlife has varying spatial and temporal depth and season closures implemented through six
-management regions. There is also a network of Marine Protected Areas (MPAs) designated from 2007-2012 that prohibit recreational fishing, and are therefore areas no longer sampled by the
-recreational fishing fleet.
+Fishery-dependent surveys sample the fishing fleets and are subject to potential sampling biases. The sampling is dependent on the fishing boat's behavior, 
+which is to maximize catch. Sampling of the fishing fleet is often opportunistic based on the availability of samplers and the availability of trips to sample.
+Sampling the fisheries can also be constrained to the current regulations, which may prohibit the retention of a species or fishing at certain depths, 
+i.e., California Department of Fish and Wildlife has varying spatial and temporal depth and season closures implemented through six management regions. 
+There is also a network of Marine Protected Areas (MPAs) designated from 2007-2012 that prohibit recreational fishing, and are therefore areas no longer sampled 
+by the recreational fishing fleet.
 
 *Catch per unit effort (CPUE) is a common metric available from fishery-dependent surveys [@Maunder:2004:SCE].*
 
-In addition, a common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred within the species' habitat and the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes). Fisheries survey data are often subset to exclude structural zeroes using the
-Stephens-MacCall method [-@Stephens:2004:MAS], which models the probability of observing the target species given the other the presence/absence of other species. However, the onboard observer survey
-collected location-specific information on each observer fish encounter. To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations (I DON"T TOTALLY UNDERSTAND THIS - only postiive catches are included?) this sentence seems like it is in the wrong place? more of a methods?) as a proxy for
-suitable habitat.
+In addition, a common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred 
+within the species' habitat and the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes). Fisheries survey data
+are often subset to exclude structural zeroes using the Stephens-MacCall method [-@Stephens:2004:MAS], which models the probability of observing the target species 
+given the other the presence/absence of other species. However, the onboard observer survey collected location-specific information on each observer fish encounter.
+To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations (I DON"T TOTALLY UNDERSTAND THIS - only postiive 
+catches are included?) this sentence seems like it is in the wrong place? more of a methods?) as a proxy for suitable habitat.
 
 
-The Pacific Fishery Management Council's Groundfish Fishery Management Plan (FMP) contains 64 groundfish species off the West Coast of the United States. The data needs are large and as of 2022, xx xx
-species have not had a full age-structured stock assessment in at least one area of the coast, e.g., yellowtail rockfish (*Sebastes flavidus*)and kelp greenling (*Hexagrammos decagrammus*) do not have
-accepted stock assessments for California. In some cases a stock assessment may be categorized as data rich, but the only index of abundance available is from a fishery-dependent CPUE time series of
-observed recreational angler catch rates [@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in to the next paragraph??  How do stock assessments typcially filter data? **Is that the stevensMacall method??**  As a lead in to the next paragraph??)
+The Pacific Fishery Management Council's Groundfish Fishery Management Plan (FMP) contains 64 groundfish species off the West Coast of the United States. The data 
+needs are large and as of 2022, xx xx species have not had a full age-structured stock assessment in at least one area of the coast, e.g., yellowtail rockfish 
+(*Sebastes flavidus*)and kelp greenling (*Hexagrammos decagrammus*) do not have accepted stock assessments for California. In some cases a stock assessment may be 
+categorized as data rich, but the only index of abundance available is from a fishery-dependent CPUE time series of observed recreational angler catch rates
+[@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in 
+to the next paragraph??  How do stock assessments typcially filter data? **Is that the stevensMacall method??**  As a lead in to the next paragraph??)
 
 
-To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery sampling and bathymetry data. We
-evaluated data from a recreational party boat onboard observer program, which collects location- and species-specific CPUE information from the commercial passenger fishing vessel (CPFV; also know as
-party boat) fleet [@Monk:2014:DRD]. The data were collected at the level of a fishing drift and fine-scale habitat data are available for a large fraction of California state waters. Paired with
-recently available high-resolution bathymetry data provided an opportunity to overlay each individual fishing drift onto known habitat type (hard vs. soft substrate), and has been the method utilized
-for stock assessments since 2015. To explore how data selection methods and the resulting indices would change if the data were only available at a courser resolution, we used the same data set to
-develop standardized indices of relative abundance based on three different data filtering methods. We applied these methods across six nearshore rockfish species with different life histories,
+To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery sampling and bathymetry data. We evaluated data from a
+recreational party boat onboard observer program, which collects location- and species-specific CPUE information from the commercial passenger fishing vessel 
+(CPFV; also know as party boat) fleet [@Monk:2014:DRD]. The data were collected at the level of a fishing drift and fine-scale habitat data are available for a 
+large fraction of California state waters. Paired with recently available high-resolution bathymetry data provided an opportunity to overlay each individual fishing 
+drift onto known habitat type (hard vs. soft substrate), and has been the method utilized for stock assessments since 2015. To explore how data selection methods and
+the resulting indices would change if the data were only available at a courser resolution, we used the same data set to  develop standardized indices of 
+relative abundance based on three different data filtering methods. We applied these methods across six nearshore rockfish species with different life histories,
 habitat preferences and commonness in the data.
 
-The three data treatment methods included filtering the drift-level data based on known location, i.e., the status quo, treating the drift-level data as if the location of the drifts were not
-available, and lastly, an aggregating of the catches at the drift-level data to a trip. In addition, for the model filtered based on known rocky reef habitat, we weighted the index by area of habitat
-within pre-defined regions. For the two cases where we removed the location information, we filtered the data using the Stephens-MacCall method.
+The three data treatment methods included filtering the drift-level data based on known location, i.e., the status quo, treating the drift-level data as if the 
+location of the drifts were not available, and lastly, an aggregating of the catches at the drift-level data to a trip. In addition, for the model filtered based on
+known rocky reef habitat, we weighted the index by area of habitat within pre-defined regions. For the two cases where we removed the location information, 
+we filtered the data using the Stephens-MacCall method.
 
-The Stephens-MacCall [-@Stephens:2004:MAS] filtering approach was used to predict the probability of encountering the target species, based on the species composition of the catch in a given trip. The
-method uses presence/absence data within a logistic regression to identify the probability of encountering a target species given the presence or absence of other predictor species. This method is
-commonly used to filter data that were collected dockside after a vessel returned to port or when location data are not provided.
+The Stephens-MacCall [-@Stephens:2004:MAS] filtering approach was used to predict the probability of encountering the target species, based on the species composition
+of the catch in a given trip. The method uses presence/absence data within a logistic regression to identify the probability of encountering a target species given 
+the presence or absence of other predictor species. This method is commonly used to filter data that were collected dockside after a vessel returned to port 
+or when location data are not provided.
 
-Prior to 2013, these data had not been used to develop an index of abundance for West Coast fisheries stock assessments. That was partially due to the availability of data and at that point in time
-not many full stock assessments had been conducted for the nearshore groundfish species. These data were first used without the habitat data in a suite of 2013 data moderate stock assessments
-[@Cope:2015:DMS], where data were filtered using positive species observations and an alpha hull method commonly used to estimate species home range sizes and distribution modeles for terrestrial
-species [@Burgman:2003:BSR; @Meyer:2017:CHM]
+Prior to 2013, these data had not been used to develop an index of abundance for West Coast fisheries stock assessments. That was partially due to the availability
+of data and at that point in time not many full stock assessments had been conducted for the nearshore groundfish species. These data were first used without the
+habitat data in a suite of 2013 data moderate stock assessments [@Cope:2015:DMS], where data were filtered using positive species observations and an alpha hull 
+method commonly used to estimate species home range sizes and distribution modeles for terrestrial species [@Burgman:2003:BSR; @Meyer:2017:CHM]
 
 *cut from another place: The onboard observer data provide a high-resolution of catch, effort and the ability to map the fishing drifts to fine-scale habitat data. This paper explores methodological
 differences in data treatment to see what we gain by having the high-resolution habitat data and using that as a mechanism to filter out trips that are not targeting the species of interest*
