@@ -78,7 +78,6 @@ However, there are cases when only fishery-dependent data are available and the 
 Fishery-dependent data are collected directly from the the fishery and are less costly than (than what????) the whose operations are not constrained by 
 sampling designs, but dependent on the behaviors of the captain and vessel and, in the case of recreational trips, customer preference.
 
-
 Fishery-dependent surveys sample the fishing fleets and are subject to potential sampling biases. The sampling is dependent on the fishing boat's behavior, 
 which is to maximize catch. Sampling of the fishing fleet is often opportunistic based on the availability of samplers and the availability of trips to sample.
 Sampling the fisheries can also be constrained to the current regulations, which may prohibit the retention of a species or fishing at certain depths, 
@@ -88,13 +87,12 @@ by the recreational fishing fleet.
 
 *Catch per unit effort (CPUE) is a common metric available from fishery-dependent surveys [@Maunder:2004:SCE].*
 
-In addition, a common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred 
-within the species' habitat and the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes). Fisheries survey data
-are often subset to exclude structural zeroes using the Stephens-MacCall method [-@Stephens:2004:MAS], which models the probability of observing the target species 
-given the other the presence/absence of other species. However, the onboard observer survey collected location-specific information on each observer fish encounter.
-To subset the onboard observer survey data and exclude structural zeroes, we used the positive catch locations (I DON"T TOTALLY UNDERSTAND THIS - only postiive 
-catches are included?) this sentence seems like it is in the wrong place? more of a methods?) as a proxy for suitable habitat.
-
+A common characteristic of ecological data is a high proportion of zero observations across samples and the question as to whether the sampling occurred 
+within the species' habitat and the species was not observed or if the sampling occurred outside of the species' habitat (structural zeroes) . Fisheries survey
+data are often subset to exclude structural zeroes using the Stephens-MacCall method [-@Stephens:2004:MAS], which models the probability of observing the target 
+species given the other the presence/absence of other species. However, the onboard observer survey collected location-specific information on each observer fish 
+encounter. To subset the onboard observer survey data and exclude structural zeroes,we used the positive catch locations (I DON"T TOTALLY UNDERSTAND THIS - 
+only postiive catches are included?) this sentence seems like it is in the wrong place? more of a methods?) as a proxy for suitable habitat.
 
 The Pacific Fishery Management Council's Groundfish Fishery Management Plan (FMP) contains 64 groundfish species off the West Coast of the United States. The data 
 needs are large and as of 2022, xx xx species have not had a full age-structured stock assessment in at least one area of the coast, e.g., yellowtail rockfish 
@@ -102,7 +100,6 @@ needs are large and as of 2022, xx xx species have not had a full age-structured
 categorized as data rich, but the only index of abundance available is from a fishery-dependent CPUE time series of observed recreational angler catch rates
 [@Cope:2013:ISC].  (THIS PARAGRAPH SEEMS LIKE IT MIGHT BETTER FIT HERE??  or state in a sentence that this work will help future stock assessments as a lead in 
 to the next paragraph??  How do stock assessments typcially filter data? **Is that the stevensMacall method??**  As a lead in to the next paragraph??)
-
 
 To explore the changes in data filtering related to structural zeroes, we utilized high resolution fishery sampling and bathymetry data. We evaluated data from a
 recreational party boat onboard observer program, which collects location- and species-specific CPUE information from the commercial passenger fishing vessel 
@@ -138,27 +135,30 @@ assessments in 2021, the data have undergone a major quality assurance effort by
 
 # Methods
 
-We explored the methods described in the following sections for six species or species complexes of management interest: black rockfish (*Sebastes melanops*), blue and deacon rockfish complex
-(*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish (*Sebastes nebulosus*), gopher rockfish (*Sebastes carnatus*), and vermilion and sunset rockfish
-complex (*Sebastes miniatus*/*Sebastes crocotulus*). For rockfish, it can be the case that two genetically distinct species compose a cryptic species pair that may or may not be visually
-distinguishable, or were not recorded separately in surveys or catch histories. For example, the Cal Poly onboard survey records blue and deacon rockfish separately, but the CDFW survey records both
-species as blue rockfish. **Should I add a sentence or two on the differences among the species??**
+We explored the methods described in the following sections for six species or species complexes of management interest: black rockfish (*Sebastes melanops*), blue
+and deacon rockfish complex (*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish (*Sebastes nebulosus*), gopher rockfish
+(*Sebastes carnatus*), and vermilion and sunset rockfish complex (*Sebastes miniatus*/*Sebastes crocotulus*). For rockfish, it can be the case that two genetically 
+distinct species compose a cryptic species pair that may or may not be visually distinguishable, or were not recorded separately in surveys or catch histories. 
+For example, the Cal Poly onboard survey records blue and deacon rockfish separately, but the CDFW survey records both species as blue rockfish.
+**Should I add a sentence or two on the differences among the species??**
 
-All of these species are part of the nearshore rockfish complex, but, among other characteristics, have different spatial distributions, habitat preferences, and depth preferences [@Love:2002:RNP].
+All of these species are part of the nearshore rockfish complex, but, among other characteristics, have different spatial distributions, habitat preferences,
+and depth preferences [@Love:2002:RNP].
 
 ## Survey Data and Habitat Assignment
 
-The California Department of Fish and Wildlife (CDFW) began a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel (CPFV or party/charter boat) fleet in 1999. In 2004,
-the survey became part of the California Recreational Fisheries Survey (CFRS) that includes additional surveys to quantify the catches and effort of the recreational fleet. Approximately 21% of the
-CDFW observed groundfish trips were north of Point Conception, which is xxx to the xxx% of estimated charter boat effort across the state \[pull and cite RecFIN\]. North of Bodega Bay, California the
-majority of charter boats are smaller 6-pack vessel that may not have the capacity to carry an observer onboard. In response to a request from the fishing industry, the California Polytechnic State
-University Institute of Marine Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program of the CPFV fleet in 2001 based in Port Avila and Port San Luis along the Central Coast
-\[#fig-map\].
+The California Department of Fish and Wildlife (CDFW) began a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel 
+(CPFV or party/charter boat) fleet in 1999. In 2004, the survey became part of the California Recreational Fisheries Survey (CFRS) that includes additional surveys
+to quantify the catches and effort of the recreational fleet. Approximately 21% of the CDFW observed groundfish trips were north of Point Conception, which is xxx
+to the xxx% of estimated charter boat effort across the state \[pull and cite RecFIN\]. North of Bodega Bay, California the majority of charter boats are smaller
+6-pack vessel that may not have the capacity to carry an observer onboard. In response to a request from the fishing industry, the California Polytechnic State
+University Institute of Marine Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program of the CPFV fleet in 2001 based in Port Avila 
+and Port San Luis along the Central Coast \[#fig-map\].
 
-The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 [-@Monk:2014:DRD], and received more current data from the CDFW. The Cal Poly data were provided to the SWFSC
-annually. All data were cross-checked for potential errors at the drift-level by SWFSC staff; where identifiable errors could be corrected within the CDFW database (i.e., obvious transcription of
-latitude or longitude), we made those changes and noted them in the database. Potential errors identified in the Cal Poly database were checked against the original datasheets and corrected when
-appropriate.
+The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 [-@Monk:2014:DRD], and received more current data from the CDFW. 
+The Cal Poly data were provided to the SWFSC annually. All data were cross-checked for potential errors at the drift-level by SWFSC staff; where identifiable errors 
+could be corrected within the CDFW database (i.e., obvious transcription of latitude or longitude), we made those changes and noted them in the database. 
+Potential errors identified in the Cal Poly database were checked against the original datasheets and corrected when appropriate.
 
 While only a small portion of the total CPFV trips taken were observed, the onboard observer program collected a large amount of data during each trip. During each trip the sampler recorded information for
 each fishing drift, defined as a period starting when the captain announced "Lines down" to when the captain instructed anglers to reel their lines up. Just prior to the start of each fishing drift,
