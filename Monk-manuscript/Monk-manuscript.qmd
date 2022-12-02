@@ -25,7 +25,8 @@ author:
           state: State
           postal-code: Postal Code
     note: |
-      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.
+      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently 
+      long enough to make two lines of footnote text.
   - name: Cat Memes
     email: cat@example.com
     affiliations:
@@ -153,45 +154,55 @@ to quantify the catches and effort of the recreational fleet. Approximately 21% 
 to the xxx% of estimated charter boat effort across the state \[pull and cite RecFIN\]. North of Bodega Bay, California the majority of charter boats are smaller
 6-pack vessel that may not have the capacity to carry an observer onboard. In response to a request from the fishing industry, the California Polytechnic State
 University Institute of Marine Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program of the CPFV fleet in 2001 based in Port Avila 
-and Port San Luis along the Central Coast \[#fig-map\].
+and Port San Luis along the Central Coast \[#fig-map\]. 
 
 The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 [-@Monk:2014:DRD], and received more current data from the CDFW. 
 The Cal Poly data were provided to the SWFSC annually. All data were cross-checked for potential errors at the drift-level by SWFSC staff; where identifiable errors 
 could be corrected within the CDFW database (i.e., obvious transcription of latitude or longitude), we made those changes and noted them in the database. 
 Potential errors identified in the Cal Poly database were checked against the original datasheets and corrected when appropriate.
 
-While only a small portion of the total CPFV trips taken were observed, the onboard observer program collected a large amount of data during each trip. During each trip the sampler recorded information for
-each fishing drift, defined as a period starting when the captain announced "Lines down" to when the captain instructed anglers to reel their lines up. Just prior to the start of each fishing drift,
-the sampler selected a subset of anglers to observe, at a maximum of 15 anglers per drift. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group, i.e.,
-catch cannot be attributed to an individual angler. Samplers also recorded the start and end times of the drift, coordinates of the fishing drift (start latitude/longitude and for most drifts, end
-latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the species level as either retained or discarded, providing a count of
-each species at a particular location. The CDFW measured all of the discarded fish during an observed trip, while the retained fish were measured during an angler interview. Protocols for the Cal Poly
-survey were the same as the CDFW survey, with the exception that Cal Poly measured retained and discarded fish from observed anglers. While both surveys included records of discarded fish, we only
-used the retained catch in these analyses. Discarded fish can often represent a different size structure than retained fish, either due to size limits or angler preference.
+While only a small portion of the total CPFV trips taken were observed, the onboard observer program collected a large amount of data during each trip. 
+During each trip the sampler recorded information for each fishing drift, defined as a period starting when the captain announced "Lines down" to when the
+captain instructed anglers to reel their lines up. Just prior to the start of each fishing drift, the sampler selected a subset of anglers to observe, at a
+maximum of 15 anglers per drift. The sampler recorded all fish encountered (retained and discarded) by the subset of anglers as a group, i.e., catch cannot 
+be attributed to an individual angler. Samplers also recorded the start and end times of the drift, coordinates of the fishing drift (start latitude/longitude
+and for most drifts, end latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers were recorded to the 
+species level as either retained or discarded, providing a count of each species at a particular location. The CDFW measured all of the discarded fish during an
+observed trip, while the retained fish were measured during an angler interview. Protocols for the Cal Poly survey were the same as the CDFW survey, with the 
+exception that Cal Poly measured retained and discarded fish from observed anglers. While both surveys included records of discarded fish, we only
+used the retained catch in these analyses. Discarded fish can often represent a different size structure than retained fish, either due to size limits or
+angler preference.
 
-In order to overlay the fishing data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP).
-The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The CSMP mapped California state waters (3 nm from shore) at a 2 m resolution north of of Point
-Conception ($34^\circ 27^\prime N$) to the California-Oregon border.  Rough and smooth substrates were identified by CSMP using two rugosity indices, surface:planar area, and vector
-ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block, removed any artifacts, and is considered a conservative estimate of rough habitat. 
-A total of XXX substrate blocks were produced by CSMP, and mosaicked together by authors. Authors then converted the rough habitat (rocky habitat proxy) from a raster format to polygon, and performed
-5 m buffer to the rough habitat polygon to allow for any potential inadvertant error in positional accuracy. Reef polygons greater than or equal to 100 m2 were included. Contiguous polygons identified
-as rocky substrate remained as a singular rocky reef, regardless of size. Reefs were grouped (and stratfied?) where any reef polygon greater than a distance of 200 m was considered a seperate reef.  
-The 200 m distance criteria was based on a spatial scale meaningful for nearshore rockfish that exhibit site high fidelity, where tagging studies have recaptured rockfish close to original capture sites 
-[@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM; @Hannah:2012:UNC].  The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm
-from shore). The mapped area does not include the white zones close to shore, which extends approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is usually limited in the white zone
-due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start location of a drift, given that the end locations of drifts were not always recorded, and in the
-interest of maximizing effort, we did not quality check the end locations. The distance from the recorded drift start location to the nearest rocky habitat was calculated in meters.
+In order to overlay the fishing data collected from the onboard observer program with predicted habitat we utilized the bathymetry and backscatter data 
+collected by the California Seafloor Mapping Program (CSMP). The CSMP formed in response to the network of Marine Protected Area network established in 
+California state waters. The CSMP mapped California state waters (3 nm from shore) at a 2 m resolution north of of Point Conception ($34^\circ 27^\prime N$) 
+to the California-Oregon border.  Rough and smooth substrates were identified by CSMP using two rugosity indices, surface:planar area, and vector
+ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block, removed any artifacts, and is 
+considered a conservative estimate of rough habitat. A total of XXX substrate blocks were produced by CSMP, and mosaicked together by authors. Authors then
+converted the rough habitat (rocky habitat proxy) from a raster format to polygon, and performed 5 m buffer to the rough habitat polygon to allow for any potential 
+inadvertant error in positional accuracy. Reef polygons greater than or equal to 100 m2 were included. Contiguous polygons identified as rocky substrate remained
+as a singular rocky reef, regardless of size. Reefs were grouped (and stratfied?) where any reef polygon greater than a distance of 200 m was considered a seperate
+reef.  The 200 m distance criteria was based on a spatial scale meaningful for nearshore rockfish that exhibit site high fidelity, where tagging studies have
+recaptured rockfish close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM; @Hannah:2012:UNC].  The area of rocky habitat for this
+paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm from shore). The mapped area does not
+include the white zones close to shore, which extends approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is usually limited in the white zone
+due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start location of a drift, given that the end locations of drifts
+were not always recorded, and in the interest of maximizing effort, we did not quality check the end locations. The distance from the recorded drift start location
+to the nearest rocky habitat was calculated in meters.
 
-The data contained a total of 19,425 fishing drifts and after removing drifts with missing effort information (time fished or observed anglers), 19,180 remained. To further remove drifts that may not
-accurately define a successful fishing drift or data errors, the upper and lower 1% of the recorded fish time and observed anglers were removed. This resulted in fishing drifts lasting between three
-and 96 minutes fished with three to 15 observed anglers, reducing the data to 18,591 fishing drifts.
+The data contained a total of 19,425 fishing drifts and after removing drifts with missing effort information (time fished or observed anglers), 19,180 remained.
+To further remove drifts that may not accurately define a successful fishing drift or data errors, the upper and lower 1% of the recorded fish time and observed
+anglers were removed. This resulted in fishing drifts lasting between three and 96 minutes fished with three to 15 observed anglers, reducing the data to 18,591 
+fishing drifts.
 
-For indices incorporating habitat information, we filtered the data on depth to retain 99% of drifts, which resulted in a depth cutoff of 46.6 fathoms and retained 18,405 drifts. The fishery was
-closed deeper than 40 fathoms for the entire time period from 2004-2016, and the additional 6 fathoms is within the scope of error given the rugous bottom habitat.
+For indices incorporating habitat information, we filtered the data on depth to retain 99% of drifts, which resulted in a depth cutoff of 46.6 fathoms and 
+retained 18,405 drifts. The fishery was closed deeper than 40 fathoms for the entire time period from 2004-2016, and the additional 6 fathoms is within the scope
+of error given the rugous bottom habitat.
 
-The drift distance from rocky reef composed the last filter for indices including habitat. Using the drifts with the target species, we retained 90% of drift from the cumulative frequency of distance to
-rocky habitat. The distance cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. For each species, the
-regions of rocky habitat were further aggregated depending on available data for each species to ensure sufficient data to model the positive encounters.
+The drift distance from rocky reef composed the last filter for indices including habitat. Using the drifts with the target species, we retained 90% of drift
+from the cumulative frequency of distance to rocky habitat. The distance cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion
+rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. For each species, the regions of rocky habitat were further aggregated depending on 
+available data for each species to ensure sufficient data to model the positive encounters.
 
 ## Stephens-MacCall Data Filtering
 
