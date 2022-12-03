@@ -169,7 +169,7 @@ In order to overlay the fishing data collected from the onboard observer program
 Program (CSMP). The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The CSMP mapped California state waters (3 nm from shore) at a 2 m
 resolution north of of Point Conception ($34^\circ 27^\prime N$) to the California-Oregon border. Rough and smooth substrates were identified by CSMP using two rugosity indices, surface:planar area,
 and vector ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block, removed any artifacts, and is considered a conservative estimate of
-rough habitat. A total of XXX substrate blocks were produced by CSMP, and mosaicked together by authors. Authors then converted the rough habitat (rocky habitat proxy) from a raster format to polygon,
+rough habitat. A total of 133 substrate blocks were produced by CSMP and mosaicked together by authors. Authors then converted the rough habitat (rocky habitat proxy) from a raster format to polygon,
 and performed 5 m buffer to the rough habitat polygon to allow for any potential inadvertant error in positional accuracy. Reef polygons greater than or equal to 100 m2 were included. Contiguous
 polygons identified as rocky substrate remained as a singular rocky reef, regardless of size. Reefs were grouped (and stratfied?) where any reef polygon greater than a distance of 200 m was considered
 a seperate reef. The 200 m distance criteria was based on a spatial scale meaningful for nearshore rockfish that exhibit site high fidelity, where tagging studies have recaptured rockfish close to
