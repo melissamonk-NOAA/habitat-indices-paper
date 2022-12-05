@@ -134,87 +134,83 @@ assessments in 2021, the data have undergone a major quality assurance effort by
 
 # Methods
 
-\*\*Grammatical tense is not my forte for methods so please advise\*\*
+\*\*Grammatical tense is not my forte for methods so please advise\*\* *PAST TENSE IS FINE*
 
-We applied the methods described in the following sections to develope indicies of abundance for six species (or species pairs) of rockfish (*Sebastes spp.*) that are of management interest on the
-West Coast: black rockfish (*Sebastes melanops*), the blue and deacon rockfish (*Sebastes mystinus*, *Sebastes diaconus*), brown rockfish (*Sebastes auriculatus*), China rockfish (*Sebastes
-nebulosus*), gopher rockfish (*Sebastes carnatus*), and the vermilion and sunset rockfish (*Sebastes miniatus*/*Sebastes crocotulus*). All of these species are managed within the of the complex of
-West Coast rockfishes that inhabit the nearshore waters [cite FMP]. The two cryptic species pairs (blue/deacon and sunset/vermilion rockfish) are genetically identifiable, but not separable within the
-onboard observer data time series and both cryptic pairs are currently managed as species complexes by the Pacific Fisheries Management Council [@Bizzarro:2020:GIB; @Longo:2022:GMR]. These six species
-all have different latitudinal distributions, exploitation histories, habitat and depth preferences, and live history strategies[@Love:2002:RNP]. We will discuss the importance of consideration for
-these differences in development of indices of abundance.
+*I dropped sentences that were not methods (e.g. details of the FMP). You have an international audience, so avoid details of local management whenever possible.*
+We developed indicies of abundance for six species or species pairs of rockfish (*Sebastes spp.*) that are of management interest on the U.S. 
+West Coast: black rockfish (*S. melanops*), the blue and deacon rockfish (*S. mystinus*/*S. diaconus*), brown rockfish (*S. auriculatus*), China rockfish (*S.
+nebulosus*), gopher rockfish (*S. carnatus*), and the vermilion and sunset rockfish (*S. miniatus*/*S. crocotulus*). The two cryptic species pairs (blue/deacon and sunset/vermilion rockfish) are genetically identifiable, but not separable within the
+onboard observer data time series. These six species
+all have different latitudinal distributions, exploitation histories, and habitat and depth preferences[@Love:2002:RNP].
 
 ## Survey Data and Habitat-base Filtering
 
 The California Department of Fish and Wildlife (CDFW) began a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel (CPFV or party/charter boat) fleet in 1999. In 2004,
-the survey became part of the CDFW's California Recreational Fisheries Survey (CFRS) that includes additional surveys to quantify catch and effort by the recreational fleet. In response to a request
+the survey became part of the CDFW's California Recreational Fisheries Survey (CFRS, *add year and cite website*) that includes additional surveys to quantify catch and effort by the recreational fleet. In response to a request
 from the fishing industry, the California Polytechnic State University Institute of Marine Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer program in 2001 of the CPFV fleet
 based in Port Avila and Port San Luis along the Central Coast \[#fig-map\]. Both the CDFW and the Cal Poly onboard observer surveys continue through present day; however, due to both spatial and
 temporal recreational regulation changes we limited the dataset for this research to the years 2004 to 2016. Between 1999 and 2003, the recreational regulations evolved from no restriction on the
-number of lines or hooks an angler could deploy to a one line and two-hook maximum, as well as implementation of depth restrictions. These were a direct result of ten groundfish species declared
-overfished in 2000 the entire West Coast groundfish fishery was declared a federal disaster [@Conway:2008:SLL]. Subsequent management and successful rebuilding of all but one groundfish stock
-(yelloweye rockfish, *Sebastes ruberrimus*) allowed a relaxation of depth restrictions beginning in 2017 and shifted fishing effort [@Monk:2021:SVR].
+number of lines or hooks an angler could deploy to a one line and two-hook maximum, as well as implementation of depth restrictions. Subsequent management allowed a relaxation of depth restrictions beginning in 2017, potentially shifting fishing effort relative to the 2004-2016 period [@Monk:2021:SVR]. *(I'd like to discuss implications of this more generally -- not for the paper, but for the upcoming assessments)*
 
+*clarify that "sampler" and "onboard observer" are the same thing*
 While only a small portion of the total CPFV trips taken are observed, the onboard observer program collects a large amount of data during each trip. During each trip the sampler records information
 for each fishing drift, defined as a period starting when the captain announced "lines down" to when the captain instructs anglers to reel their lines up. Just prior to the start of each fishing
 drift, the sampler selected a subset of anglers to observe, at a maximum of 15 anglers per drift. The sampler records all fish encountered (retained and discarded) by the subset of anglers as a group,
-i.e., catch cannot be attributed to an individual angler. Samplers also record the start and end times of a drift, coordinates of the fishing drift (start latitude/longitude and for most drifts, end
-latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers are recorded to the species level as either retained or discarded. This provides
+i.e., catch cannot be attributed to an individual angler. Samplers also record the start and end times of a drift, location of the fishing drift (start latitude/longitude and for most drifts, end
+latitude/longitude), and minimum and maximum bottom depth. Fish encountered by the group of observed anglers are recorded as either retained or discarded. This provides
 information on the catch (count of each species) and effort (time and number of anglers fished) during each fishing drift. While both surveys include records of discarded fish, we only used the
 retained catch in these analyses. Discarded fish can often represent a different size structure than retained fish, either due to size limits or angler preference, or represent fish encountered during
 a temporal or spatial closure.
 
-The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010 and additional survey details can be found[-@Monk:2014:DRD], and we received more current data from the CDFW. The
-Cal Poly data are provided to the SWFSC annually. All data were cross-checked for potential errors at the drift-level by SWFSC staff; where identifiable errors could be corrected within the CDFW
-database (e.g., obvious transcription of latitude or longitude), we made those changes and noted them in the database. Potential errors identified in the Cal Poly database were checked against the
-original datasheets and corrected when appropriate.
+The SWFSC developed a relational database for the CDFW onboard survey from 1999-2010[-@Monk:2014:DRD] that has been updated annually. The
+Cal Poly data are also provided to the SWFSC annually. All data were checked for potential errors at the drift-level by SWFSC staff.
 
-The combined data north of Point Conception from 2004-2016 contained a total of 19,425 fishing drifts and after removing drifts with missing effort information (time fished or observed anglers),
-19,180 drifts remained. To further remove drifts that may not accurately define a successful fishing drift or represent data errors, the upper and lower 1% of the recorded time fished and recorded
-observed anglers were removed. This resulted in fishing drifts lasting between three and 96 minutes and three to 15 observed anglers, reducing the data to 18,591 fishing drifts. Given that the fishery
-was closed deeper than 40 fathoms for the entire time period from 2004-2016, we filtered the data to retain 99% of all drifts (18,405 drifts) based on average drift depth, a cutoff of 46.6 fathoms. We
+The CPFV data included only areas north of Point Conception ($34^\circ 27^\prime N$) due to gaps in habitat coverage further south. *MOVE SAMPLE SIZES TO RESULTS: from 2004-2016 contained a total of 19,425 fishing drifts and after removing drifts with missing effort information (time fished or observed anglers),
+19,180 drifts remained.* To further remove drifts that may not accurately define a successful fishing drift or represent data errors, the upper and lower 1% of the recorded time fished and recorded
+observed anglers were removed. *MOVE TO RESULTS: This resulted in fishing drifts lasting between three and 96 minutes and three to 15 observed anglers, reducing the data to 18,591 fishing drifts.* Given that the fishery
+was closed deeper than 40 fathoms for the entire time period from 2004-2016, we filtered the data *MOVE TO RESULTS: to retain 99% of all drifts (18,405 drifts)* based on average drift depth. *MOVE CUTOFF TO RESULTS:, a cutoff of 46.6 fathoms.* We
 calculated average depth from the recorded minimum and maximum depths when available or the imputed minimum and maximum depth from the bathymetry layer described in the next paragraph. A depth cutoff
-slightly deeper than the maximum allowed is reasonable given the rugous habitat fished and all retained drifts occurred within California state waters.
+slightly deeper than the maximum allowed is reasonable given the rugous habitat fished and all retained drifts occurred within California state waters (up to 3 nm from shore).
 
-Recently collected high resolution seafloor mapping data allowed us to overlay each drift from the onboard observer programs with predicted habitat. We utilized the bathymetry and backscatter data
-collected by the California Seafloor Mapping Program (CSMP) [\@Golden:2013:CSW]. The CSMP formed in response to the network of Marine Protected Area network established in California state waters. The
-CSMP mapped California state waters (3 nm from shore) at a 2 m resolution north of of Point Conception ($34^\circ 27^\prime N$) to the California-Oregon border. Rough and smooth substrates were
-identified by CSMP using two rugosity indices, surface:planar area, and vector ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block,
+High resolution seafloor mapping data allowed us to overlay each drift from the onboard observer programs with predicted habitat. We utilized the bathymetry and backscatter data
+collected by the California Seafloor Mapping Program (CSMP) [\@Golden:2013:CSW]. The
+CSMP mapped California state waters at a 2 m resolution north of of Point Conception to the California-Oregon border. Rough and smooth substrates were
+identified by CSMP using two rugosity indices, surface:planar area, and vector ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM threshold for each block, *you haven't defined what a block is in this context*
 removed any artifacts, and is considered a conservative estimate of rough habitat. A total of 133 CSMP substrate blocks were mosaiced together by authors. Authors then converted the rough habitat
-(rocky habitat proxy) from a raster format to polygon, and performed 5 m buffer to the rough habitat polygon to allow for any potential inadvertant error in positional accuracy. Reef polygons greater
-than or equal to 100 \$m\^2\$ were included. Contiguous polygons identified as rocky substrate remained as a singular rocky reef, regardless of size. Reefs were grouped where any reef polygon greater
-than a distance of 200 m was considered a separate rocky reef. The 200 m distance criteria was based on a spatial scale meaningful for nearshore rockfish that exhibit site high fidelity, where tagging
+(rocky habitat proxy) from a raster format to polygon, and calculated a 5 m buffer around the rough habitat polygon to allow for potential inadvertant errors in positional accuracy. Reef polygons greater
+than or equal to 100 \$m\^2\$ *meters squared is showing up as code in the pdf* were included. Contiguous polygons identified as rocky substrate were defined as a singular rocky reef, regardless of size. Reef polygons greater
+than a distance of 200 m apart were defined as separate rocky reefs. The 200 m distance criterion was based on a spatial scale meaningful for nearshore rockfish that exhibit high site fidelity, where tagging
 studies have recaptured rockfish close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM; @Hannah:2012:UNC]. The area of rocky habitat for this paper was calculated to
-exclude portions of the reef that extended outside of California state waters (further than 3 nm from shore). The mapped area does not include the white zones close to shore, which extends
-approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is limited in the white zone due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start
-location of a drift, given that the end locations of drifts were not always recorded, and in the interest of maximizing effort, we did not quality check the end locations. The distance from the
+exclude portions of the reef that extended outside of California state waters (further than 3 nm from shore). The mapped area does not include very shallow areas close to shore, which extend
+approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is limited in these waters due to shallow depths and kelp beds. We assigned fishing drifts to reefs based on the recorded start
+location of a drift, given that the end locations of drifts were not always recorded. The distance from the
 recorded drift start location to the nearest rocky habitat was calculated in meters. For each target species, we calculated the cumulative distribution of distance to rocky reef for drifts that
-retained the target species and used a distance cutoff of 90% for each species. The distance cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters
-for black rockfish and 16 meters for brown rockfish.
+retained the target species and used a distance cutoff of 90% for each species. *MOVE LAST SENTENCE TO RESULTS: The distance cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters
+for black rockfish and 16 meters for brown rockfish.*
 
 ## Stephens-MacCall Data Filtering
 
-It is not often the case where high-resolution habitat and fishing location information are both available, and for many fishery-dependent surveys an analyst will have to determine which subset of the
-data to use based on available information. The onboard observer data provide an opportunity to explore what information we gain from explicit knowledge of fishing locations. We took the same data and
-removed any location identifiers and also aggretated data across a fishing trip to see how each affects data selection and the resulting indices of abundance.
+*MOVE TO INTRODUCTION: It is not often the case where high-resolution habitat and fishing location information are both available, and for many fishery-dependent surveys an analyst will have to determine which subset of the
+data to use based on available information. The onboard observer data provide an opportunity to explore what information we gain from explicit knowledge of fishing locations.* To construct a data set that mimics trip-level data, we took the drift-level data and
+removed any location identifiers and also aggretated data across drifts within a fishing trip. We then compared results using two levels of aggregation (catch rates by drift and trip) to illustrate the effects on both data filtering and the resulting indices of abundance.
 
-We applied the Stephens-MacCall method to both the drift-level data and the trip-level data [-@Stephens:2004:MAS]. Prior to any filtering a total of 19,425 drifts that aggregated to 2,270 trips were
+*Include a paragaph in the introduction that briefly summarizes the purpose of the S-M method, i.e. using species composition of the catch to identify effective fishing effort for the target species, and cite it there. That way, you can mention it in the methods and the reader will already be familiar with it.*
+Specifically, we applied the Stephens-MacCall method to both the drift-level data and the trip-level data [-@Stephens:2004:MAS]. Prior to any filtering a total of 19,425 drifts that aggregated to 2,270 trips were
 available for the analyses. The number of initial samples used for the Stephens-MacCall filtering method were higher than the habitat-informed data described in the previous section because we
-retained drifts with missing effort or location data, which allowed us to retain as much information about a trip as possible.
+retained drifts with missing effort *(do these drifts contribute to catch, but not effort?)* or location data, which allowed us to retain as much information about a trip as possible.
 
 Before applying the Stephens-MacCall method, we identified a suite of potentially informative predictor species for each of the six target species. Species that never co-occurred with the target
-species and those present in fewer than 1% of all drifts and 3% of all trips were removed to reduce the number of species to those that were informative. A lower threshold was selected for the
-drift-level data to the change in magnitude of the number of samples when using drifts vs trips.
+species and those present in fewer than 1% of all drifts and 3% of all trips were removed to reduce the number of species to those that were informative. A lower threshold was selected *(say what the lower threshold was)* for the
+drift-level data due to the change in magnitude of the number of samples when using drifts vs trips.
 
 The remaining species all co-occurred with the target species in at least one trip and were retained for the Stephens-MacCall logistic regression. Coefficients from the Stephens-MacCall analysis (a
 binomial generalized linear model) were positive for species that are more likely to co-occur with the target species, and negative for species that were less likely to be caught with target species.
 The intercept represented the probability of observing only the target species in a sample. We also calculated the 95% confidence interval for each coefficient.
 
-Stephens and MacCall [-@Stephens:2004:MAS] recommended including all trips above a threshold where the false negatives and false positives are equally balanced. However, this theshold does not have
-any biological relevance and for this particular data set where trained samplers identify all fish. We assumed that if the target species was encountered, the vessel fished in appropriate habitat.
 Stephens and MacCall [-@Stephens:2004:MAS] proposed filtering (excluding) samples from index standardization based on a criterion of balancing the number of false positives and false negatives from
 the predicted probability of encounter. False positives (FP) are trips that are predicted to encounter the target species based on the species composition of the catch, but did not. False negatives
-(FN) are trips that were not predicted to encounter the target species, given the catch composition, but caught at least one target species.
+(FN) are trips that were not predicted to encounter the target species, given the catch composition, but caught at least one target species. Stephens and MacCall *(don't cite every time)* recommended a threshold where the false negatives and false positives are equally balanced, however, this theshold does not have
+any biological relevance and for this particular data set where trained samplers identify all fish. We assumed that if the target species was encountered, the vessel fished in appropriate habitat.
 
 Of interest for the index of abundance was the elimination of trips that had a low probability of catching the target species given the other species caught on the trip. Therefore, we retained all of
 the trips that caught the target species and those trips that did not catch the target species, but had a probability higher than the threshold balancing the false negatives and false positives. This
@@ -222,35 +218,37 @@ practice has commonly been used in recent stock assessments of rockfish on the W
 
 #### Indices of Abundance
 
+*Can you use the names for each data set, e.g. "drift-level habitat informed", when you describe the different levels of aggregation and filtering, too?*
 Four standardized indices of abundance were generated for each of the six species, one each for the data filtering method (drift-level habitat informed, Stephens-MacCall filtered drift-level,
-Stephens-MacCall filtered trip-level) and an area-weighted index from the habitat-informed drift-level data. All indices were modeled using Bayesian generalized linear models (GLMs) and the delta
-method [@Lo:1992:IRA]. The delta GLM method is commonly used to standardize catch-per-unit effort for stock assessments \[citations\]. The delta method models the the data with two separate GLMs; one
+Stephens-MacCall filtered trip-level) and an area-weighted index from the habitat-informed drift-level data. All indices were modeled using Bayesian generalized linear models (GLMs) and the delta GLM
+method [@Lo:1992:IRA]. *(also cite Stefánsson, G. 1996. Analysis of groundfish survey abundance data: combining the GLM and delta approaches. – ICES Journal of Marine Science, 53: 577–588.)* The delta GLM method is commonly used to standardize catch-per-unit effort for stock assessments \[citations\]. The delta method models the the data with two separate GLMs; one
 for the probability of encountering the species of interest from a binomial likelihood and a logit link function and the second models the positive encounters with either gamma or lognormal error
-structure. The error structure of the positive model was selected via AIC from models with the full suite of considered explanatory variables.
+structure. The error structure of the positive model was selected via the Akaike Information Criterion (AIC) from models with the full suite of considered explanatory variables.
 
 The response variable for the positive models was angler-retained catch per unit effort. For the indices modeled at the level of a drift, effort was calculated as the number of angler hours fished on
 a drift. The trip-level effort was calculated as angler days, using the average number of observed anglers across all drifts on a trip.
 
 To keep comparisons across data filtering methods similar, depth was not considered as an explanatory variable in the habitat-informed index. Depth is often a significant explanatory variable for
 rockfish species, with many rockfish species and populations separated by depth [@Love:2002:RNP]. Year was always included in as an explanatory variable in model selection, even if it was not
-significant, because the goal of the index of abundance was to extract the year effect. Other explanatory variables considered for the habitat-informed index were the rocky reefs and wave (a 3-month
+significant, because the goal of the index of abundance was to extract the year effect. Other explanatory variables considered for the habitat-informed index were the rocky reefs (*describe how reef was included -- categorical (Y/N), or as a distance?)* and wave (a 3-month
 aggregated period of time, e.g., January-March). The area-weighted index also included a year/rocky reef interaction term, even if it was not statistically significant, to allow us to weight the index
 by the area of rocky reef. The areas of rocky reef were aggregated differently for each species to ensure adequate sample sizes to explore the year/rocky reef interaction.
 
-Explanatory variables for the two indices that were blind to habitat information included only year, wave and region, i.e., aggregated counties of landing. California has 14 coastal counties north of
+Explanatory variables for the two indices that were blind to habitat information (Stephens-MacCall filtered drift- and trip-level) included only year, wave and region, i.e., aggregated counties of landing. California has 14 coastal counties north of
 Point Conception, 11 of which were represented in these data. We aggregated the northern counties of Del Norte, Humboldt and Mendocino into one region, Sonoma and Marin counties just north of San
 Francisco into another region and Alameda and San Francisco counties into a third region. The remaining counties of San Mateo, Santa Cruz, Monterey and San Luis Obispo remained unaggregated.
 
-The the model of positive samples, the gamma or lognormal error distribution was chosen via maximum likelihood AIC from the full model with all explanatory variables. Model selection for the binomial
-and positive observation models were also selected using AIC and unless very different predictors were selected, the same predictors were used in each of the two Bayesian models. The Bayesian models
-were run with 5,000 iterations and uninformative priors. Posterior predictive model checks were examined for both the binomial and positive observation models, including the predicted percent positive
+Model selection for the binomial
+and positive observation models was based on AIC using the lme4 package in R, and unless very different predictors were selected, the same predictors were used in each of the two Bayesian models. The Bayesian models
+were run with 5,000 iterations and weakly informative priors. Posterior predictive model checks were examined for both the binomial and positive observation models, including the predicted percent positive
 compared to the maximum likelihood estimates. We constructed the final year index by multiplying the back-transformed posterior draws from the binomial model with the exponentiation of positive model
 draws, and taking the mean and standard deviation for each year.
 
-The area-weighted index was developed by extracting the posterior draws of from each year and area combination of the binomial and positive posterior predictions, and then summing across the product
-of the posteriors weighted by the fraction of total area within each reef. To compare the indices across the three data filtering methods and the area-weighted index, each index was scaled to its mean
+The area-weighted habitat-informed index was developed by extracting the posterior draws of from each year and area combination of the binomial and positive posterior predictions, and then summing across the product
+of the back-transformed posteriors weighted by the fraction of total area within each reef. To compare the indices across the three data filtering methods and the area-weighted index, each index was scaled to its mean
 value.
 
+*move this to the discussion*
 Versions of the indices filtered based on habitat were approved by the Pacific Fisheries Management Council's Science and Statistical Committee for use in the 2013 stock assessments and have been used
 all of the stock assessment process since. Comparisons should not be drawn between the indices presented here and the stock assessment documents as the indices in this paper were simplified to develop
 direct comparisons among methods.
