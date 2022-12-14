@@ -173,7 +173,7 @@ We calculated average depth (OF WHAT?) from the recorded minimum and maximum dep
 slightly deeper than the maximum allowed is reasonable given the rugous habitat fished and all retained drifts occurred within California state waters (up to 3 nm from shore).
 
 *habitat data*
-High-resolution seafloor mapping data allowed us to overlay each fishing drift from the onboard observer programs with predicted habitat. We utilized the bathymetry
+High-resolution seafloor mapping data allowed us to overlay each fishing drift with predicted habitat. We utilized the bathymetry
 and backscatter data collected by the California Seafloor Mapping Program (CSMP) [\@Golden:2013:CSW]. The CSMP was intiated in 2007 in support of the Marine Life 
 Protection Act (citation) to map the underwater habitats and geology of California state waters (mean high water line to 3 nautical miles from shore). 
 The data was mapped at a 2 m resolution in 133 continous blocks from north of of Point Conception to the California-Oregon border. Rough and smooth substrates were
@@ -188,7 +188,8 @@ Contiguous polygons identified as rocky substrate were defined as a singular roc
 Reef polygons were grouped on several different scales.  The finest scale is set to any reef at a distance greater than 200 m apart were defined as separate 
 rocky reefs. The 200 m distance criterion was based on a spatial scale meaningful for nearshore rockfish that exhibit high site fidelity, where tagging studies 
 have recaptured rockfish close to original capture sites [@Lea:1999:BAM; @Matthews:1985:SSM; @Hannah:2011:SFM; @Hannah:2012:UNC]. Reefs were then grouped together
-into 6 latitudinal Mega Reefs (How were these decided?? --maybe we don't need to talk about the fine scale 200m distance reefs as not relevent to this particular project?? we only use the 'mega reefs' here) 
+into 6 latitudinal Mega Reefs (How were these decided?? --maybe we don't need to talk about the fine scale 200m distance reefs as not relevent to this particular
+project?? we only use the 'mega reefs' here) 
 
 The area of rocky habitat for this paper was calculated to exclude portions of the reef that extended outside of California state waters (further than 3 nm from shore).
 The mapped area does not include very shallow areas close to shore, which extend approximately 200-500 m from the shoreline. Fishing by the CPFV fleet is limited in 
