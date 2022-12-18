@@ -151,7 +151,7 @@ These six species all have different latitudinal distributions, exploitation his
 The California Department of Fish and Wildlife (CDFW) began a fishery-dependent onboard observer survey of the Commercial Passenger Fishing Vessel (CPFV or party/charter boat) fleet in 1999. In 2004,
 the survey became part of the CDFW's California Recreational Fisheries Survey (CFRS, *add year and cite website*) that includes additional surveys to quantify catch and effort by the recreational
 fleet. In response to a request from the fishing industry, the California Polytechnic State University Institute of Marine Science, San Luis Obispo (Cal Poly) began a supplemental onboard observer
-survey in 2001 of the CPFV fleet based in Port Avila and Port San Luis along the Central Coast \[#fig-map\]. Both the CDFW and the Cal Poly onboard observer surveys continue through present day;
+survey in 2001 of the CPFV fleet based in Port Avila and Port San Luis along the Central Coast [#fig-map]. Both the CDFW and the Cal Poly onboard observer surveys continue through present day;
 however, due to both spatial and temporal recreational regulation changes we limited the data for this research to the years 2004 to 2016. Between 1999 and 2003, the recreational regulations evolved
 from no restriction on the number of lines or hooks an angler could deploy to a one line and two-hook maximum, as well as implementation of depth restrictions. Subsequent management allowed a
 relaxation of depth restrictions beginning in 2017, potentially shifting fishing effort relative to the 2004-2016 period [@Monk:2021:SVR].
@@ -175,9 +175,9 @@ available or the imputed minimum and maximum depth from the bathymetry layer des
 variability in habitat fished and all retained drifts occurred within California state waters (up to 3 nm from shore).
 
 High resolution seafloor mapping data allowed us to map each drift from the onboard observer surveys with predicted habitat (referred throughout the paper as the drift-level, habitat-informed data).
-We utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP) \[@Golden:2013:CSW\]. The CSMP mapped California state waters at a 2 m resolution north of
-of Point Conception to the California-Oregon border. A total of 137 CSMP substrate blocks that ranged in size from 16 \$km\^\$ to more than 400 \$km\^2\$ were mosaicked together by authors. Rough and
-smooth substrates were identified by CSMP using two rugosity indices, surface:planar area, and vector ruggedness measure (VRM) of the bathymetric digital elevation model. The CSMP set a varying VRM
+We utilized the bathymetry and backscatter data collected by the California Seafloor Mapping Program (CSMP) [@Golden:2013:CSW]. The CSMP mapped California state waters at a 2 m resolution north of
+of Point Conception to the California-Oregon border. A total of 137 CSMP substrate blocks that ranged in size from 16 $km^$ to more than 400 $km^2$ were mosaicked together by authors. Rough and
+smooth substrates were identified by CSMP using two rugosity indices, surface:planar area, and vector ruggedness measure (VRM) of the bathymetric digital elevation model [#fig-map2]. The CSMP set a varying VRM
 threshold for each of the substrate blocks, removed any artifacts, and is considered a conservative estimate of rough habitat.
 
 The 137 CSMP substrate raster blocks were then mosaicked together by authors, and converted the pixels designated as rough habitat (rocky habitat proxy) from a rasterformat to polygon, and calculated
@@ -217,7 +217,7 @@ Of interest for the index of abundance was the elimination of trips that had a l
 the trips that caught the target species and those trips that did not catch the target species, but had a probability higher than the threshold balancing the false negatives and false positives. This
 practice has commonly been used in recent stock assessments of rockfish on the West Coast.
 
-#### Indices of Abundance
+## Indices of Abundance
 
 Four standardized indices of abundance were generated for each of the six species, one each for the data filtering method (drift-level habitat-informed, drift-level Stephens-MacCall, trip-level
 Stephens-MacCall) and an area-weighted index from the habitat-informed drift-level data. All indices were modeled using Bayesian generalized linear models (GLMs) and the delta GLM method
@@ -251,19 +251,19 @@ index, each index was scaled to its mean value.
 
 # Results
 
-## Survey Data and Habitat-based Filtering
-
 The data sets were filtered for errors within the relational database before analyses and the data used here reflects changes from the QA/QC process that may not be reflected in data available
 directly form CDFW. Approximately 21% of the CDFW observed groundfish trips from 2004-2016 were north of Point Conception and it is important to note that north of Bodega Bay, California the majority
 of charter boats are smaller 6-pack vessel that may not have the capacity to carry a sampler onboard. The addition of the Cal Poly survey to the CDFW survey increased the sample sizes of observed
 trips out of San Luis Obispo county by an average of 155% from 2004-2016.
 
-From 2004-2016 the data contained a total of 19,425 fishing drifts, and after removing drifts with missing effort information (time fished or observed anglers), 19,180 drifts remained. The filter for
+## Survey Data and Habitat-based Filtering
+
+From 2004-2016 the drift-level data contained a total of 19,425 fishing drifts, and after removing drifts with missing effort information (time fished or observed anglers), 19,180 drifts remained. The filter for
 fishing drifts and observed anglers resulted in fishing drifts lasting between three and 96 minutes and three to 15 observed anglers, and reduced the data to 18,591 fishing drifts. The remaining data
 filter of depth resulted in a cutoff of 46.6 fathoms, and retained 18,405 drifts based on average drift depth.
 
 We defined 108 areas of rocky habitat at the finest scale within California state waters from Point Conception to the California/Oregon border. After exploratory analyses and considering the the
-availability of data, the areas rocky habitat was grouped into five regions to ensure adequate sample sizes for developing indices of abundance (Figure \@fig-map). While covering a small area, the
+availability of data, the areas rocky habitat were grouped into five regions to ensure adequate sample sizes for developing indices of abundance (Figure \@fig-map). While covering a small area, the
 number of observed fishing drifts within state waters around the Farallon Islands off the coast of San Francisco was high enough to warrant keeping it as a separate area of rocky habitat. The region
 defined from the California/Oregon to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts fished in this area, and represents
 approximately 9% of the total effort \[cite RecFIN\]. Each of the four remaining nearshore regions from San Francisco to Point Conception contained an average of 11% of the available habitat.
@@ -409,7 +409,7 @@ fundamentally different, with a higher percentage of trips targeting mixed speci
 is a biogeographic break (citation) and a number of stock assessments In addition, complete habitat data are not available for areas in southern California. The data were also temporally restricted to
 the years 2001-2016. Earlier and more recent data were excluded to preserve a data set with the most consistent gear and depth regulations.
 
-Composition data from recreational surveys had the largest impact on simulation results, but individual survey components did not have individual effects on benchmarks [@Siegfried:2016:ISA].\
+Composition data from recreational surveys had the largest impact on simulation results, but individual survey components did not have individual effects on benchmarks [@Siegfried:2016:ISA].
 
 \FloatBarrier
 
@@ -463,8 +463,10 @@ kableExtra::kable(reefareas, booktabs = T,
 
 # Figures
 
-![An example of the mapped rocky habitat in California state waters north of Point Conception and an inset of the state showing the 3 nm state water boundary](figures/map.jpg){#fig-map} ![The percent
-of drifts that retained the target species, within grouped areas of rocky habitat over all years of the time series. The grey dashed lines represent the aggregated rocky habitat used to develop an
+![A example of the high resolution bathymetric data and components used to create the rocky reef habitat layer for groundfish (far right panel).](figures/map_2.jpg){#fig-map2}
+
+![A maps of California state waters north of Point Conception colored by the aggregated areas of rocky reef habitat, including inset A depicting the rocky reef habitat in relation to 3 nm state water boundary state waters and inset B showing the high resolution rocky habitat in the area.](figures/map.jpg){#fig-map} 
+![The percent of drifts that retained the target species, within grouped areas of rocky habitat over all years of the time series. The grey dashed lines represent the aggregated rocky habitat used to develop an
 index of abundance.](figures/percentpositives_map.jpg){#percentpos-map}
 
 ![The average CPUE across all years of the time series for each of the six species. The grey dashed lines represent the aggregated rocky habitat used to develop an index of
