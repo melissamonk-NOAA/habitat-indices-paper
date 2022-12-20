@@ -72,6 +72,7 @@ editor:
 
 ```{r opts, include = FALSE}
 fig_loc = paste0(getwd(), "/figures")
+library(tidyverse)
 library(dplyr)
 library(kableExtra)
 library(tidyr)
@@ -309,7 +310,7 @@ the years 2001-2016. Earlier and more recent data were excluded to preserve a da
 
 Habitat layers
 The characteristics and classification of the rocky habitat into more specific substrate types, e.g., boulder vs pinnacle, is available for a small fraction of the mapped area. Therefore, all areas of
-rocky substrate are currently created equal. A number of video surveys have shown hab itat associations differ by species and ,
+rocky substrate are currently created equal. A number of video surveys have shown habitat associations differ by species and ,
 
 
 Oftentimes a captain will position the vessel adjacent to rocky habitat so that the current allows the vessel to drift over the rocky habitat.
@@ -373,7 +374,7 @@ avgcv <- readxl::read_xlsx("C:\\Users\\melissa.monk\\Documents\\GitHub\\habitat-
 ```
 
 ```{r, reef-areas, warning = FALSE, echo = FALSE}
-library(dplyr)
+
 library(kableExtra)
 kableExtra::kable(reefareas, booktabs = T,
                   caption = "Area of rocky habitat in state waters 
@@ -388,20 +389,21 @@ kableExtra::kable(reefareas, booktabs = T,
 
 ```
 
-```{r, fig-samplesize, warning = FALSE, echo = FALSE}
+```{r, sample-size, warning = FALSE, echo = FALSE}
 
-kableExtra::kable(samplesize, booktabs = T,
-                  caption = "The fraction of samples retained to develop indices
-                   of abundance after the filtering steps for each method
-                   where the trip-level data started with 2,252 samples, the 
-                   drift-level Stephens-MacCall filtered data started with 
-                   19,425 samples and the drift level habitat-informed data 
-                   started with 18,405 samples.") %>%
+kableExtra::kable(samplesize, booktabs = T) %>% #,
+            #      caption = "The fraction of samples retained to develop indices
+            #       of abundance after the filtering steps for each method
+            #       where the trip-level data started with 2,252 samples, the 
+            #       drift-level Stephens-MacCall filtered data started with 
+            #       19,425 samples and the drift level habitat-informed data 
+            #       started with 18,405 samples.") %>%
     column_spec(1, width = "1.8in") 
 
 ```
 
-```{r, fig-avgcv, warning = FALSE, echo = FALSE}
+```{r, avg-cv, warning = FALSE, echo = FALSE}
+
 kableExtra::kable(avgcv, booktabs = T,
                   caption = "The average Coefficient of Variation (CV) for 
                   each index of abundance, where SM-filtered is the 
@@ -423,6 +425,7 @@ kableExtra::kable(avgcv, booktabs = T,
 ![The average CPUE across all years of the time series for each of the six species. The grey dashed lines represent the aggregated rocky habitat used to develop an index of abundance.](figures/CPUE_map.jpg){#fig-cpue}
 
 ::: {#fig-sm layout-ncol="2"}
+
 ![Black rockfish trip-level](figures/black_trip_sm.png){#fig-black-tripsm width="2.7in"}
 
 ![Black rockfish drift-level](figures/black_drift_sm.png){#fig-black-driftsm width="2.7in"}
@@ -433,6 +436,8 @@ kableExtra::kable(avgcv, booktabs = T,
 
 Examples of the species coefficients and 95% confidence intervals for the Stephens-MacCall filtering for black rockfish and brown rockfish for the trip-level and drift-level data.
 :::
+
+
 
 ::: {#fit-indices layout-ncol="2"}
 ![Black rockfish](figures/black_indices.png){#fig-black-indices width="3in"}
@@ -450,43 +455,4 @@ Examples of the species coefficients and 95% confidence intervals for the Stephe
 Scaled indices of abundance for four data filtering methods explored.
 :::
 
-\FloatBarrier
 
-
-
-# Supplemental tables and figures
-
-| Species            | Drift level (habitat) | Drift level (no habitat) | Trip level |
-|--------------------|-----------------------|--------------------------|------------|
-| Black rockfish     | 0.158                 | 0.557                    | 0.753      |
-| Blue rockfish      | 0.444                 | 0.699                    | 0.916      |
-| Brown rockfish     | 0.160                 | 0.605                    | 0.727      |
-| China rockfish     | 0.083                 | 0.552                    | 0.699      |
-| Gopher rockfish    | 0.310                 | 0.648                    | 0.843      |
-| Vermilion rockfish | 0.295                 | 0.623                    | 0.869      |
-
-: The average fraction of positive observations across years after applying each filtering method.{#tbl-percentpos}
-
-::: {#fig-sm3 layout-ncol="2"}
-![Gopher rockfish trip level](figures/gopher_trip_sm.png){#fig-gopher-trips width="2.75in"}
-
-![Gopher rockfish drift level](figures/gopher_drift_sm.png){#fig-gopher-drifts width="2.75in"}
-
-![Vermilion rockfish trip level](figures/vermilion_trip_sm.png){#fig-vermilion-trips width="2.75in"}
-
-![Vermilion rockfish driftlevel](figures/vermilion_drift_sm.png){#fig-vermilion-drifts width="2.75in"}
-
-The species coefficients from the Stephens-MacCall method at the trip-level and drift-level for species not presented in the main body of the paper.
-:::
-
-::: {layout-ncol="2"}
-![Blue rockfish trip level](figures/blue_trip_sm.png){#fig-blue-tripsm width="2.75in"}
-
-![Blue rockfish drift level](figures/blue_drift_sm.png){#fig-blue-driftsm width="2.75in"}
-
-![China rockfish trip level](figures/china_trip_sm.png){width="2.75in"}
-
-![China rockfish drift level](figures/china_drift_sm.png){width="2.75in"}
-
-The species coefficients from the Stephens-MacCall method at the trip-level and drift-level for species not presented in the main body of the paper.
-:::

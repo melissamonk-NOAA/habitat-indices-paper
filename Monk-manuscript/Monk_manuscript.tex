@@ -223,7 +223,7 @@ This is the abstract.
 association \sep groundfish \sep 
     index of abundance
 \end{keyword}
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, breakable, enhanced]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, sharp corners, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -805,7 +805,7 @@ Habitat layers The characteristics and classification of the rocky
 habitat into more specific substrate types, e.g., boulder vs pinnacle,
 is available for a small fraction of the mapped area. Therefore, all
 areas of rocky substrate are currently created equal. A number of video
-surveys have shown hab itat associations differ by species and ,
+surveys have shown habitat associations differ by species and ,
 
 Oftentimes a captain will position the vessel adjacent to rocky habitat
 so that the current allows the vessel to drift over the rocky habitat.
@@ -953,21 +953,7 @@ Morro Bay to Point Conception & 112.264 & \multirow{-4}{.8in}{\raggedleft\arrayb
 \end{tabular}
 \end{table}
 
-\begin{figure}
-
-{\centering 
-
-\hypertarget{fig-samplesize-1}{}
-\begin{table}
-
-\caption{The fraction of samples retained to develop indices
-                   of abundance after the filtering steps for each method
-                   where the trip-level data started with 2,252 samples, the 
-                   drift-level Stephens-MacCall filtered data started with 
-                   19,425 samples and the drift level habitat-informed data 
-                   started with 18,405 samples.}
-\centering
-\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.8in}rrr}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.8in}rrr}
 \toprule
 Species & Drift-level habitat-informed & Drift-level SM-filtered & Trip-level\\
 \midrule
@@ -980,19 +966,7 @@ Gopher rockfish & 0.787 & 0.401 & 0.755\\
 Vermilion rockfish & 0.799 & 0.382 & 0.821\\
 \bottomrule
 \end{tabular}
-\end{table}
 
-}
-
-\caption{\label{fig-samplesize}\textbf{?(caption)}}
-
-\end{figure}
-
-\begin{figure}
-
-{\centering 
-
-\hypertarget{fig-avgcv-1}{}
 \begin{table}
 
 \caption{The average Coefficient of Variation (CV) for 
@@ -1013,12 +987,6 @@ Vermilion rockfish & 0.152 & 0.178 & 0.133 & 0.238\\
 \bottomrule
 \end{tabular}
 \end{table}
-
-}
-
-\caption{\label{fig-avgcv}\textbf{?(caption)}}
-
-\end{figure}
 
 \FloatBarrier
 
@@ -1247,201 +1215,6 @@ rockfish and brown rockfish for the trip-level and drift-level data.}
 {\centering 
 
 Scaled indices of abundance for four data filtering methods explored.
-
-}
-
-\end{minipage}%
-
-\end{figure}
-
-\FloatBarrier
-
-\hypertarget{supplemental-tables-and-figures}{%
-\section{Supplemental tables and
-figures}\label{supplemental-tables-and-figures}}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2469}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2840}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3210}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1481}}@{}}
-\caption{The average fraction of positive observations across years
-after applying each filtering
-method.\{\#tbl-percentpos\}}\tabularnewline
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Species
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drift level (habitat)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drift level (no habitat)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Trip level
-\end{minipage} \\
-\midrule()
-\endfirsthead
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-Species
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drift level (habitat)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Drift level (no habitat)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Trip level
-\end{minipage} \\
-\midrule()
-\endhead
-Black rockfish & 0.158 & 0.557 & 0.753 \\
-Blue rockfish & 0.444 & 0.699 & 0.916 \\
-Brown rockfish & 0.160 & 0.605 & 0.727 \\
-China rockfish & 0.083 & 0.552 & 0.699 \\
-Gopher rockfish & 0.310 & 0.648 & 0.843 \\
-Vermilion rockfish & 0.295 & 0.623 & 0.869 \\
-\bottomrule()
-\end{longtable}
-
-\begin{figure}
-
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/gopher_trip_sm.png}
-
-}
-
-}
-
-\subcaption{\label{fig-gopher-trips}Gopher rockfish trip level}
-\end{minipage}%
-%
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/gopher_drift_sm.png}
-
-}
-
-}
-
-\subcaption{\label{fig-gopher-drifts}Gopher rockfish drift level}
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/vermilion_trip_sm.png}
-
-}
-
-}
-
-\subcaption{\label{fig-vermilion-trips}Vermilion rockfish trip level}
-\end{minipage}%
-%
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/vermilion_drift_sm.png}
-
-}
-
-}
-
-\subcaption{\label{fig-vermilion-drifts}Vermilion rockfish driftlevel}
-\end{minipage}%
-
-\caption{\label{fig-sm3}The species coefficients from the
-Stephens-MacCall method at the trip-level and drift-level for species
-not presented in the main body of the paper.}
-
-\end{figure}
-
-\begin{figure}
-
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/blue_trip_sm.png}
-
-}
-
-\caption{\label{fig-blue-tripsm}Blue rockfish trip level}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/blue_drift_sm.png}
-
-}
-
-\caption{\label{fig-blue-driftsm}Blue rockfish drift level}
-
-}
-
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/china_trip_sm.png}
-
-}
-
-\caption{China rockfish trip level}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics[width=2.75in,height=\textheight]{figures/china_drift_sm.png}
-
-}
-
-\caption{China rockfish drift level}
-
-}
-
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
-
-The species coefficients from the Stephens-MacCall method at the
-trip-level and drift-level for species not presented in the main body of
-the paper.
 
 }
 
