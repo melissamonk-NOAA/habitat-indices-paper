@@ -1,0 +1,42 @@
+---
+title: "Supplemental"
+format: pdf
+editor: visual
+---
+
+# Supplemental tables and figures
+
+| Species            | Drift level (habitat) | Drift level (no habitat) | Trip level |
+|--------------------|-----------------------|--------------------------|------------|
+| Black rockfish     | 0.158                 | 0.557                    | 0.753      |
+| Blue rockfish      | 0.444                 | 0.699                    | 0.916      |
+| Brown rockfish     | 0.160                 | 0.605                    | 0.727      |
+| China rockfish     | 0.083                 | 0.552                    | 0.699      |
+| Gopher rockfish    | 0.310                 | 0.648                    | 0.843      |
+| Vermilion rockfish | 0.295                 | 0.623                    | 0.869      |
+
+: The average fraction of positive observations across years after applying each filtering method.{#tbl-percentpos}
+
+::: {#fig-sm3 layout-ncol="2"}
+![Gopher rockfish trip level](figures/gopher_trip_sm.png){#fig-gopher-trips width="2.75in"}
+
+![Gopher rockfish drift level](figures/gopher_drift_sm.png){#fig-gopher-drifts width="2.75in"}
+
+![Vermilion rockfish trip level](figures/vermilion_trip_sm.png){#fig-vermilion-trips width="2.75in"}
+
+![Vermilion rockfish driftlevel](figures/vermilion_drift_sm.png){#fig-vermilion-drifts width="2.75in"}
+
+The species coefficients from the Stephens-MacCall method at the trip-level and drift-level for species not presented in the main body of the paper.
+:::
+
+::: {layout-ncol="2"}
+![Blue rockfish trip level](figures/blue_trip_sm.png){#fig-blue-tripsm width="2.75in"}
+
+![Blue rockfish drift level](figures/blue_drift_sm.png){#fig-blue-driftsm width="2.75in"}
+
+![China rockfish trip level](figures/china_trip_sm.png){width="2.75in"}
+
+![China rockfish drift level](figures/china_drift_sm.png){width="2.75in"}
+
+The species coefficients from the Stephens-MacCall method at the trip-level and drift-level for species not presented in the main body of the paper.
+:::
