@@ -1,81 +1,11 @@
 ---
-title: Methods to utilize known habitat to filter data for indices of abundance from a recreational fishery survey in California
-author:
-  - name: Melissa Hedges Monk
-    email: melissa.monk@noaa.gov
-    affiliations: 
-        - id: some-tech
-          name: Southwest Fisheries Science Center
-          department: Fisheries Ecology Division
-          address: 110 McAllister Way
-          city: Santa Cruz
-          state: California
-          postal-code: 95060
-    attributes:
-        corresponding: true
-    note: This is the first author footnote.
-  - name: Rebecca R. Miller
-    email: rebecca.miller@noaa.gov
-    affiliations:
-        - id: ucsc
-          name: University of California Santa Cruz
-          department: Fisheries Collaborative Program
-          address: Street Address
-          city: Santa Cruz
-          state: CA
-          postal-code: 95060
-  - name: Grant Waltz
-    email: cat@example.com
-    affiliations:
-        - id: calpoly
-          name: California Polytechnic State University
-          department: Center for Coastal Marine Sciences, Biological Sciences Department
-          address: Street Address
-          city: San Luis Obispo
-          state: CA
-          postal-code: 93407
-        - ref: calpoly
-  - name: Dean Wendt
-    email: cat@example.com
-    affiliations:
-        - ref: calpoly
-abstract: |
-  Indices of abundance developed from fishery-dependent data are typically 
-  subject to a number of assumptions about the area and habitat fished due to 
-  the aggreation of the catch at the level of a fishing trip. In California, 
-  two surveys occur onboard the recreational charter boats fleet and samplers record 
-  location-specific data on the catch and effort during individual fishing 
-  stops throughout a trip. This location specific information coupled with 
-  high-resolution maps of the bottom substrate allowed us to subset the the 
-  survey data to areas of rocky reef habitat.  The six species of rockfish species 
-  (**Sebastes** spp.) modeled in this paper as example all have high affinity to 
-  rocky habitat. We compared the indices of abundance developed from data 
-  filtering at the finest scale of a fishing drop using
-  the maps of rocky reef to filter the data to the same data using only county 
-  of landing  as an indicator of location. In addition, we aggregated the data 
-  across a trip to mimic data available from a dockside survey that occurs after 
-  a fishing trip to further explore the effect of datacourseness on data 
-  filtering an indices of abundance. For the data without any fishing location 
-  identified we applied the commonly used Stephens-MacCall method 
-  to identfy samples for the indices of abundance.  The identification of the
-  rocky reefs also allowed us to weight the index of abundance by the area of 
-  available habitat with predefined regions. We show that in general the 
-    
-keywords: 
-  - fisheries dependent data
-  - habitat association
-  - groundfish
-  - index of abundance
-date: last-modified
-bibliography: bibliography.bib
+title: "My Document"
 format:
-  elsevier-pdf:
-    keep-tex: true
-    journal:
-      name: Fisheries Research
-      formatting: preprint
-      model: 3p
-      cite-style: authoryear
+  docx:
+    toc: true
+    prefer-html: true
+    number-sections: true
+    highlight-style: github
     include-in-header:
         text: |
           \usepackage{placeins}
@@ -84,10 +14,6 @@ format:
           \onehalfspacing
           \linespread{2}
           \linenumbers
-fontsize: 12pt
-editor: 
-  markdown: 
-    wrap: 200
 ---
 
 ```{r opts, include = FALSE}
@@ -101,15 +27,11 @@ library(tidyr)
 
 # Introduction
 
-
 stock assessment
 
 onboard observer data
 
 indices and SM filtering
-
-
-
 
 Integrated fisheries stock assessment models utilize a variety of data sources to develop the most complete picture of the stock and current status.  Indices of abundance are one such data stream that provides a time series of an observed portion of the stock with the assumption that the trends are proportional to the true abundance [@Harley:2001:CUE]. In an ideal situation, indices developed from both fishery-independent surveys and fishery-dependent surveys would be available for stock assessments.  Here we focus on data available from a fishery-dependent survey of the recreational commercial passenger fishing vessel fleet (CPFV) in California, specifically a survey where a sample rides along on paid fishing trips (onboard observer survey). In addition, we are able to utilize high resolution bathymetric data to define appropriate habitat for the target rockfish (**Sebastes** spp.) species.It is not often the case where high-resolution habitat data and fishing location information are both available, and for many fishery-dependent surveys an analyst will have to determine which subset of the data to use based on available information. The onboard observer data provide an opportunity to explore what information we gain from explicit knowledge of fishing
 locations.
@@ -154,8 +76,9 @@ This paper explores methodological differences in data treatment to determine ch
 
 # Methods
 
-We developed indices of abundance for six species or species pairs of rockfish (*Sebastes spp.*) that are of management interest on the U.S. West Coast: black rockfish (*S. melanops*), the blue and
-deacon rockfish (*S. mystinus*/*S. diaconus*), brown rockfish (*S. auriculatus*), China rockfish (*S. nebulosus*), gopher rockfish (*S. carnatus*), and the vermilion and sunset rockfish (*S.miniatus*/*S. crocotulus*). The two cryptic species pairs (blue/deacon and sunset/vermilion rockfish) are genetically identifiable, but not separable within the onboard observer survey time series.
+We developed indicies of abundance for six species or species pairs of rockfish (*Sebastes spp.*) that are of management interest on the U.S. West Coast: black rockfish (*S. melanops*), the blue and
+deacon rockfish (*S. mystinus*/*S. diaconus*), brown rockfish (*S. auriculatus*), China rockfish (*S. nebulosus*), gopher rockfish (*S. carnatus*), and the vermilion and sunset rockfish (*S.
+miniatus*/*S. crocotulus*). The two cryptic species pairs (blue/deacon and sunset/vermilion rockfish) are genetically identifiable, but not separable within the onboard observer survey time series.
 These six species all have different latitudinal distributions, exploitation histories, and habitat and depth preferences[@Love:2002:RNP].
 
 ## Survey Data and Habitat-based Filtering
@@ -263,79 +186,50 @@ index, each index was scaled to its mean value.
 
 ## Survey Data and Habitat-based Filtering
 
-The data sets were filtered for errors within the relational database before analyses were conducted, and the data used here reflect changes from the QA/QC process that may not be reflected in the raw data available
-directly from the CDFW. Approximately 21% of all the CDFW observed CPFV trips from 2004-2016 occurred north of Point Conception and it is important to note that north of Bodega Bay, California, the majority
-of charter boats are smaller 6-pack vessel that may not have the capacity to carry a sampler onboard. The addition of the Cal Poly onboard observer survey to the CDFW survey increased the sample sizes of observed trips in San Luis Obispo county by an average of 155% from 2004-2016.
+The data sets were filtered for errors within the relational database before analyses and the data used here reflects changes from the QA/QC process that may not be reflected in data available
+directly from the CDFW. Approximately 21% of all the CDFW observed CPFV trips from 2004-2016 occurred north of Point Conception and it is important to note that north of Bodega Bay, California the majority
+of charter boats are smaller 6-pack vessel that may not have the capacity to carry a sampler onboard. The addition of the Cal Poly onboard observer survey to the CDFW survey increased the sample sizes of observed
+trips in San Luis Obispo county by an average of 155% from 2004-2016.
 
-From 2004-2016 the drift-level data contained a total of 19,425 fishing drifts, and after removing drifts with missing effort information (time fished and/or observed anglers), 19,180 drifts remained. The filter removing the upper and lower 1% of the time fished and number of observed anglers resulted in fishing drifts lasting between three and 96 minutes and three to 15 observed anglers, and reduced the data to 18,591 fishing drifts. The remaining data filter for depth resulted in a cutoff of 46.6 fathoms, and retained 18,405 drifts based on average drift depth. A filter on the 
-minimum depth was not included here because the recreational fleet was not limited to a minimum fishing depth and all of the fishing drift locations were verified during the QA/QC process. 
+From 2004-2016 the drift-level data contained a total of 19,425 fishing drifts, and after removing drifts with missing effort information (time fished and/or observed anglers), 19,180 drifts remained. The filter for
+fishing drifts and observed anglers resulted in fishing drifts lasting between three and 96 minutes and three to 15 observed anglers, and reduced the data to 18,591 fishing drifts. The remaining data
+filter for depth resulted in a cutoff of 46.6 fathoms, and retained 18,405 drifts based on average drift depth.
 
-We defined 108 areas of rocky habitat within California state waters from the California/Oregon border to Point Conception. The 2 m resolution of the substrate shows the patchiness and heterogeneity of the rocky substrate (@fig-map2). We adopted the same thresholds to define rocky habitat as determined by the United States Geological Survey (USGS). While the location-specific data from the fishing fleet is governed by
-confidentiality and cannot be displayed here, 85% of the fishing drifts were withing 5 m of rocky habitat.  The recreational fishing fleet's targetting of rockfish species was verified by the distributions of the distance from rocky habitat for each of the six species. The
-distance from rocky habitat cutoff (retaining 90% of drifts encountering each species) for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. The percentage of drifts and trips encountering the target species can be found in 
+We defined 108 areas of rocky habitat at the finest scale within California state waters from the California/Oregon border to Point Conception. The 2 m resolution of the substrate shows the patchiness and heterogeneity of the rocky substrate (@fig-map2). We did not modify the thresholds to define rocky habitat as determined by the United States Geological Survey (USGS). While the location-specific data from the fishing fleet is governed by
+confidentiality, a high proportion of the fishing drifts were associated with rocky habitat.  This was verified by the distributions of the distance from rocky habitat for each of the six species. The
+distance from rocky habitat cutoff for blue, China and gopher rockfish was six meters, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. which the percent of drifts encountering the target species can be found in 
 Table (@tbl-samplesize).
 
-Based on exploratory analyses and consideration of the available data, the areas of rocky habitat were grouped into six regions to ensure adequate sample sizes for developing indices of abundance  (@fig-map). While covering a small area (5% of the rocky habitat), the number of observed fishing drifts within state waters around the Farallon Islands off the coast of San Francisco was high enough to warrant keeping it as a separate area of rocky habitat. The region
-defined from the California/Oregon to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts (2,637) fished in this area. Each of the four remaining regions of rocky habitat defined from San Francisco to Point Conception contained an average of 12% of the available habitat. The CDFW estimated fishing effort by management district, which does not exactly align with our areas of grouped reef habitat. Only considering the fishing effort north of Point Conception, CDFW estimated an average of 9% of the CPFV from the California/Oregon border through Mendocino County, 38% from Sonoma through San Mateo County, and 53% from Santa Cruz to Point Conception.
+After exploratory analyses and considering the the
+availability of data, the areas rocky habitat were grouped into five regions to ensure adequate sample sizes for developing indices of abundance (@fig-map). While covering a small area (5% of the rocky habitat), the
+number of observed fishing drifts within state waters around the Farallon Islands off the coast of San Francisco was high enough to warrant keeping it as a separate area of rocky habitat. The region
+defined from the California/Oregon to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts fished in this area. Each of the four remaining regions of rocky habitat defined from San Francisco to Point Conception contained an average of 12% of the available habitat. The CDFW estimated fishing effort by district, which does not exactly align with our areas of grouped reef habitat. Only considering the fishing effort north of Point Conception, CDFW estimated an average of 9% of the CPFV from the California/Oregon border through Mendocino County, 38% from Sonoma through San Mateo County, and 53% from Santa Cruz to Point Conception.
 
-The differences in latitudinal distribution of the six species is apparent from the maps of percent of positive observations (@fig-percentpos). Black rockfish are distributed north of San Francisco, a more
+The differences in latitudinal distribution of the six species is apparent from the maps of percent of positive observations (@fig-percentpos). Black rockfish are distributed north fo San Francisco, a more
 northerly distribution reflected in the aggregation of data from Santa Cruz and south, whereas brown rockfish is distributed across coastal California. Percent positive catch generally showed higher catches south of San Francisco
-for vermilion, gopher, brown, and blue rockfish. The percentage of drifts retaining China rockfish was low coastwide. The average CPUE was highest for blue rockfish between San Francisco south to Big Sur (@fig-cpue). The average CPUE for black rockfish average CPUE was higher in the north, while gopher rockfish CPUE was generally consistent across the coast, albeit slightly higher south of Big Sur. China rockfish CPUE catch was typically low coastwide, with slightly higher catch rates in the Farallon Island reefs.
+for vermilion, gopher, brown, and blue rockfish. Black rockfish showed higher positive catches in the north, while the percent of drifts retaining China rockfish were all around low coastwide. The average CPUE was highest for blue rockfish between San Francisco south to Big Sur (@fig-cpue). Black rockfish average CPUE higher in the north, while gopher rockfish CPUE was generally consistent across the coast, albeit slightly higher south of Big Sur. China rockfish CPUE catch was typically low coastwide, with slightly higher catch rates in the Farallon Island reefs.
 
-The final aggregation of the reefs and total area within each region are found in @tbl-reefareas and reflect the distribution and patterns in the visual representation of commonness in the data.  The fraction of drifts retained for the indices of abundance was high for all six species (80% or greater), indicating that many of drifts within these data occurred near areas of rocky habitat. 
+The final aggregation of the reefs and total area within each region are found in Table \ref{tbl-reefareas} and reflect the distribution and patterns in the visual representation of commonness in the data.  The fraction of drifts retained for the indices of abundance was high for all six species (80% or greater), indicating that many of drifts within these data occurred near areas of rocky habitat. 
 
 ## Stephens-MacCall Data Filtering
 
-A total of 19,425 drifts that aggregated to 2,252 trips were used for the trip-level Stephens-MacCall filtering. In general, the co-occurring species used for the Stephens-MacCall method were similar for the drift-level and the trip-level data.  We present the coefficients and 95% confidence intervals for the species coefficients for black rockfish and brown rockfish at the trip-level in @fig-sm.  The plots for black rockfish and brown rockfish at the drift-level and all plots for the remaining four species are available in the supplemental materials.  The confidence intervals were larger for the trip-level data and the co-occurring species at the drift-level provide a refined look at species that have positive coefficients.  For black rockfish, a noticeable difference is the intercept.  At the trip-level the intercept (probability of catching the target species, given that none of the indicator species were caught) is uninformative and at the drift-level the intercept is strongly negative.  A higher fraction of the co-occurring species are uninformative information  about the target species in our study (the 95% confidence interval crosses zero) for the trip-level data than the drift-level.
+A total of 19,425 drifts that aggregated to 2,252 trips were used for the trip-level Stephens-MacCall filtering. In general, the co-occurring species used for the Stephens-MacCall method were similar for the drift-level and the trip-level data.  We present the coefficients and 95% confidence intervals for the species coefficients for black rockfish and brown rockfish in @fig-sm.  The plots for the remaining four species are available in the supplemental materials.  The confidence intervals were larger for the trip-level data and the co-occurring species at the drift-level provide a refined look at species that have positive coefficients.  For black rockfish, a noticeable difference is the intercept.  At the trip-level the intercept (probability the only black rockfish is encountered) is uninformative and at the drift-level the intercept is strongly negative.  A higher fraction of the co-occurring species provide uninformative information (the 95% confidence interval crosses zero) for the trip-level data than the drift-level.
 
-The percentage of samples retained for each data filtering method differed by species, but followed the general trend that the lowest percent of samples were retained from the Stephens-MacCall filtering at the drift level, ranging from 12% of samples retained for China rockfish and 54% for blue rockfish (@tbl-samplesize). A much higher percent of samples were retained both from the other two methods, with an average of 83% of drifts retained when habitat was included as a filter. Data filtering for the trip-level indices that retained all positive observations resulted in a high proportion of positive samples (0.70 - 0.86) for all species.
-
-To determine how consistent the Stephens-MacCall trip-level filter was with the 
-habitat-informed filter, we looked at the distance to reef from all of the drifts 
-contributing to trips that were used for the trip-level index. This provides a proxy for how well the Stephens-MacCall method infers habitat from species associations. Using the same distance from reef cutoff by species as calculated from the habitat-informed data, we calculated the percentage of drifts that were further from a reef than would be expected, but used in the data to develop the trip-level index. The percentage of drifts contributing to the trips outside reef habitat was 11% for black 
-rockfish, 13% for blue rockfish, 10% for brown rockfish, 12% for China rockfish, 12% for gopher rockfish, and 11% for vermilion rockfish. 
+The percent of the samples retained for each data method differed by species, but followed the general trend that the lowest percent of samples were retained from the Stephens-MacCall filtering at the drift level, ranging from 12% of samples retained for China rockfish and 54% for blue rockfish (@tbl-samplesize). A much higher percent of samples were retained both from the other two methods, with an average of 83% of drifts retained when habitat was included as a filter. Data filtering for the indices with data aggregated to the trip-level and using the status quo of retaining all positive observations resulted in a high proportion of positive samples (0.70 - 0.86) for all species.
 
 ## Indices of Abundance
 
-All but three of the 24 indices of relative abundance were modeled with a lognormal distribution. The trip-level indices for black, blue and gopher rockfish were modeled using a gamma distribution as selected by AIC (AIC values available in the supplementary material). All of the covariates (year, reef, and wave) were selected for both the 
-binomial and positive models for all species in the habitat-informed drift level index. 
-Gopher rockfish was the only case for the drift-level habitat-informed index where different models the covariates year and reef were select over year, reef and wave. However, the change in AIC was one so we chose to maintain the model with year, reef and wave.
+All but three of the 24 indices of relative abundance were modeled with a lognormal distribution.  The trip-level indices for black, blue and gopher rockfish were modeled using a gamma distribution. In general, the larger increases and decreases in the indices were similar among the four indices developed for each species (@fig-indices). The generalized approach used in this paper to create indices with comparable methods resulted in different results for each species. The area-weighted indices are reflective of the total available habitat and use all of the available high resolution habitat and fishing drift data. The effects of this can be seen in the plots where the area-weighted indices depart from the habitat-informed drift-level indices.  For example, the effect of the area-weighting is apparent for black rockfish in 2005, 2007, 2009 and 2013. For China rockfish the habitat-informed indices present a more variable index, whereas both the Stephens-MacCall filtered data sets are more similar.  For vermilion rockfish, while the trends are similar among all four indices, the effect of area-weighting dampens the increase modelled from the habitat-informed drift level data from 2004-2006.  
 
-(LMK and I can put these in a table in the doc) The full model that included the reef:year interaction was selected by AIC for all species except for China rockfish.  For China rockfish the positive binomial model selected the 
-interaction covariate, but the model without the interaction was select for the positive lognormal model by an difference in AIC of 22.  However, in order to look at the effects of 
-the area-weighting on the index, we included the year:reef interaction in the final model for China rockfish.
+China rockfish is the only species for which the trip-level index had the lowest average coefficient of variation, which increased with the the habitat-informed filtering (Table @tab-avgcv).  For all other species, the habitat-informed filtering resulted indices with a lower average CV than the trip-level filtering. This is most apparent for brown and gopher rockfish where the estimated error shrinks drastically for all of the drift level indices versus the trip-level index (@fig-indices).
 
-For both the drift-level and trip-level Stephens-MacCall filtered data, year, county and wave were selected for black rockfish, blue rockfish, gopher rockfish, and vermilion rockfish and the drift-level index for brown rockfish. The model incorporate in year and county was selected for the trip-level Stephens-MacCall filtered index for brown rockfish and both Stephens-MacCall filtered indices for China rockfish.
-
-In general, the larger increases and decreases in the indices were similar among the four indices developed for each species (@fig-indices). The generalized approach used in this paper to create indices with comparable methods resulted in different results for each species. The area-weighted indices are reflective of the total available habitat and use all of the available high resolution habitat and fishing drift data.  However, differences among the four indices were different for each species.  The average CVs between the drift-level area-weighted index and the drift-level habitat informed indices were similar, as expected, since they both used the same data with the only difference being the year:area interaction in the models (Table @tab-avgcv). However, the average CV between drift-level habitat-informed filtering and Stephens-MacCall filtering for the drift-level data differed by species. 
-
-Black rockfish
-
-
-Blue rockfish
-
-Brown rockfish
- The average CV for brown rockfish from the Stephens-MacCall filtering was large (0.679) compared to the habitat informed filtering (0.142). 
-
-China rockfish
-This is most apparent for brown and gopher rockfish where the estimated error shrinks drastically for all of the drift level indices versus the trip-level index (@fig-indices).
-
-
-Gopher rockfish
-China rockfish is the only species for which the trip-level index had the lowest average coefficient of variation, which increased with the the habitat-informed filtering . For all other species, the habitat-informed filtering resulted indices with a lower average CV than the trip-level filtering. 
-
-
-Vermilion rockfish
-
-. The effects of this can be seen in the plots where the area-weighted indices depart from the habitat-informed drift-level indices.  For example, the effect of the area-weighting is apparent for black rockfish in 2005, 2007, 2009 and 2013. For China rockfish the habitat-informed indices present a more variable index, whereas both the Stephens-MacCall filtered data sets are more similar.  For vermilion rockfish, while the trends are similar among all four indices, the effect of area-weighting dampens the increase modelled from the habitat-informed drift level data from 2004-2006.  
-
+The average CVs between the drift-level area-weighted index and the drift-level habitat informed indices were similar, as expected, since they both used the same data with the only difference being the year:area interaction in the models. However, the average CV between drift-level habitat-informed filtering and Stephens-MacCall filtering for the drift-level data differed by species.  The average CV for brown rockfish from the Stephens-MacCall filtering was large (0.679) compared to the habitat informed filtering (0.142). 
 
 
 \FloatBarrier
 
 # Discussion
 
-When you get to finishing the discussion section, it might be good to talk about why the habitat-area weighted index is conceptually the preferred approach. Specifically, CPUE is more a function of local density than abundance. Given that, using area weights to approximate abundance makes the most sense and should provide the most accurate estimates of uncertainty (not to be confused with small CVs).
 
 Data were limited to the California coast north of Point Conception ($34^\circ 27^\prime N$) because the composition of the fish communities in southern California differ, and the recreational fisheries are
 fundamentally different, with a higher percentage of trips targeting mixed species and pelagic and highly migratory species, as well as more limited access to rocky habitat nearshore. Point Conception
