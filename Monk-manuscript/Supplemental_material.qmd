@@ -7,7 +7,7 @@ editor: visual
 # Supplemental tables and figures
 
 | Species            | Drift level (habitat) | Drift level (no habitat) | Trip level |
-|--------------------|-----------------------|--------------------------|------------|
+|----------------|-------------------|---------------------|----------------|
 | Black rockfish     | 0.158                 | 0.557                    | 0.753      |
 | Blue rockfish      | 0.444                 | 0.699                    | 0.916      |
 | Brown rockfish     | 0.160                 | 0.605                    | 0.727      |
@@ -18,6 +18,11 @@ editor: visual
 : The average fraction of positive observations across years after applying each filtering method.{#tbl-percentpos}
 
 ::: {#fig-sm3 layout-ncol="2"}
+
+![Black rockfish drift-level](figures/black_drift_sm.png){#fig-black-driftsm width="2.7in"}
+
+![Brown rockfish drift-level](figures/brown_drift_sm.png){#fig-brown-driftsm width="2.7in"} 
+
 ![Gopher rockfish trip level](figures/gopher_trip_sm.png){#fig-gopher-trips width="2.75in"}
 
 ![Gopher rockfish drift level](figures/gopher_drift_sm.png){#fig-gopher-drifts width="2.75in"}
