@@ -223,9 +223,9 @@ California, two surveys occur onboard the recreational charter boats
 fleet and samplers record location-specific data on the catch and effort
 during individual fishing stops throughout a trip. This location
 specific information coupled with high-resolution maps of the bottom
-substrate allowed us to subset the the survey data to areas of rocky
-reef habitat. The six species of rockfish (\emph{Sebastes} spp.) modeled
-in this paper as example all have high affinity to rocky habitat. We
+substrate allowed us to subset the survey data to areas of rocky reef
+habitat. The six species of rockfish (\emph{Sebastes} spp.) modeled in
+this paper as example all have high affinity to rocky habitat. We
 compared the indices of abundance developed from data filtering at the
 finest scale of a fishing drop using the maps of rocky reef to filter
 the data to the same data using only county of landing as an indicator
@@ -249,7 +249,7 @@ the
 association \sep groundfish \sep 
     index of abundance
 \end{keyword}
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, boxrule=0pt, breakable, sharp corners]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, interior hidden, frame hidden, enhanced, breakable, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -273,8 +273,8 @@ reflect local densities than total abundance
 \citep{Haggarty:2006:CIR, Schnute:1995:IEP}, in which case standardized
 trends in CPUE (relative density) should be multiplied by habitat area,
 when available, to estimate trends in relative abundance. Additionally,
-fishery-dependent data are reliant on the behavior of the the fishermen
-and must be standardized to account for spatial and temporal changes in
+fishery-dependent data are reliant on the behavior of the fishermen and
+must be standardized to account for spatial and temporal changes in
 fishing activity \citep{Campbell:2004:CSA, Hilborn:1992:QFS}.
 
 An analyst must alsoconsider factors such as the targeting of multiple
@@ -438,148 +438,133 @@ potential errors at the drift-level by SWFSC staff.
 The CPFV data in this paper included only areas north of Point
 Conception (\(34^\circ 27^\prime N\)) due to gaps in habitat coverage
 further south. Point Conception is a significant biogeographic boundary
-(\citet{Valentine:1966:NAM}), the composition of the fish communities in
-southern California differ, and the recreational fisheries are
-fundamentally different, with a higher percentage of trips targeting
-mixed species and pelagic and highly migratory species, as well as more
-limited access to rocky habitat nearshore.
+(\citet{Valentine:1966:NAM}), and the composition of the fish
+communities in southern California differ, potentially reducing the
+effectiveness of methods that rely on species associations, such as the
+method of Stephens and MacCall. The recreational fisheries south of
+Point Conception are also fundamentally different, with a higher
+percentage of trips targeting mixed species and pelagic and highly
+migratory species, as well as less rocky habitat in nearshore areas
+compared to northern California.
 
-We removed drifts that either may not accurately define a successful
-fishing drift or represent data errors, the upper and lower 1\% of the
-recorded time fished and recorded observed anglers were removed. Given
-that the fishery was closed deeper than 40 fathoms for the entire time
-period from 2004-2016, we filtered the data to retain 99\% of all drifts
-based on average drift depth. We calculated average depth from the
-recorded minimum and maximum depths when available or the imputed
-minimum and maximum depth from the bathymetry layer described in the
-next paragraph. A depth cutoff slightly deeper than the maximum allowed
-is reasonable given the variability in habitat fished and all retained
-drifts occurred within California state waters (up to 3 nm from shore).
+We removed drifts in the upper and lower 1\% of the recorded time fished
+and recorded observed anglers, as these may not accurately define a
+successful fishing drift or may represent data errors. Similarly, we
+filtered the data to retain 99\% of all drifts based on average drift
+depth. We calculated average depth from the recorded minimum and maximum
+depths when available or the imputed minimum and maximum depth from the
+bathymetry layer described below.
 
-High resolution seafloor mapping data allowed us to overlay the starting
-latitude/longitude of each drift from the onboard observer surveys with
-predicted habitat (referred throughout the paper as the drift-level,
-habitat-informed data). We utilized the bathymetry and backscatter data
-collected by the California Seafloor Mapping Program (CSMP)
-\citep{Golden:2013:CSW, CSUMB:2014:CSM}. The CSMP mapped California
-state waters at a 2 m resolution north of of Point Conception to the
-California-Oregon border. A total of 137 CSMP substrate blocks that
-ranged in size from 16 \(km^2\) to more than 400 \(km^2\) were mosaicked
-together by authors. Rough and smooth substrates were identified by CSMP
-using two rugosity indices, surface:planar area, and vector ruggedness
-measure (VRM) of the bathymetric digital elevation model
-{[}\#fig-map2{]}. The CSMP set a varying VRM threshold for each of the
-substrate blocks, removed any artifacts, and is considered a
-conservative estimate of rough habitat.
+High resolution seafloor mapping data of the study area allowed us to
+overlay the starting latitude/longitude of each drift from the onboard
+observer surveys with predicted habitat (referred throughout the paper
+as the drift-level, habitat-informed data). Specifically, we used
+bathymetry and backscatter data collected by the California Seafloor
+Mapping Program (CSMP) \citep{Golden:2013:CSW, CSUMB:2014:CSM}. The CSMP
+mapped California state waters at a 2 m resolution from Point Conception
+to the California-Oregon border. We created a mosaic from 137 CSMP
+substrate blocks that ranged in size from 16 \(\mathrm{km}^2\) to more
+than 400 \(\mathrm{km}^2\). The CSMP identifies rough and smooth
+substrates, surface:planar area, and a vector ruggedness measure (VRM)
+of the bathymetric digital elevation model {[}\#fig-map2{]}. The CSMP
+set a varying VRM threshold for each of the substrate blocks, removed
+any artifacts, and their product is considered a conservative estimate
+of rough habitat.
 
-The 137 CSMP substrate raster blocks were then mosaicked together by
-authors, and converted the pixels designated as rough habitat (rocky
-habitat proxy) from a raster format to polygons, and calculated a 5 m
-buffer around the rough habitat polygon to allow for any small errors in
-positional accuracy using ArcMap 10.3 (ESRI citation). The area of each
-reef polygon was calculated, and those reefs greater than or equal to
-100 \(m^2\) were included. Contiguous polygons identified as rocky
-substrate were defined as a singular rocky reef, regardless of size. The
-area of rocky habitat for this paper was calculated to exclude portions
-of the reef that extended outside of California state waters (further
-than 3 nm from shore). The mapped area does not include very shallow
-areas close to shore, which extend approximately 200-500 m from the
-shoreline. Fishing by the CPFV fleet is limited in these waters due to
-shallow depths and kelp beds. We assigned fishing drifts to reefs based
-on the recorded start location of a drift, given that the end locations
-of drifts were not always recorded. The distance from the recorded drift
-start location to the nearest rocky habitat was calculated in meters.
+The digital mosaic of137 CSMP substrate raster blocks with pixels
+designated as rough habitat (our rocky habitat proxy) was then converted
+from a raster format to polygons. Next, a 5 m buffer region was created
+around the rough habitat polygon to allow for any small errors in
+positional accuracy. The area of each reef polygon was calculated, and
+those reefs greater than or equal to \(100 \mathrm{m^2}\) were included.
+All spatial analyses were conducted using ArcMap 10.3 (ESRI citation).
+
+Contiguous polygons defined in this way as rocky reef substrate were
+treated as a single rocky reef, regardless of size. Polygons with at
+least 200 m distance between them were treated as separate reefs. The
+area of rocky habitat for this paper includes reefs within California
+state waters (up to 3 nm from shore). The mapped area does not include
+very shallow areas close to shore, which extend approximately 200-500 m
+from the shoreline, due to gaps in habitat mapping data However, fishing
+by the CPFV fleet is also limited in these waters due to shallow depths
+and the presence of thick kelp beds. We assigned fishing drifts to reefs
+based on the recorded start location of a drift, given that the end
+locations were not always recorded.
+
 For each target species, we calculated the cumulative distribution of
-distance to rocky reef for drifts that retained the target species and
-used a distance cutoff of 90\% for each species. To illustrate the
-similarities and differences among the six species, we plotted the
-percent of fishing drifts within an aggregated region that where the
-species was present and retained. To show the differences in the general
-commonness or rarity of the species we calculated the average CPUE,
-before standardization, for each species and aggregated area. We also
-downloaded the effort estimates for the CPFV trips from RecFIN to
-compare the the the area of rocky habitat with the effort in each region
-as well as the distribution of observed trips.
+distance to rocky reef (in meters) for drifts that retained the target
+species and used a distance cutoff of 90\% for each species. To
+illustrate the similarities and differences among the six species, we
+mapped he percentage of fishing drifts within an aggregated region where
+each species was present and retained. To illustrate differences in
+relative densities among species we calculated the average CPUE, before
+standardization, for each species and aggregated area. We also examined
+the assumption that effort might be proportional to reef area by
+obtaining effort estimates for the CPFV trips (cite RecFIN) and
+comparing the area of rocky habitat to the effort in each region .
 
 \hypertarget{stephens-maccall-data-filtering}{%
 \subsection{Stephens-MacCall Data
 Filtering}\label{stephens-maccall-data-filtering}}
 
-To illustrate the impact of less spatially-explicit data on both data
-filtering and the resulting indices of abundance, we applied the
-Stephens-MacCall method to both the drift-level data and the trip-level
-data \citeyearpar{Stephens:2004:MAS}. We then compared results using two
-levels of aggregation (catch by drift and trip). For the
-Stephens-MacCall drift-level data we removed all location and depth
-identifiers for a drift and kept the county of landing as a spatial
-identifier. To construct a data set that mimicked trip-level data, we
-took the drift-level data, aggregated the observed retained catch within
-a trip, and kept the county of landing as a spatial identifier.
-
-Prior to any filtering a total of 19,425 drifts that aggregated to 2,270
-trips were available for the analyses. The number of initial samples
-used for the Stephens-MacCall filtering method were higher than the
-habitat-informed data described in the previous section because retained
-drifts with missing locations (latitude/longitude).
+To identify effective fishing effort without the use of precise fishing
+locations and habitat data, we began our analyses again from the
+unfiltered onboard observer data set. In this way, data filtered by the
+Stephens-MacCall method would solely rely on information about species
+composition of the catch, as would be the case in the absence of habitat
+information. Since the Stephens-MacCall method relies on species
+composition of the catch, one can imagine that aggregating catch across
+fishing locations could affect which records are retained for CPUE
+standardization. To illustrate the impact of having less
+spatially-explicit data on both data filtering and the resulting indices
+of abundance, we applied the Stephens-MacCall method using two levels of
+aggregation (catch by drift and by trip)
+\citeyearpar{Stephens:2004:MAS}. For the Stephens-MacCall drift-level
+data we removed all location and depth identifiers for a drift and kept
+the county of landing as a spatial identifier. To construct a data set
+that mimicked trip-level data, we took the drift-level data, aggregated
+the observed retained catch within a trip, and kept the county of
+landing as a spatial identifier.
 
 Before applying the Stephens-MacCall method, we identified a suite of
 potentially informative predictor species for each of the six target
-species. Species that never co-occurred with the target species and
-those present in fewer than 1\% of all drifts and 3\% of all trips were
-removed to reduce the number of species to those that were informative.
-A lower threshold of 1\% was selected for the drift-level data due to
-the change in magnitude of the number of samples when using drifts vs
-trips.
+species. Species present in fewer than 1\% of all drifts and 3\% of all
+trips were removed to reduce the number of species to those that were
+informative. A lower threshold of 1\% was selected for the drift-level
+data due to the change in magnitude of the number of samples when using
+drifts versus trips.
 
-The remaining species all co-occurred with the target species in at
-least one trip and were retained for the Stephens-MacCall logistic
-regression. Coefficients from the Stephens-MacCall analysis (a binomial
-generalized linear model) were positive for species that are more likely
-to co-occur with the target species, and negative for species that were
-less likely to be caught with target species. The intercept represented
-the probability of observing only the target species in a sample. We
-also calculated the 95\% confidence interval for each coefficient.
-
-Stephens and MacCall proposed filtering (excluding) samples from index
-standardization based on a criterion of balancing the number of false
-positives and false negatives from the predicted probability of
-encounter. False positives (FP) are trips that are predicted to
-encounter the target species based on the species composition of the
-catch, but did not. False negatives (FN) are trips that were not
-predicted to encounter the target species, given the catch composition,
-but caught at least one target species. Stephens and MacCall recommended
-a threshold where the false negatives and false positives are equally
-balanced, however, this threshold does not have any biological relevance
-and for this particular data set where trained samplers identify all
-fish. We assumed that if the target species was encountered, the vessel
-fished in appropriate habitat.
-
-Of interest for the index of abundance was the elimination of trips that
-had a low probability of catching the target species given the other
-species caught on the trip. Therefore, we retained all of the trips that
-caught the target species and those trips that did not catch the target
-species, but had a probability higher than the threshold balancing the
-false negatives and false positives. This practice has commonly been
-used in recent stock assessments of rockfish on the West Coast.
+The goal when implementing the Stephens-MacCall method is to eliminate
+trips with a low probability of catching the target species given the
+other species caught on the trip. Stephens and MacCall proposed
+excluding samples from index standardization based on a criterion of
+balancing the number of false positives and false negatives from the
+predicted probability of encounter. The false positives are samples that
+are predicted to encounter the target species based on the species
+composition of the catch, but did not. The false negatives are samples
+that were not predicted to encounter the target species, given the catch
+composition, but caught at least one target species. Balancing the false
+negatives and false positives remains common practice and is the method
+we applied in this study.
 
 \hypertarget{indices-of-abundance}{%
 \subsection{Indices of Abundance}\label{indices-of-abundance}}
 
-Four standardized indices of abundance were generated for each of the
-six species, one each for the data filtering method (drift-level
-habitat-informed, drift-level Stephens-MacCall, trip-level
-Stephens-MacCall) and an area-weighted index from the habitat-informed
+We generated four standardized indices of abundance for each of the six
+species; one index for each of the three data filtering methods
+(drift-level habitat-informed, drift-level Stephens-MacCall, trip-level
+Stephens-MacCall), plus an area-weighted index from the habitat-informed
 drift-level data. All indices were modeled using Bayesian generalized
 linear models (GLMs) and the delta GLM method
 \citep{Lo:1992:IRA, Stefansson:1996:AGS}. The delta GLM method is
 commonly used to standardize catch-per-unit effort for stock assessments
-{[}citations{]}. The delta method models the the data with two separate
+{[}citations{]}. The delta method models the data with two separate
 GLMs; one for the probability of encountering the species of interest
-from a binomial likelihood and a logit link function and the second
-models the positive encounters with either gamma or lognormal error
-structure. The error structure of the positive model was selected via
-the Akaike Information Criterion (AIC) from models with the full suite
-of considered explanatory variables.
+using a binomial likelihood and a logit link function, and the second
+GLM for the positive encounters assuming either a gamma or lognormal
+error structure. The error structure of the positive model was selected
+via the Akaike Information Criterion (AIC) from models with the full
+suite of considered explanatory variables.
 
 The response variable for the positive models was angler-retained catch
 per unit effort. For the indices modeled at the level of a drift, effort
@@ -595,7 +580,7 @@ with many rockfish species and populations separated by depth
 variable in model selection, even if it was not significant, because the
 goal of the index of abundance was to extract the year effect. Other
 explanatory variables considered for the habitat-informed index were
-aggregated regions rocky reefs (categorical variable\emph{)} and wave (a
+aggregated regions of rocky reef (categorical variable) and wave (a
 3-month aggregated period of time, e.g., January-March). The
 area-weighted index also included a year/rocky reef interaction term,
 even if it was not statistically significant, to allow us to weight the
@@ -603,16 +588,16 @@ index by the area of rocky reef. The regions of rocky reef were
 aggregated differently for each species to ensure adequate sample sizes
 to explore the year/rocky reef interaction.
 
-Explanatory variables for the two indices using the data filtered using
-Stephens-MacCall method (blind to habitat information at the drift- and
-trip-level) included only year, wave and aggregated counties of landing.
-California has 14 coastal counties north of Point Conception, 11 of
-which were represented in these data. We aggregated the northern
+Explanatory variables for the two indices based on data filtered using
+the Stephens-MacCall method (blind to habitat information at the drift-
+and trip-level) included only year, wave and aggregated counties of
+landing. California has 14 coastal counties north of Point Conception,
+11 of which were represented in these data. We aggregated the northern
 counties of Del Norte, Humboldt and Mendocino into one region, Sonoma
 and Marin counties just north of San Francisco into another region and
 Alameda and San Francisco counties into a third region. The remaining
-counties of San Mateo, Santa Cruz, Monterey and San Luis Obispo remained
-unaggregated.
+counties of San Mateo, Santa Cruz, Monterey and San Luis Obispo were not
+aggregated.
 
 Model selection for the binomial and positive observation models was
 based on AIC using the lme4 package in R, and unless very different
@@ -621,18 +606,18 @@ two Bayesian models. The Bayesian models were run with 5,000 iterations
 and weakly informative priors. Posterior predictive model checks were
 examined for both the binomial and positive observation models,
 including the predicted percent positive compared to the maximum
-likelihood estimates. We constructed the final year index by multiplying
-the back-transformed posterior draws from the binomial model with the
-exponentiation of positive model draws, and taking the mean and standard
-deviation for each year.
+likelihood estimates. We constructed the unweighted annual index by
+multiplying the back-transformed posterior draws from the year
+coefficients from the binomial model by the exponentiated positive model
+draws from the year coefficients, and taking the mean and standard
+deviation of the distribution of the product for each year.
 
-The area-weighted habitat-informed index was developed by extracting the
-posterior draws of from each year and area combination of the binomial
-and positive posterior predictions, and then summing across the product
-of the back-transformed posteriors weighted by the fraction of total
-area within each reef. To compare the indices across the three data
-filtering methods and the area-weighted index, each index was scaled to
-its mean value.
+The area-weighted, habitat-informed index was developed by extracting
+the posterior draws of the unweighted index, and then summing across the
+product of the back-transformed posteriors weighted by the fraction of
+total area within each reef. To compare the indices across the three
+data filtering methods and the area-weighted index, each index was
+scaled to its mean value.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -652,6 +637,12 @@ the capacity to carry a sampler onboard. The addition of the Cal Poly
 onboard observer survey to the CDFW survey increased the sample sizes of
 observed trips in San Luis Obispo county by an average of 155\% from
 2004-2016.
+
+Prior to any filtering a total of 19,425 drifts that aggregated to 2,270
+trips were available for the analyses. The number of initial samples
+used for the Stephens-MacCall filtering method were higher than the
+habitat-informed data described in the previous section because retained
+drifts with missing locations (latitude/longitude).
 
 From 2004-2016 the drift-level data contained a total of 19,425 fishing
 drifts, and after removing drifts with missing effort information (time
@@ -746,6 +737,14 @@ drift-level the intercept is strongly negative. A higher fraction of the
 co-occurring species are uninformative information about the target
 species in our study (the 95\% confidence interval crosses zero) for the
 trip-level data than the drift-level.
+
+The remaining species all co-occurred with the target species in at
+least one trip and were retained for the Stephens-MacCall logistic
+regression. Coefficients from the Stephens-MacCall analysis (a binomial
+generalized linear model) were positive for species that are more likely
+to co-occur with the target species, and negative for species that were
+less likely to be caught with target species. The intercept represented
+the probability of observing only the target species in a sample.
 
 The percentage of samples retained for each data filtering method
 differed by species, but followed the general trend that the lowest
@@ -851,7 +850,7 @@ informed filtering (0.142).
 
 China rockfish is the only species for which the trip-level
 Stephens-MaCall filtered index had the lowest average coefficient of
-variation that increased with the the habitat-informed filtering
+variation that increased with the habitat-informed filtering
 (Table~\ref{tbl-avgcv}). Although the trends among the four indices was
 similar, this is the only species for which the highest error was
 consistently estimated for both habitat-informed drift-level indices
@@ -865,7 +864,7 @@ and the trip-level Stephens-MacCall index had the highest average CV
 (0.626) compared to the average CVs of less than two from all of the
 other drift-level indices. China rockfish is the only species for which
 the trip-level index had the lowest average coefficient of variation,
-which increased with the the habitat-informed filtering . For all other
+which increased with the habitat-informed filtering . For all other
 species, the habitat-informed filtering resulted indices with a lower
 average CV than the trip-level filtering.
 
@@ -1181,13 +1180,13 @@ parentheses. }\tabularnewline
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-4}
 Species & Habitat-informed & Stephens-MacCall filtered & Stephens-MacCall filtered\\
 \midrule
-Black Rockfish & 16306 (16\%) & 4891 (56\%) & 919 (75\%)\\
-Blue Rockfish & 15283 (44\%) & 10445 (70\%) & 1962 (92\%)\\
-Brown Rockfish & 15736 (16\%) & 4717 (61\%) & 1104 (73\%)\\
-China Rockfish & 14865 (8\%) & 2356 (55\%) & 1160 (70\%)\\
-Gopher Rockfish & 14476 (31\%) & 7788 (65\%) & 1700 (84\%)\\
+Black Rockfish & 16306 (16\%) & 3038 (30\%) & 706 (68\%)\\
+Blue Rockfish & 15283 (44\%) & 7490 (60\%) & 1813 (91\%)\\
+Brown Rockfish & 15736 (16\%) & 2740 (31\%) & 806 (62\%)\\
+China Rockfish & 14865 (8\%) & 1331 (22\%) & 798 (57\%)\\
+Gopher Rockfish & 14476 (31\%) & 5088 (45\%) & 1449 (81\%)\\
 \addlinespace
-Vermilion Rockfish & 14713 (30\%) & 7415 (62\%) & 1849 (87\%)\\
+Vermilion Rockfish & 14713 (30\%) & 5040 (45\%) & 1627 (85\%)\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -1207,13 +1206,13 @@ where SM-filtered is the Stephens-MacCall filtering. }\tabularnewline
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-5}
 Species & Area-weighted & Habitat-informed & Stephens-MacCall filtered & Stephens-MacCall filtered\\
 \midrule
-Black rockfish & 0.443 & 0.449 & 0.364 & 0.671\\
-Blue rockfish & 0.134 & 0.142 & 0.099 & 0.257\\
-Brown rockfish & 0.242 & 0.240 & 0.679 & 0.858\\
-China rockfish & 0.320 & 0.301 & 0.233 & 0.151\\
-Gopher rockfish & 0.179 & 0.183 & 0.138 & 0.626\\
+Black rockfish & 0.4426091 & 0.4493133 & 0.7641099 & 0.8495448\\
+Blue rockfish & 0.1343866 & 0.1415416 & 0.1610735 & 0.3324914\\
+Brown rockfish & 0.2415686 & 0.2399299 & 0.8652880 & 0.9161881\\
+China rockfish & 0.3196653 & 0.3011640 & 0.4481187 & 0.2087114\\
+Gopher rockfish & 0.1785421 & 0.1831132 & 0.2562205 & 0.2535190\\
 \addlinespace
-Vermilion rockfish & 0.152 & 0.178 & 0.133 & 0.238\\
+Vermilion rockfish & 0.1519120 & 0.1781884 & 0.4224451 & 0.5087889\\
 \bottomrule
 \end{tabular}}
 \end{table}
