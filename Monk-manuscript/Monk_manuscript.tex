@@ -223,11 +223,11 @@ Obispo}, country={}, postcode={93407}}
 \begin{abstract}
 Indices of abundance developed from fishery-dependent data are typically
 subject to a number of assumptions about the area and habitat fished due
-to the aggreation of the catch at the level of a fishing trip.
+to the aggregation of the catch at the level of a fishing trip.
 
 In California, two surveys occur onboard the recreational charter boats
 fleet and samplers record location-specific data on the catch and effort
-during individual fishing f stops throughout a trip. This location
+during individual fishing stops throughout a trip. This location
 specific information coupled with high-resolution maps of the bottom
 substrate allowed us to subset the survey data to areas of rocky reef
 habitat. The six species of rockfish (\emph{Sebastes} spp.) modeled in
@@ -251,61 +251,30 @@ used to portion catches across management areas.
 association \sep groundfish \sep 
     index of abundance
 \end{keyword}
-\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced]}{\end{tcolorbox}}\fi
+\end{frontmatter}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced, boxrule=0pt, frame hidden, sharp corners, breakable]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Information on the known area of available habitat provides unique
-opportunities for incorporation into the data processing of stock
-assessments and management decisions. We present methods and examples
-for incorporating the area of available habitat for reef-associated
-species within indices of abundance for stock assessments and allocation
-of yield for management decisions.
+John Shepherd is quoted as saying ``counting fish is like counting
+trees, except you can't see them and they keep moving'', which is gives
+gravity to the number of challenges and assumptions facing fisheries
+scientists and managers. Analyzing fisheries data requires making
+assumptions that include defining the appropriate spatial scale of a
+stock, consideration of ontogenetic or migration patterns and behaviors
+that affect catchability. Because it is not possible to take a census of
+marine fish populations, we rely on sampling to provide insight on
+population dynamics. We make assumptions about the relationship of the
+sample data to the population and also the distribution of the stock for
+management. When a portion of the population is sampled, the data can
+provide information on the relative abundance.
 
-It is not often the case where high-resolution habitat data and fishing
-location information are both available, and for many fishery-dependent
-surveys an analyst will have to determine which subset of the data to
-use based on available information. The availability of a 20+ year time
-series of onboard observer data from California CPFVs, coupled with
-high-resolution habitat maps of rocky reef habitat, provides us with an
-opportunity to evaluate the effectiveness of the Stephens-MacCall method
-and compare standardized indices of abundance derived from data sets
-that differ in terms of spatial and temporal resolution.
-
-One of the major recreational targets in California are groundfish
-species, a group of which includes dozens of rockfish species
-(\emph{Sebastes spp.}). Rockfish species' affinity to rocky habitat
-differs by species and ranges from the territorial gopher rockfish
-(\emph{S. carnatus}) that resides within rocky crevices and maintains
-small home ranges of less than 20\(m^2\) \citep{Larson:1980:TBB}, to a
-the schooling, mid-water black rockfish (\emph{S. melanops}) that haa an
-average home range of 0.25\(km^2\), and exhibits diurnal movement
-offshore \citep{Green:2011:MSA}. Tagged black rockfish have also been
-recovered hundreds of miles from the initial capture location
-(California Collaborative Fisheries Research Program, unpublished data).
-The association of \emph{Sebastes} with rocky habitat makes them ideal
-candidates for exploring the ability to predict effective effort from
-fishery-dependent data based on known habitat. In addition, the area of
-known rocky reef habitat data creates an opportunity to weight the index
-of abundance by the calculated area of rocky reef habitat along the
-California coast.
-
-Indices of abundance are commonly used to provide a stock assessment
-model with information about the stock's trend over time
-\citep{Harley:2001:CUE, Hilborn:1992:QFS}. For many fish stocks, only
-fishery-dependent survey data are available. Fishery-dependent survey
-data are more readily available than fishery-independent scientific
-survey data due to factors including the lower cost to collect data,
-more frequent sampling opportunities, and ability to collect data at
-large spatial scales where the fisheries operate.
-
-Modelling fishery-dependent data requires making a number of assumptions
-due to the nature of the data being reliant on the behavior of the
-fishing fleet. A common metric for modelling fishery-dependent data is
-catch per unit effort (CPUE), which is often used under the assumption
-that the estimated trends are proportional to the true abundance of the
-stock \citep{Maunder:2004:SCE}. However, catch rates are more likely to
+Modelling fisheries data requires making a number of assumptions due to
+the nature of the data being reliant on the behavior of the fishing
+fleet. A common metric for modelling fishery-dependent data is catch per
+unit effort (CPUE), which is often used under the assumption that the
+estimated trends are proportional to the true abundance of the stock
+\citep{Maunder:2004:SCE}. However, catch rates are more likely to
 reflect local densities than total abundance
 \citep{Haggarty:2006:CIR, Schnute:1995:IEP}, in which case standardized
 trends in CPUE (relative density) should be multiplied by habitat area,
@@ -313,6 +282,24 @@ when available, to estimate trends in relative abundance. Additionally,
 fishery-dependent data are reliant on the behavior of the fishermen and
 must be standardized to account for spatial and temporal changes in
 fishing activity \citep{Campbell:2004:CSA, Hilborn:1992:QFS}.
+
+Indices of abundance are commonly used to provide a stock assessment
+model with information about the population trend through time
+\citep{Harley:2001:CUE, Hilborn:1992:QFS} and the most commonly
+standardized metric is catch per unit effort, e.g., number of fish
+encountered per hour. CPUE is often assumed to be proportional to
+abundance, and scaled by a catchability rate. However, itt it has been
+well-documented that this relationship does not always hold true
+\citep{Beverton:1957:DEF, Clark:1990:xxx, Harley:2001:xxx} and CPUE may
+not represent the population density. The assumption of proportionality
+also assumes that the stock is uniformly distributed across the area
+sampled. Catch per unit effort can be estimated as proportional to
+density if information on the location and amount of habitat is
+available. This is possible for species that have a strong association
+to habitat and the catch locations are known. In addition concept of
+proportionality and uniform distribution of a species also applies to
+fisheries management when the available yield is divided among user
+groups or spatially.
 
 An analyst must also consider factors such as the targeting of multiple
 species when developing an index of abundance. The recreational for-hire
@@ -323,10 +310,19 @@ limit regulations, angler preference and experience, duration of the
 trip, and the captain's experience level. All of these factors affect
 the catch during a trip. For example, a recreational trip in California,
 USA may set out to target a particular rockfish (\emph{Sebastes spp.})
-species associated with hard substrate, but if fishing is unsuccessful
+species associated with rocky substrate, but if fishing is unsuccessful
 or if bag limits are reached, the captain may spend a portion of the
 trip targeting sanddab species (\emph{Citharichthys spp}) that inhabit
 areas of soft substrate.
+
+Here, we present methods and examples for incorporating the area of
+available habitat for reef-associated species within indices of
+abundance for stock assessments and allocation of yield for management
+decisions.
+
+Using a fishery-dependent survey of the for-hire commercial passenger
+fishing vessel (CPFV) fleet, we are able to overlay fishing locations
+with habitat data to filter the fishing locations that were in
 
 Therefore, an analyst must determine which samples within a survey
 represent the effective effort directed towards the target species. The
@@ -341,6 +337,92 @@ the trip. For these data, both temporal resolution (trip vs.~drift) and
 spatial resolution (location of landing vs.~location of fishing) are
 improved.
 
+or many fishery-dependent surveys an analyst will have to determine
+which subset of the data to use based on available information. The
+availability of a 20+ year time series of onboard observer data from
+California CPFVs, coupled with high-resolution habitat maps of rocky
+reef habitat, provides us with an opportunity to evaluate the
+effectiveness of the
+
+We present methods to define areas of rocky habitat within California's
+state waters. We then describe how the known habitat allows us to filter
+fishery-dependent data with known fishing locations and comparisons of
+indices of abundance with and without accounting the area of known
+habitat. Using a fishery-independent survey that monitors California's
+network of marine protected areas we demonstrate the ability to account
+for closed areas in an index of abundance. Lastly, we present and
+compare four methods for allocating yield with and without consideration
+of available habitat.
+
+One of the major recreational fishery targets in California is a group
+of groundfish that includes dozens of rockfish species (\emph{Sebastes
+spp.}). The \emph{Sebastes} genus includes species representing a suite
+of life history strategies, and as their name implies, many are
+bottom-dwelling species that have a high affinity to associate with
+rocky reef habitat \citep{Love:1995:xxx}. Vermilion rockfish (\emph{S
+miniatus}) is a popular recreational , commonly encountered in the
+survey data, and the species we use to illustrate the methods for
+incoporating habitat in indices of abundance and the allocation of
+yield. Adult vermilion rockfish reside high relief rocky outcrops and
+are most commonly found in depths from 50 to 150 m
+\citep{Love:2002:xxx}. Vermilion rockfish and sunset rockfish (\emph{S.
+crocotulus}) are a cryptic species pair that are visually similar and
+reported only as vermilion rockfish in the fisheries data. The pair was
+assessed as a single stock in 2021. Sunset rockfish inhabit deeper
+waters than vermilion rockfish and are not as common north of Point
+Conception, the focal area within our study \citep{Hyde:2009:xxx}. For
+simplicity, we refer to the cryptic species pair in this paper as
+vermilion rockfish.
+
+Vermilion rockfish is a federally managed species within the minor
+nearshore rockfish complex in the Pacific Fishery Management Council's
+(PSMFC) Groundfish Fishery Management Plan. In addition to being managed
+within a complex, the minor nearshore rockfish complex is managed north
+and south of (\(40^\circ 10^\prime N\)), which is near Cape Mendocino,
+California. Cape Mendocino represents a biogeographic boundary, but also
+means that a number of California's fisheries are managed as part of two
+separate complexes. Through the PSMFC process, California manages the
+nearshore rockfish complex through series of spatial management areas.
+Management of California's recreational fisheries is complex and has
+undergone spatial and temporal changes since 1999 as well as depth
+restrictions that vary across the management area. For much of the
+2000s, the recreational fishery was restricted to fishing shoreward of
+20-40 fm. Subsequent management and recovery of overfished species
+allowed a relaxation of depth restrictions beginning in 2017 that
+shifted fishing effort relative to the 2004-2016 period
+\citep{Monk:2021:SVR}. California implemented a network of Marine
+Protected Areas (MPAs) across the coast in 2007, reducing access to the
+recreational fishery.
+
+found in the waters off California are typically modelled recognizing
+the biogeographic and CDFW management breaks at Point Conception and
+Cape Mendocino (reference map). Fisheries data are collected
+independently by each state (Washington, Oregon, and California) on the
+fisheries in the waters off their respective coasts. Stock assessment
+boundaries may be drawn at political boundaries and not at the
+management boundaries. This creates a question on how to divide the OFL
+between areas.
+
+Stock assessment models estimate an Overfishing Limit (OFL) for a single
+stock or a sub-area of a stock. On the West Coast of the U.S., the
+Pacific Fishery Management Councils currently manages the nearshore
+rockfish complex based on their depth distributions and at a
+biogeographic break near Cape Mendocino, California ( 40 10), which
+means the yield produced in California is divided into two separate
+management areas. We utilized the onboard survey data to create develop
+methods that account for the available habitat within fine scale areas.
+We utilized the fishing drift level data with known location from the
+onboard observer surveys and subset data based on the proximity to rocky
+reef habitat. For this data set we also evaluated the effect of
+weighting by reef habitat area. We applied these methods across six
+nearshore rockfish species with different life histories, habitat
+preferences and commonness in the data.
+
+available habitat and spatial coverage of the sampling universe often
+cited as Gulland:1969:XXX
+
+same probability of capture \citep{Seber:1982:xxx}
+
 Here we focus on data available from fishery-dependent onboard observer
 surveys of California's recreational partyboat fleet, also referred to
 as commercial passenger fishing vessels (CPFV). The onboard observer
@@ -353,15 +435,6 @@ Obispo (Cal Poly) surveys vessels with home ports in San Luis Obispo
 County. In addition, we are able to utilize high resolution bathymetric
 data to define appropriate habitat for a target species.
 
-We utilized the onboard survey data to create develop methods that
-account for the available habitat within fine scale areas. We utilized
-the fishing drift level data with known location from the onboard
-observer surveys and subset data based on the proximity to rocky reef
-habitat. For this data set we also evaluated the effect of weighting by
-reef habitat area. We applied these methods across six nearshore
-rockfish species with different life histories, habitat preferences and
-commonness in the data.
-
 Stock assessment models estimate an Overfishing Limit (OFL) for a single
 stock or a sub-area of a stock. On the West Coast of the U.S., the
 Pacific Fishery Management Councils currently manages the nearshore
@@ -370,36 +443,27 @@ biogeographic break near Cape Mendocino, California ( 40 10), which
 means the yield produced in California is divided into two separate
 management areas.
 
-found in the waters off California are typically modelled recognizing
-the biogeographic and CDFW management breaks at Point Conception and
-Cape Mendocino (reference map). Fisheries data are collected
-independently by each state (Washignton, Oregon, and California) on the
-fisheries in the waters off their respective coasts. Stock assessment
-boundaries may be drawn at political boundaries and not at the
-management boundaries. This creates a question on how to divide the OFL
-between areas.
-
 We applied weights to sub-areas of habitat across California for and
 also calculated the amount of available habitat within and outside
 California's network of Marine Protected Areas to account for the area
 within the area open and closed to fishing from a fishery-independent
-survey. The amount of availale habitat by management areas that do not
+survey. The amount of available habitat by management areas that do not
 align with the spatial extent of a stock structure allowed us to
 decompose the Annual Catch Limit (ACL) by management area.
 
 We utilized two data sets, one fishery-independent an one
 fishery-dependent that represent two methods of incorporating known
 habitat data in the development of indices of abundance. The
-fihsery-dependent data source is a combination of a CDFW and Cal Poly
+fishery-dependent data source is a combination of a CDFW and Cal Poly
 surveys of the recreational CPFV fleet that fishes with hook-and-line
 and targets groundfish species. The fishery-independent data source is
 an MPA monitoring survey along the central coast of California, the
-California Collaborative Fisheries Reserach Program (CCFRP). The CCFRP
+California Collaborative Fisheries Research Program (CCFRP). The CCFRP
 expanded to cover additional monitoring areas in 2017, but we limit the
-the data in this paper to the core sampling area. The incorportaion of
+the data in this paper to the core sampling area. The incorporation of
 habitat data is made possible by the California Seafloor Mapping Program
-(CSMP) that collected bathymetry and interpretted the data for nearly
-all of California's state waters.
+(CSMP) that collected bathymetry and interpreted the data for nearly all
+of California's state waters.
 
 A number of methods are currently used to allocate an OFL with the stock
 boundary does not align with a management boundary. Allocation of the
@@ -410,83 +474,23 @@ other information was available (Dick and MacCall, 2010; Dick et
 al.~2011). Allocation of the OFL proportional to catch works if the
 catch is proportional to biomass, which is unlikely in many cases.
 Allocation based on catch may also allocate catch to areas where harvest
-excedes the OFL. When fishery-independent survey data are avaialble
+exceeds the OFL. When fishery-independent survey data are available
 allocation can be based on estimates of survey biomass. This requires
 that the survey covers the entire area of the stock assessment, which is
 not often the case.
 
-Copper rockfish (\emph{Sebastes caurinus}) is a nearshore species
-ranging from northern Baja Mexico to the Gulf of Alaska. They inhabit
-sub-tidal depths as junveile as juveniles and are commonly encountered
-in depths up to 180 m as adults\citep{Love:2002:RNP, Love:1996:XXX}.
-Copper rockfish prefer low-relief rocky habitat and have high site
-fidelity. These characteristics make copper rockfish an ideal species to
-illustrate the benefits of incorporating known habitat. Additional
-examples and more details on each of the datasets we utlize are
-available in a number of groundfish stock assessments (cite
-assessments).
-
-\textbf{keep or remove? We also examined the assumption that effort
-might be proportional to reef area by obtaining effort estimates for the
-CPFV trips (cite RecFIN) and comparing the area of rocky reef habitat to
-the effort in each region.}
-
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
-
-We present methods to define areas of rocky habitat within California's
-state waters. We then describe how the known habitat allows us to filter
-fishery-dependent data with known fishing locations and comparisons of
-indices of abundance with and without accounting the area of known
-habitat. Using a fishery-independent survey that monitors California's
-network of marine protected areas we demonstrate the ability to account
-for closed areas in an index of abundance. Lastly, we present and
-compare four methods for allocating yield with and without consideration
-of available habitat.
 
 \hypertarget{mapping-and-identification-of-rocky-reefs}{%
 \subsection{Mapping and Identification of Rocky
 Reefs}\label{mapping-and-identification-of-rocky-reefs}}
 
-We predicted rocky reef habitat using high resolution seafloor mapping
-of California state waters (out ot 3nm) north of Point Conception
-California (34.45). The California Seafloor Mapping Project (CSMP)
-collected bathymetry and backscatter data collected from 20xx to 20xx
-\citep{Golden:2013:CSW, CSUMB:2014:CSM}. The CSMP mapped the mainland
-California state waters at a 2 m resolution from the California-Mexico
-border to the California-Oregon border. The mapped area does not include
-very shallow areas close to shore (the ``white zone''), which extend
-approximately 200-500 m from the shoreline. Maps of the white zone are
-not yet available and we assume proportionality in the area of habitat
-in the white zone and the mapped area.
-
-We created a mosaic from 137 CSMP substrate blocks that ranged in size
-from 16 \(\mathrm{km}^2\) to more than 400 \(\mathrm{km}^2\). The CSMP
-identified rough and smooth substrates, surface:planar area, and a
-vector ruggedness measure (VRM) of the bathymetric digital elevation
-model {[}\#fig-map2{]}. The CSMP set a varying VRM threshold for each of
-the substrate blocks, removed any artifacts, and the product is
-considered a conservative estimate of rough habitat.
-
-We converted the digital mosaic of 137 CSMP substrate raster blocks with
-pixels designated as rough habitat (our rocky reef habitat proxy) from a
-raster format to polygons. We applied a 5 m buffer region around the
-rough habitat polygon to allow for any small errors in positional
-accuracy. Contiguous polygons of rocky reef substrate were treated as a
-single rocky reef, regardless of size. Polygons separated by 200 m were
-treated as separate reefs; the 200 m cutoff is based upon expert
-knowledge and a consensus that it represented a distance that most
-rockfish species would traverse over sandy habitat. We calculated the
-area of each reef defined and retained those greater than or equal to
-\(100 \mathrm{m^2}\). We conducted all spatial analyses and overlay of
-the data sources on the rocky reef habitat in ArcMap 10.3 (ESRI
-citation).
-
-The data in this paper included only areas north of Point Conception
-(\(34^\circ 27^\prime N\)) due to gaps in the bathymetric layers to
-interpret habitat coverage further south. Point Conception is a
-significant biogeographic boundary (\citet{Valentine:1966:NAM}), and the
-composition of the fish communities in southern California differ,
+The data used for this study included only areas north of Point
+Conception (\(34^\circ 27^\prime N\)) due to gaps in the bathymetric
+layers to interpret habitat coverage further south. Point Conception is
+a significant biogeographic boundary (\citet{Valentine:1966:NAM}), and
+the composition of the fish communities in southern California differ,
 potentially reducing the effectiveness of methods that rely on species
 associations, such as the method of Stephens and MacCall
 (\citet{Stephens:2004:MAS}). The recreational fisheries south of Point
@@ -496,9 +500,56 @@ species. The availability of accessible rocky habitat in southern
 California is also less in the southern California nearshore areas
 compared to northern California.
 
-\hypertarget{fishery-dependent-onboard-observer-survey}{%
-\subsection{Fishery-Dependent Onboard Observer
-Survey}\label{fishery-dependent-onboard-observer-survey}}
+The California Seafloor Mapping Project (CSMP) collected bathymetry and
+backscatter data collected from 20xx to 20xx
+\citep{Golden:2013:CSW, CSUMB:2014:CSM}. The CSMP mapped the mainland
+California state waters at a 2 m resolution from the California-Mexico
+border to the California-Oregon border. The CSMP mapped area does not
+include very shallow areas close to shore (the ``white zone''), which
+extend from the shoreline to approximately 200-500 m offshore. The white
+zone is not yet mapped due to the difficulty of navigating the shallow
+waters and kelp beds; we assume the area of rocky reef in the white zone
+is proportional to the amount of rocky reef in the mapped areas. We
+predicted rocky reef habitat using high resolution seafloor mapping of
+California state waters (out ot 3 nm) north of Point Conception
+California (\(34^\circ 27^\prime\) N. lat.).
+
+We created a mosaic from 137 CSMP substrate blocks that ranged in size
+from 16 \(\mathrm{km}^2\) to more than 400 \(\mathrm{km}^2\). The CSMP
+identified rough and smooth substrates, surface:planar area, and a
+vector ruggedness measure (VRM) of the bathymetric digital elevation
+model {[}\#fig-map2{]}. The CSMP set a varying VRM threshold for each of
+the substrate blocks, removed any artifacts, and the product is
+considered a conservative estimate of rough habitat. We characterized
+the rocky reef habitat using thresholds as determined by the CSMP
+(\citet{CSUMB:2014:CSM}).
+
+We converted the digital mosaic of 137 CSMP substrate raster blocks with
+pixels designated as rough habitat (our rocky reef habitat proxy) from a
+raster format to polygons. We applied a 5 m buffer region around the
+rough habitat polygon to allow for any small errors in positional
+accuracy. Contiguous polygons of rocky reef substrate were treated as a
+single rocky reef, regardless of size. Polygons separated by 200 m were
+treated as separate reefs; the 200 m cutoff is based upon expert
+knowledge and a consensus that it represented a distance that most
+demersal rockfish species would traverse over sandy habitat. We
+calculated the area of each reef defined and retained those greater than
+or equal to \(100 \mathrm{m^2}\). We conducted all spatial analyses and
+overlay of the data sources on the rocky reef habitat in ArcMap 10.3
+(ESRI citation).
+
+\hypertarget{surveys}{%
+\subsection{Surveys}\label{surveys}}
+
+Three sources of data contributed to the analyses to illustrate the use
+of habitat information in indices of abundance and harvest allocation.
+The data sources we used to illustrate how and index of relative
+abundance can be weighted by the known area of rocky habitat are the
+fishery-dependent CPFV onboard observer survey and the
+fishery-independent California Collaborative Fisheries Research Program
+(CCFRP). An index of abundance from the CDFW private recreational fleet
+dockside intercept survey was created to estimate relative density on
+either side of the Cape Mendocino management line.
 
 The CDFW began a fishery-dependent onboard observer survey of the
 recreational CPFV fleet in 1999. In 2004, the CDFW integrated it into
@@ -508,15 +559,6 @@ industry, Cal Poly San Luis Obispo began a supplemental onboard observer
 survey in 2001 of the CPFV fleet based in Port Avila and Port San Luis
 along California's Central Coast {[}\#fig-map{]}. Both the CDFW and the
 Cal Poly onboard observer surveys continue through present day.
-Management of California's recreational fisheries is complex and has
-undergone spatial and temporal changes since 1999. Between 1999 and
-2003, the recreational regulations evolved from no restriction on the
-number of lines or hooks an angler could deploy to a one line and
-two-hook maximum, as well as implementation of depth restrictions that
-vary across the coast. Subsequent management and recovery of overfished
-species allowed a relaxation of depth restrictions beginning in 2017
-that shifted fishing effort relative to the 2004-2016 period
-\citep{Monk:2021:SVR}.
 
 The National Marine Fishery Service's Southwest Fisheries Science Center
 (SWFSC) developed a relational database for the CDFW onboard observer
@@ -554,7 +596,7 @@ temporal or spatial closure.
 We assigned survey locations to rocky reefs based on the recorded start
 location of a drift, given that the end locations were not always
 recorded. We calculated the cumulative distribution of distance to rocky
-reef (in meters) for drifts that retained copper rockfish with a
+reef (in meters) for drifts that retained Vermilion rockfish with a
 distance cutoff of 90\%. We applied further data filters to address
 possible errors in the data. We removed drifts in the upper and lower
 1\% of the recorded time fished and recorded observed anglers, as these
@@ -564,23 +606,22 @@ drifts based on average drift depth. We calculated average depth from
 the recorded minimum and maximum depths when available or the imputed
 minimum and maximum depth from the bathymetry layer described below.
 
-\hypertarget{fishery-independent-mpa-monitoring-survey}{%
-\subsection{Fishery-Independent MPA Monitoring
-Survey}\label{fishery-independent-mpa-monitoring-survey}}
-
-The California Collaborative Fisheries Research Program (CCFRP) is a
-fishery-independent hook-and-line survey designed to monitor nearshore
-fish populations at a series of sampling locations both inside and
-adjacent to MPAs
+The fishery-independent CCFRP dataset is similar in the a number of ways
+to the onboard observer data, in that it includes high resolution catch
+and effort data and uses the same gear as the recreational fleet, a
+single rod with two hooks per angler. The CCFRP survey was designed to
+monitor nearshore fish populations at a series of sampling locations
+both inside and adjacent to MPAs
 \citep{starr_variation_2015a, wendt_collaborative_2009}. The CCFRP
 survey began in 2007 along the central coast of California and was
 designed in collaboration with academics, NMFS scientists and fishermen.
-From 2007-2016 the CCFRP project was focused on the central California
-coast, and has monitored four MPAs consistently. In 2017, the CCFRP
-expanded coastwide within California. The index of abundance was
-developed from the four MPAs sampled consistently (Año Nuevo and Point
-Lobos by Moss Landing Marine Labs; Point Buchon and Piedras Blancas by
-Cal Poly).
+From 2007-2016 the CCFRP project sampled the central California coast,
+and has monitored four MPA and reference areas annually. In 2017, the
+CCFRP expanded coastwide within California to monitory 16 MPA and
+reference site pairs, invovling six university partners. The indices of
+abundance developed as an example here represent data from the four MPAs
+sampled consistently (Año Nuevo and Point Lobos by Moss Landing Marine
+Labs; Point Buchon and Piedras Blancas by Cal Poly).
 
 The survey design for CCFRP consists 500 x 500 m cells both within and
 adjacent to each MPA. On any given survey day site cells are randomly
@@ -589,22 +630,33 @@ chartered for the survey and the fishing captain is allowed to search
 within the cell for a fishing location. During a sampling event, each
 cell is fished for a total of 30-45 minutes by volunteer anglers. Each
 fish encountered is recorded, measured, and released (or descended to
-depth) and can later be linked back to a particular angler. The CCFRP
-samples shallower depths to avoid barotrauma-induced mortality. Starting
-in 2017, a subset of fish have been retained to collect otoliths and fin
-clips that provide needed biological information for nearshore species.
-For the index of abundance, CPUE was modeled at the level of the drift,
-similar to the fishery-dependent onboard observer survey described
-above. The CCFRP data are quality controlled at the time data were
-entered by each project partner.
+depth). The CCFRP samples depth shallower than 30 fm to avoid
+barotrauma-induced mortality. For the index of abundance, CPUE was
+modeled at the level of the drift, similar to the fishery-dependent
+onboard observer survey described above. The CCFRP data are quality
+controlled at the time data were entered by each project partner.
+
+Unlike the two data sources described above, the CDFW CRFS dockside
+angler intercept survey does not provide fine scale resolution of catch
+and effort data. Interviews occur across all boat modes, with the
+largest sample sizes from the private recreational fleet. Therefore, we
+used the private recreational CPUE data to develop an index of
+abundance. The as one of the methods for allocation of yield (described
+below). The catch from a dockside survey is the sampler-observed
+retained catch and the unit effort is the number of anglers contributing
+to the catch. A group of anglers may present their aggregated catch to
+sampler and in that case, the effort is the number of angler
+contributing to the catch.
 
 \hypertarget{indices-of-abundance}{%
 \subsection{Indices of Abundance}\label{indices-of-abundance}}
 
-We generated standardized indices of abundance for copper rockfish from
-the fishery-dependent onboard observer data and the fishery-independent
-CCFRP data. For each, we developed an index wihout any habitat weighting
-and one that weighted the the index by the amount of available habitat.
+We developed standardized indices of relative abundance for vermilion
+rockfish for all three data sources, the onboard CPFV, CCFRP and private
+recreational dockside surveys. Versions of these were developed and
+included in the 2021 stock assessment of vermilion and sunset rockfish.
+Fo
+
 We modeled all indices using Bayesian generalized linear models (GLMs)
 and the delta GLM method \citep{Lo:1992:IRA, Stefansson:1996:AGS}. The
 delta GLM method is commonly used to standardize catch per unit effort
@@ -612,7 +664,7 @@ for stock assessments {[}citations{]}. The delta method models the data
 with two separate GLMs; one for the probability of encountering the
 species of interest using a binomial likelihood and a logit link
 function, and the second GLM for the positive encounters assuming either
-a gamma or lognormal error structure. The error structure of the
+a gamma or lognormal error distribution. The error structure of the
 positive model was selected via the Akaike Information Criterion (AIC)
 from models with the full suite of considered explanatory variables.
 
@@ -621,66 +673,60 @@ per unit effort. The full suite explanatory variables modeled and model
 selection processes can be found in the supplemental material. Year was
 always included in as an explanatory variable in model selection, even
 if it was not significant, because the goal of the index of abundance
-was to extract the year effect. The area-weighted index included a
+was to extract the year effect. For each survey, we developed an index
+without any habitat weighting (i.e.~assuming catch rates were
+proportional to abundance) and one that weighted the the index by the
+amount of available habitat on each reef (i.e.~assuming catch rates were
+proportional to local density). The area-weighted index included a
 year/rocky reef interaction term, even if it was not statistically
 significant, to allow us to weight the index by the area of rocky reef.
 
-Model selection for the binomial and positive observation models was
-based on AIC using the lme4 package in R, and unless very different
-predictors were selected, the same predictors were used in each of the
-two Bayesian models. The Bayesian models were run with 5,000 iterations
+Due to extended run times for Bayesian models, model selection for the
+binomial and positive observation models was based on AIC using the lme4
+package in R. Unless very different predictors were selected, the same
+predictors were used in each of the two Bayesian models (binomial and
+gamma or lognormal). The Bayesian models were run with 5,000 iterations
 and weakly informative priors. Posterior predictive model checks were
-examined for both the binomial and positive observation models,
-including the predicted percent positive compared to the maximum
-likelihood estimates. We constructed the unweighted annual index by
-multiplying the back-transformed posterior draws from the year
-coefficients from the binomial model by the exponentiated positive model
-draws from the year coefficients, and taking the mean and standard
-deviation of the distribution of the product for each year.
+examined for both the binomial and positive observation models.
 
-The area-weighted, habitat-informed index was developed by extracting
-the posterior draws of the unweighted index, and then summing across the
-product of the back-transformed posteriors weighted by the fraction of
-total area within each reef. To compare the indices across the three
-data filtering methods and the area-weighted index, each index was
-scaled to its mean value.
+We constructed the unweighted annual index by multiplying the
+back-transformed posterior draws from the year coefficients of the
+binomial model by the exponentiated positive model draws from the year
+coefficients, and taking the mean and standard deviation of the
+distribution of the product for each year. The area-weighted,
+habitat-informed index was developed by extracting the posterior draws
+of the unweighted index, and then summing across the product of the
+back-transformed posteriors weighted by the fraction of total area
+within each reef.
 
 \hypertarget{allocating-yield-to-management-areas}{%
 \subsection{Allocating Yield to Management
 Areas}\label{allocating-yield-to-management-areas}}
 
-We present four methods to allocate yield for copper rockfish at the
+We present four methods to allocate yield for vermilion rockfish at the
 management boundary near Cape Mendocino, California (40-10). These
-include mehtods referred to as catch-based, habitat-based, CPUE-only and
+include method referred to as catch-based, habitat-based, CPUE-only and
 habitat-weighted CPUE.
 
 The catch-based method is derived using from the total estimated catch
 for the time period 2020-2022 (can change) north of Point Conception in
 California. The proportion north and south of Cape Mendocino equals the
 allocation of yield. For the habitat-based method, if we assume the
-average density of copper rockfish is constant over the assessed area
+average density of vermilion rockfish is constant over the assessed area
 (Point Conception to the California/Oregon border), the fraction of
-copper rockfish occurring north of Cape Mendocino would be equal to the
-fraction of habitat in the same area.
+vermilion rockfish occurring north of Cape Mendocino would be equal to
+the fraction of habitat in the same area.
 
 The assumption of equal density may not be accurate, and no direct
 estimates of density are available from a fishery-independent survey
 with adequate spatial coverage. We propose an alternative method that
-combines existing habitat information with a proxy for fish density,
-using catch per unit effort. Although data from the onboard CPFV
-observer surveys are more precise in terms of total catch, effort, and
-location, the sampling rate north of Cape Mendocino does not provide
-adequate data given the number of 6-pack vessels in northern California.
-Sampling coverage for the CRFS dockside survey is spatially more
-complete, in that numerous samples exist in the northern management
-area. Therefore used the private boat CPUE data to develop an index of
-abundance for the CPUE-only method, assuming CPUE is proportional to
-density. For the habitat-weighted CPUE method, we multiplied the
-area-specific CPUE estimates by the area of habitat to produce a spatial
-index of relative abundance. Data were filtered using the same methods
-detailed in the 2023 copper rockfish stock assessment for the CRFS
-private boat dockside index. We compare the allocations of yield among
-these four methods.
+combines existing habitat information with a proxy for fish density
+(catch per unit effort). Aor the habitat-weighted CPUE method, we
+multiplied the area-specific CPUE estimates by the area of habitat to
+produce a spatial index of relative abundance. Data were filtered using
+the same methods detailed in the 2023 Vermilion rockfish stock
+assessment for the CRFS private boat dockside index. We compare the
+allocations of yield among these four methods.
 
 \textbf{still from blue - but a placehold - Years prior to 2013 were
 subsequently dropped, to create an index that is representative of
@@ -690,9 +736,24 @@ final data set are shown in Table D3. }
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-\hypertarget{survey-data-and-rocky-reef-habitat}{%
-\subsection{Survey Data and Rocky Reef
-Habitat}\label{survey-data-and-rocky-reef-habitat}}
+From the mosaicked, we defined 108 separate rocky reefs within
+California state waters from the California/Oregon border to Point
+Conception. The two meter resolution of the substrate shows the
+patchiness and heterogeneity of the rocky reefs (Figure~\ref{fig-map2}).
+The inteed bathymetry data does not provide information on the formation
+type, e.g, pinnacle versus low relief, nor habitat quality.
+
+While the location-specific data from the fishing fleet is governed by
+confidentiality and cannot be displayed here, 85\% of the fishing drifts
+were within 5 m of rocky habitat. The recreational fishing fleet's
+targeting of rockfish species was verified by the distributions of the
+distance from rocky habitat for each of the six species. The distance
+from rocky habitat cutoff (retaining 90\% of drifts encountering each
+species) was six meters for blue, China and gopher rockfish, eight
+meters for vermilion rockfish, 14 meters for black rockfish and 16
+meters for brown rockfish. The percentage of drifts and trips
+encountering the target species can be found in
+Table~\ref{tbl-samplesize}.
 
 Prior to any filtering a total of 19,425 drifts that aggregated to 2,270
 trips were available for the analyses. Approximately 21\% of all the
@@ -719,23 +780,6 @@ the fishing drift locations were verified during the QA/QC process. In
 the final, filtered drift-level data set the average time fished was X
 minutes with a standard deviation (SD) of X. The average number of
 observed anglers was X (SD=X), and average estimated depth was X (SD=X).
-
-We define 108 areas of rocky habitat within California state waters from
-the California/Oregon border to Point Conception. The two meter
-resolution of the substrate shows the patchiness and heterogeneity of
-the rocky substrate (Figure~\ref{fig-map2}). We characterize rocky
-habitat using thresholds as determined by the CSMP
-(\citet{CSUMB:2014:CSM}). While the location-specific data from the
-fishing fleet is governed by confidentiality and cannot be displayed
-here, 85\% of the fishing drifts were within 5 m of rocky habitat. The
-recreational fishing fleet's targeting of rockfish species was verified
-by the distributions of the distance from rocky habitat for each of the
-six species. The distance from rocky habitat cutoff (retaining 90\% of
-drifts encountering each species) was six meters for blue, China and
-gopher rockfish, eight meters for vermilion rockfish, 14 meters for
-black rockfish and 16 meters for brown rockfish. The percentage of
-drifts and trips encountering the target species can be found in
-Table~\ref{tbl-samplesize}.
 
 Based on exploratory analyses and consideration of the available data,
 we aggregated the areas of rocky habitat grouped into six regions to
@@ -780,105 +824,11 @@ near areas of rocky habitat.
 \hypertarget{indices-of-abundance-1}{%
 \subsection{Indices of Abundance}\label{indices-of-abundance-1}}
 
-Model selection using AIC resulted in all but three of the 24 indices of
-relative abundance bineg modeled with a lognormal distribution for
-positive observations. The trip-level indices for black, blue and gopher
-rockfish were modeled using a gamma (refer to the supplementary material
-for AIC scores). All of the covariates (year, reef, and wave) were
-selected as main effects for both the binomial and positive models for
-all species in the habitat-informed drift level index. For instances
-where the wave. However, the difference in AIC relative to the best
-model (delta-AIC) was less than ten so we chose to maintain the model
-with year, reef and wave.
-
-(LMK and I can put these in a table in the doc) The full model that
-included the reef:year interaction was selected by AIC for all species
-except for China rockfish. For China rockfish the positive binomial
-model selected the interaction covariate, but the model without the
-interaction was select for the positive lognormal model by an difference
-in AIC of 22. However, in order to look at the effects of the
-area-weighting on the index, we included the year:reef interaction in
-the final model for China rockfish.
-
-For both the drift-level and trip-level Stephens-MacCall filtered data,
-year, county and wave were selected for black rockfish, blue rockfish,
-gopher rockfish, and vermilion rockfish and the drift-level index for
-brown rockfish. The model incorporate in year and county was selected
-for the trip-level Stephens-MacCall filtered index for brown rockfish
-and both Stephens-MacCall filtered indices for China rockfish.
-
 In general, the larger increases and decreases in the indices were
-similar among the four indices developed for each species
-(Figure~\ref{fig-indices}). The generalized approach used in this paper
-to create indices with comparable methods resulted in different results
-for each species. The area-weighted indices are reflective of the total
-available habitat and use all of the available high resolution habitat
-and fishing drift data. However, differences among the four indices were
-different for each species. The average CVs between the drift-level
-area-weighted index and the drift-level habitat informed indices were
-similar, as expected, since they both used the same data with the only
-difference being the year:area interaction in the models
-(Table~\ref{tbl-avgcv}). However, the average CV between drift-level
-habitat-informed filtering and Stephens-MacCall filtering for the
-drift-level data differed by species.
-
-The area-weighting for black rockfish, a species distributed
-predominantly north of Santa Cruz, California did have an effect on the
-index for a number of years, most notably in 2013 where the
-area-weighted estimate is lower than all three other
-indices(Figure~\ref{fig-black-indices}). The effect of the
-area-weighting is also apparent for black rockfish in 2005, 2007, and
-2009.The average CV decreased from the trip-level index (0.671) to to
-the area-weighted index (0.443). Interestingly, the average CV was
-lowest overall for the drift-level Stephens-MacCall index (0.364) which
-also modeled much smaller data with a high proportion of positive
-catches of black rockfish (Table~\ref{tbl-samplesize}).
-
-Blue rockfish is ubiquitous across the study area and was one of the two
-species for which the index was weighted by the six regions of rocky
-reef habitat. The area-weighted index differs from the other three in
-2006 with an estimated higher relative abundance and in 2014 with an
-estimated lower relative abundance. Even during the years from 2009 to
-2012 when the estimated relative abundance was low for all of the
-indices, there were differences among the four trends with the
-drift-level habitat-informed index estimating the lowest relative
-abundance.
-
-All four indices for brown rockfish suggested differing trends, with
-this species having the highest estimated error for both the trip-level
-and drift-level Stephens-MacCall filtered data
-(Figure~\ref{fig-brown-indices}). In ten of the years the area-weighted
-index estimated a either the largest or smallest relative abundance
-compared to the other indices. For brown rockfish the two
-habitat-informed indices were more similar than the Stephens-MacCall
-filtered data. The average CV for brown rockfish from the
-Stephens-MacCall filtering was large (0.679) compared to the habitat
-informed filtering (0.142).
-
-China rockfish is the only species for which the trip-level
-Stephens-MacCall filtered index had the lowest average coefficient of
-variation that increased with the habitat-informed filtering
-(Table~\ref{tbl-avgcv}). Although the trends among the four indices were
-similar, this is the only species for which the highest error was
-consistently estimated for both habitat-informed drift-level indices
-(Figure~\ref{fig-china-indices}). China rockfish is one of the less
-common species observed in the data with the highest average CPUE from
-catches the Farallon Islands, which is an overall small percentage of
-the total habitat (Table~\ref{tbl-reefareas}).
-
-The observed trends for gopher rockfish were similar among all indices
-and the trip-level Stephens-MacCall index had the highest average CV
-(0.626) compared to the average CVs of less than two from all of the
-other drift-level indices. China rockfish is the only species for which
-the trip-level index had the lowest average coefficient of variation,
-which increased with the habitat-informed filtering . For all other
-species, the habitat-informed filtering resulted indices with a lower
-average CV than the trip-level filtering.
-
-The indices of relative abundance for vermilion rockfish were relatively
-similar in trends across the time series
-(Figure~\ref{fig-vermilion-indices}). Vermilion rockfish is the second
-species for which all six areas of rocky reef habitat remained
+similar among the four indices The indices of relative abundance for
+vermilion rockfish were relatively similar in trends across the time
+series (Figure~\ref{fig-vermilion-indices}). Vermilion rockfish is the
+second species for which all six areas of rocky reef habitat remained
 dis-aggregated in the models. For vermilion rockfish, while the trends
 are similar among all four indices, the effect of area-weighting dampens
 the increase modeled from the habitat-informed drift level data from
@@ -1066,7 +1016,7 @@ Haggarty and King \citeyearpar{Haggarty:2006:CIR} conducted a SCUBA dive
 survey followed by a research angling survey directly above the dive
 plots and found a strictly proportional relationship between the density
 estimated from the SCUBA survey and CPUE from the angling survey for
-copper rockfish, a species whose habitat and depth distribution were
+Vermilion rockfish, a species whose habitat and depth distribution were
 well covered by the survey. Further analyses are underway to explore the
 fine-scale habitat characteristics to fine-tune the habitat informed
 data selection methods. We also plan to explore changes in fishing
@@ -1142,49 +1092,42 @@ it provides.
 \FloatBarrier
 
 \hypertarget{tbl-reefareas}{}
-\begin{table}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{1.6in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}}
 \caption{\label{tbl-reefareas}Area of rocky habitat in state waters aggregated to the levels modelled
 for each species. The merged cells for each species indicate which areas
 of rocky habitat were aggregated to ensure appropriate samples sizes to
 explore an area-weighted index. }\tabularnewline
 
-\centering
-\resizebox{\linewidth}{!}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{1.6in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}|>{\raggedleft\arraybackslash}p{.8in}}
 \toprule
 Rocky Reef Desginations & Blue rockfish \& Vermilion rockfish & Black rockfish & Brown rockfish & China rockfish & Gopher rockfish\\
 \midrule
 California border to San Francisco & 439.546 & 439.546 & 439.546 &  & \\
-\cmidrule{1-4}
+\cmidrule{1-4}\nopagebreak
 San Francisco to Santa Cruz & 108.424 & 108.424 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 547.970} & \\
 \cmidrule{1-3}
-\cmidrule{5-5}
-Farallon Islands & 50.252 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 498.967} & 50.252 & \\
+\cmidrule{5-5}\nopagebreak
+Farallon Islands & 50.252 &  & \multirow{-2}{.8in}[0.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\raggedleft\arraybackslash 498.967} & 50.252 & \\
 \cmidrule{1-2}
-\cmidrule{4-5}
+\cmidrule{4-5}\nopagebreak
 Moss Landing to Big Sur & 137.603 &  &  & 137.603 & \multirow{-4}{.8in}{\raggedleft\arraybackslash 735.825}\\
 \cmidrule{1-2}
-\cmidrule{5-6}
-Big Sur to Morro Bay & 90.424 &  & \multirow{-2}{.8in}{\raggedleft\arraybackslash 228.027} &  & 90.424\\
+\cmidrule{5-6}\nopagebreak
+Big Sur to Morro Bay & 90.424 &  & \multirow{-2}{.8in}[0.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\raggedleft\arraybackslash 228.027} &  & 90.424\\
 \cmidrule{1-2}
 \cmidrule{4-4}
-\cmidrule{6-6}
-Morro Bay to Point Conception & 112.264 & \multirow{-4}{.8in}{\raggedleft\arraybackslash 390.543} & 112.264 & \multirow{-2}{.8in}{\raggedleft\arraybackslash 202.688} & 112.264\\
+\cmidrule{6-6}\nopagebreak
+Morro Bay to Point Conception & 112.264 & \multirow{-4}{.8in}[1.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\raggedleft\arraybackslash 390.543} & 112.264 & \multirow{-2}{.8in}[0.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\raggedleft\arraybackslash 202.688} & 112.264\\
 \bottomrule
-\end{tabular}}
-\end{table}
+\end{longtable}
 
 \FloatBarrier
 
 \hypertarget{tbl-samplesize}{}
-\begin{table}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{1.6in}lll}
 \caption{\label{tbl-samplesize}The number of samples retained after filtering to create the index of
 abundance with the percent of samples that caught the species in
 parentheses. }\tabularnewline
 
-\centering
-\resizebox{\linewidth}{!}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{1.6in}lll}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Drift-level} & \multicolumn{1}{c}{Trip-level} \\
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-4}
@@ -1198,19 +1141,15 @@ Gopher Rockfish & 14476 (31\%) & 5088 (45\%) & 1449 (81\%)\\
 \addlinespace
 Vermilion Rockfish & 14713 (30\%) & 5040 (45\%) & 1627 (85\%)\\
 \bottomrule
-\end{tabular}}
-\end{table}
+\end{longtable}
 
 \FloatBarrier
 
 \hypertarget{tbl-avgcv}{}
-\begin{table}
+\begin{longtable}[t]{lrrrr}
 \caption{\label{tbl-avgcv}The average Coefficient of Variation (CV) for each index of abundance,
 where SM-filtered is the Stephens-MacCall filtering. }\tabularnewline
 
-\centering
-\resizebox{\linewidth}{!}{
-\begin{tabular}{lrrrr}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Drift-level} & \multicolumn{1}{c}{Trip-level} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-5}
@@ -1224,8 +1163,7 @@ Gopher rockfish & 0.1785421 & 0.1831132 & 0.2562205 & 0.2535190\\
 \addlinespace
 Vermilion rockfish & 0.1519120 & 0.1781884 & 0.4224451 & 0.5087889\\
 \bottomrule
-\end{tabular}}
-\end{table}
+\end{longtable}
 
 \FloatBarrier
 
