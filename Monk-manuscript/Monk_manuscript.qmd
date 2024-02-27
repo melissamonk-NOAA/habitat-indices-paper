@@ -143,8 +143,10 @@ We created a mosaic from 137 CSMP substrate blocks that ranged in size from 16 $
 
 We converted the digital mosaic of 137 CSMP substrate raster blocks with pixels designated as rough habitat (our rocky reef habitat proxy) from a raster format to polygons. We applied a 5 m buffer region around the rough habitat polygon to allow for any small errors in positional accuracy. Contiguous polygons of rocky reef substrate were treated as a single rocky reef, regardless of size. Polygons separated by 200 m were treated as separate reefs; the 200 m cutoff is based upon expert knowledge and a consensus that it represented a distance that most demersal rockfish species would traverse over sandy habitat.  We calculated the area of each reef defined and retained those greater than or equal to $100 \mathrm{m^2}$. We conducted all spatial analyses and overlay of the data sources on the rocky reef habitat in ArcMap 10.3 (ESRI citation).
 
+The habitat layer was also clipped at the boundaries of the MPAs to calculate the amount of habitat within and outside each MPA within California state waters. Only those MPAs classified as no-take were included in the calculation of closed area.
 
-## Surveys
+
+## Surveys and Indices of Relative Abundance
 
 Three sources of data contributed to the analyses to illustrate the use of habitat information in indices of abundance and harvest allocation. The data sources we used to illustrate how and index of relative abundance can be weighted by the known area of rocky habitat are the fishery-dependent CPFV onboard observer survey and the fishery-independent California Collaborative Fisheries Research Program (CCFRP). An index of abundance from the CDFW private recreational fleet dockside intercept survey was created to estimate relative density on either side of the Cape Mendocino management line.
 
@@ -166,8 +168,6 @@ Unlike the two data sources described above, the CDFW CRFS dockside angler inter
  as one of the methods for allocation of yield (described below). The catch from a dockside survey is the sampler-observed retained catch and the unit effort is the number of anglers contributing to the catch. A group of anglers may present their aggregated catch to sampler and in that case, the effort is the number of angler contributing to the catch.
 
 
-## Indices of Abundance
-
 We developed standardized indices of relative abundance for vermilion rockfish for all three data sources, the onboard CPFV, CCFRP and private recreational dockside surveys. Versions of these were developed and included in the 2021 stock assessment of vermilion and sunset rockfish. Fo 
 
 We modeled all indices using Bayesian generalized linear models (GLMs) and the delta GLM method [@Lo:1992:IRA; @Stefansson:1996:AGS]. The delta GLM method is commonly used to standardize catch per unit effort for stock assessments \[citations\]. The delta method models the data with two separate GLMs; one for the probability of encountering the species of interest using a binomial likelihood and a logit link function, and the second GLM for the positive encounters assuming either a gamma or lognormal error distribution. The error structure of the positive model was selected via the Akaike Information Criterion (AIC) from models with the full suite of considered explanatory variables.
@@ -177,6 +177,8 @@ The response variable for the positive models was angler-retained catch per unit
 Due to extended run times for Bayesian models, model selection for the binomial and positive observation models was based on AIC using the lme4 package in R. Unless very different predictors were selected, the same predictors were used in each of the two Bayesian models (binomial and gamma or lognormal). The Bayesian models were run with 5,000 iterations and weakly informative priors. Posterior predictive model checks were examined for both the binomial and positive observation models.
 
 We constructed the unweighted annual index by multiplying the back-transformed posterior draws from the year coefficients of the binomial model by the exponentiated positive model draws from the year coefficients, and taking the mean and standard deviation of the distribution of the product for each year. The area-weighted, habitat-informed index was developed by extracting the posterior draws of the unweighted index, and then summing across the product of the back-transformed posteriors weighted by the fraction of total area within each reef. 
+
+MPAs - closed areas and accounting for them
 
 ## Allocating Yield to Management Areas
 
@@ -190,12 +192,13 @@ The assumption of equal density may not be accurate, and no direct estimates of 
 
 
 # Results
+## Mapping and Identification of Rocky Reefs 
 
-From the mosaicked, we defined 108 separate rocky reefs within California state waters from the California/Oregon border to Point Conception. The two meter resolution of the substrate shows the patchiness and heterogeneity of the rocky reefs (@fig-map2). The inteed bathymetry data does not provide information on the formation type, e.g, pinnacle versus low relief, nor habitat quality.   
+At the finest scale, we defined 108 rocky reefs within California state waters from the California/Oregon border to Point Conception. The large number of individual reefs reflects the patchiness and heterogeneity of the rocky reefs and we acknowledge that small areas, such as pinnacles, may still be missing from this habitat layer (@fig-map2). The interpreted substrate in its current form does not provide information on the rocky formation type, e.g, pinnacle versus low relief, or habitat quality. The definition of habitat quality may differ by species or also by season.  The fine scale of the reefs will allow us to more easily re-classify them in the future if more detailed information on the habitat becomes available.
 
+After a number of iterations using the habitat data for stock assessments, the authors determined that the CDFW CRFS districts represent well-defined breaks along the northern California coast in terms of biogeography. The CRFS districts also represent distinct ports and separation of areas fished from each port by the charter boat and private boat recreational fleets. The amount of available habitat within For the purposes of incorporating the amount of available habitat in indices
 
-
-While the location-specific data from the fishing fleet is governed by confidentiality and cannot be displayed here, 85% of the fishing drifts were within 5 m of rocky habitat.  The recreational fishing fleet's targeting of rockfish species was verified by the distributions of the distance from rocky habitat for each of the six species. The distance from rocky habitat cutoff (retaining 90% of drifts encountering each species) was six meters for blue, China and gopher rockfish, eight meters for vermilion rockfish, 14 meters for black rockfish and 16 meters for brown rockfish. The percentage of drifts and trips encountering the target species can be found in @tbl-samplesize.
+While the location-specific data from the fishing fleet is governed by confidentiality and cannot be displayed here, 85% of the fishing drifts from (xxxx to xxxx) were within 5 m of rocky habitat. The recreational fishing fleet's targeting of rockfish species was verified by the distribution of the distance from rocky habitat. For vermilion rockfish, 90% of all drifts that encountered vermilion were within eight meters of rocky habitat.  
 
 
 Prior to any filtering a total of 19,425 drifts that aggregated to 2,270 trips were available for the analyses. Approximately 21% of all the CPFV trips observed by CDFW from 2004-2016 occurred north of Point Conception. It is important to note that north of Bodega Bay, California, the majority of charter boats are smaller six-pack vessels that may not have the capacity to carry a sampler onboard. As a result, sample sizes in this part of the state are smaller than areas to the south. The addition of the Cal Poly onboard observer survey to the CDFW survey more than doubled the sample sizes of observed trips in San Luis Obispo County, with an average annual increase of 155% from 2004-2016.
@@ -206,16 +209,17 @@ From 2004-2016 the drift-level data contained a total of 19,425 fishing drifts, 
 
 Based on exploratory analyses and consideration of the available data, we aggregated the areas of rocky habitat grouped into six regions to ensure adequate sample sizes for developing indices of abundance  (@fig-map). While covering a small area (5% of the rocky habitat), the number of observed fishing drifts within state waters around the Farallon Islands off the coast of San Francisco was high enough to warrant keeping it as a separate area of rocky habitat. The region defined from the California/Oregon border to San Francisco encompasses 49% of the total rocky habitat in state waters by area, but only 12% of the observed drifts (2,637). Each of the four remaining regions of rocky habitat defined from San Francisco to Point Conception contained an average of 12% of the available habitat (Table X). The CDFW estimated fishing effort by management district, which does not exactly align with our areas of grouped reef habitat. Only considering the fishing effort north of Point Conception, CDFW estimated an average of 9% of the CPFV trips occurred from the California/Oregon border through Mendocino County, 38% from Sonoma through San Mateo County, and 53% from Santa Cruz to Point Conception.
 
-The differences in latitudinal distribution of the six species is apparent from the maps of percent of positive observations (@fig-percentpos). The distribution of black rockfish tapers off south of San Francisco, whereas percent of fishing drifts encountering vermilion, gopher, and blue rockfish are higher south of San Francisco. Brown rockfish is distributed across all of coastal California, with slightly higher encounter rates south of San Francisco and the percentage of drifts retaining China rockfish was low coastwide. The average CPUE was highest for blue rockfish between San Francisco south to Big Sur (@fig-cpue). The average CPUE for black rockfish average was higher in the north, while gopher rockfish CPUE was generally consistent across the coast, albeit slightly higher south of Big Sur. China rockfish CPUE catch was typically low coastwide, with slightly higher catch rates in the Farallon Island reefs.
+The differences in latitudinal distribution of the six species is apparent from the maps of percent of positive observations (@fig-percentpos). 
 
 The final aggregation of the reefs and total area within each region are found in @tbl-reefareas.  The fraction of drifts retained for the indices of abundance was high for all six species (80% or greater), indicating that fishing effort represented by these data occurred mainly near areas of rocky habitat. 
 
 ## Indices of Abundance
 
-In general, the larger increases and decreases in the indices were similar among the four indices 
-The indices of relative abundance for vermilion rockfish were relatively similar in trends across the time series (@fig-vermilion-indices). Vermilion rockfish is the second species for which all six areas of rocky reef habitat remained dis-aggregated in the models. For vermilion rockfish, while the trends are similar among all four indices, the effect of area-weighting dampens the increase modeled from the habitat-informed drift level data from 2004-2006, where the area-weighting down-weighted the relative abundance from the drift-level habitat informed index.  
+The indices of relative abundance for vermilion rockfish were relatively similar in trends across the time series (@fig-vermilion-indices).  
 
-## Allocation of Yield
+For vermilion rockfish, while the trends are similar among all four indices, the effect of area-weighting dampens the increase modeled from the habitat-informed drift level data from 2004-2006, where the area-weighting down-weighted the relative abundance from the drift-level habitat informed index.  
+
+## Allocating Yield to Management Areas
 
 \FloatBarrier
 
