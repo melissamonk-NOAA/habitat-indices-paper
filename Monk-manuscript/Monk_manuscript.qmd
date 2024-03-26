@@ -145,6 +145,7 @@ We converted the digital mosaic of 137 CSMP substrate raster blocks with pixels 
 
 The habitat layer was also clipped at the boundaries of the MPAs to calculate the amount of habitat within and outside each MPA within California state waters. Only those MPAs classified as no-take were included in the calculation of closed area.
 
+22.8% of available rocky habitat is within protected MPAs
 
 ## Surveys and Indices of Relative Abundance
 
@@ -181,6 +182,24 @@ We constructed the unweighted annual index by multiplying the back-transformed p
 MPAs - closed areas and accounting for them
 
 ## Allocating Yield to Management Areas
+We therefore used the private boat (PR1) CPUE data to develop a spatial 
+index (with CPUE assumed proportional to density), and multiplied the area-specific 
+CPUE estimates by the amount of habitat to produce a spatial index of relative abundance.
+Data were filtered using the same methods detailed in the assessment for the CRFS 
+private boat dockside index. Years prior to 2016 were subsequently dropped as well as 2020 due to reduced sampling during COVID-19, to create an index that is representative of recent catch rates in each area. Sample sizes (number of trips) for the final data set are shown in Table \@ref(tab:number-trips).
+
+Vermilion rockfish is a shelf species and we recognize that there is a fraction of the 
+population and rocky habitat outside of state waters.  However, due to depth closures that began in 2002, samples from deeper waters are not available, nor is the associated habitat 
+data.  This method assumes the same proportion of habitat outside state waters north and 
+south of Cape Mendocino. We explored limiting the data to only angler-reported trips inside state waters. However, the accuracy of the angler-reported trip location is unknown and the 
+trip may represent catch from both inside and outside state waters. Filtering based on 
+angler-reported area fished did not affect the final result, so we retained all data for this analysis.
+
+
+We modeled CPUE (vermilion rockfish per angler trip) using a Bayesian negative binomial regression with subregion (defined as CRFS districts, see Table \@ref(tab:number-trips)) as a qualitative covariate and 
+pooling data across years 2016-2019. Including the subregion covariate reduced AIC 
+by 2270 points relative to the null (intercept-only) model. CPUE in the Wine District subregion was lower than the other subregions in the model 
+(Table \@ref(tab:rel-cpue)). When CPUE is multiplied by the percentage of habitat area north of \CapeM latitude, the expected percentage of the stock that occurs north of Cape Mendocino is 4.4% (Table \@ref(tab:rel-cpue)).
 
 We present four methods to allocate yield for vermilion rockfish at the management boundary near Cape Mendocino, California (40-10). These include method referred to as catch-based, habitat-based, CPUE-only and habitat-weighted CPUE.    
 
@@ -268,13 +287,23 @@ Data attribution: CDFW acquires data from its own fisheries management activitie
 
 
 ```{r, include = FALSE}
-reefareas <- readxl::read_xlsx("C:\\Users\\melissa.monk\\Documents\\GitHub\\habitat-indices-paper\\Monk-manuscript\\reef_areas.xlsx")
 
-samplesize <- readxl::read_xlsx("C:\\Users\\melissa.monk\\Documents\\GitHub\\habitat-indices-paper\\Monk-manuscript\\Sample_size2.xlsx")
-colnames(samplesize)[3:4] <- "Stephens-MacCall filtered"
+#Amount of reef available
+reefareas <- readxl::read_xlsx("C:/Users/melissa.monk/Documents/GitHub/habitat-indices-paper/Monk-manuscript/reef_areas.xlsx")
 
-avgcv <- readxl::read_xlsx("C:\\Users\\melissa.monk\\Documents\\GitHub\\habitat-indices-paper\\Monk-manuscript\\avgcv.xlsx")
-colnames(avgcv)[4:5] <- "Stephens-MacCall filtered"
+#Sample size and percent positive for onboard and PR data
+fd_sample_size <- readxl::read_xlsx("C:/Users/melissa.monk/Documents/GitHub/habitat-indices-paper/Monk-manuscript/samplesize.xlsx")
+
+#Sample size and percent positive for CCFRP by area
+ccfrp_sample_size <- readxl::read_xlsx("C:/Users/melissa.monk/Documents/GitHub/habitat-indices-paper/Monk-manuscript/samplesize2.xlsx")
+
+#GEMM report landings of vermilion
+gemm_report <- readxl::read_xlsx("C:/Users/melissa.monk/Documents/Indices_of_abundance/CRFS_PR_management_split/GEMM_report_copy.xlsx")
+
+#Recreational landings
+crfs_landings <- readxl::read_xlsx("C:/Users/melissa.monk/Documents/Indices_of_abundance/CRFS_PR_management_split/CRFS_landings.xlsx")
+
+load("C:/Stock_Assessments/VRML_Assessment_2021/Indices_of_Abundance/CRFS_PR_management_split/PR_management_split.RData")
 ```
 
 \FloatBarrier
@@ -282,7 +311,6 @@ colnames(avgcv)[4:5] <- "Stephens-MacCall filtered"
 ```{r, echo=FALSE, warning = FALSE}
 #| label: tbl-reefareas
 #| tbl-cap: "Area of rocky habitat in state waters aggregated to the levels modelled for each species. The merged cells for each species indicate which areas of rocky habitat were aggregated to ensure appropriate samples sizes to explore an area-weighted index."
-
 kableExtra::kable(reefareas,
                   booktabs = T) %>%
   column_spec(1, width = "1.6in")  %>%
@@ -292,7 +320,15 @@ kableExtra::kable(reefareas,
 
 ```
 
-\FloatBarrier
+```{r setup, echo = FALSE, include = FALSE, warning = FALSE, message = FALSE, cache = FALSE}
+#knitr::opts_chunk$set(echo = params$printcode)
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.table.format = "latex")
+
+
+
+``` 
+
 
 ```{r, warning = FALSE, echo = FALSE}
 #| label: tbl-samplesize
@@ -308,18 +344,7 @@ kableExtra::kable(samplesize,
 
 \FloatBarrier
 
-```{r, warning = FALSE, echo = FALSE}
-#| label: tbl-avgcv
-#| tbl-cap: "The average Coefficient of Variation (CV) for each index of abundance, where SM-filtered is the Stephens-MacCall filtering."
 
-kableExtra::kable(avgcv, booktabs = T) %>%
-  add_header_above(c(" ", "Drift-level" = 3, "Trip-level" = 1)) %>%
-       kable_styling(latex_options="scale_down")
-
-```
-
-
-\FloatBarrier
 
 # Figures
 
@@ -330,36 +355,4 @@ kableExtra::kable(avgcv, booktabs = T) %>%
 ![The percent of drifts that retained the target species, within grouped areas of rocky habitat over all years of the time series. The grey dashed lines represent the aggregated rocky habitat used to develop an index of abundance.](figures/percentpositives_map.jpg){#fig-percentpos}
 
 ![The average CPUE across all years of the time series for each of the six species. The grey dashed lines represent the aggregated rocky habitat used to develop an index of abundance.](figures/CPUE_map.jpg){#fig-cpue}
-
-::: {#fig-sm layout-ncol="2"}
-
-![Black rockfish trip-level](figures/black_trip_sm.png){#fig-black-tripsm width="2.7in"}
-
-![Brown rockfish trip-level](figures/brown_trip_sm.png){#fig-brown-tripsm width="2.7in"}
-
-Examples of the species coefficients and 95% confidence intervals for the Stephens-MacCall filtering for black rockfish (a) and brown rockfish (b) in the trip-level data.  A positive coefficient indicates a species is associated with the target species and a negative coefficient indicates the species is not associated with the target species. 
-
-:::
-
-
-
-::: {#fig-indices layout-ncol="2"}
-
-![Black rockfish](figures/black_indices.png){#fig-black-indices width="3in"}
-
-![Blue rockfish](figures/blue_indices.png){#fig-blue-indices width="3in"}
-
-![Brown rockfish](figures/brown_indices.png){#fig-brown-indices width="3in"}
-
-![China rockfish](figures/china_indices.png){#fig-china-indices width="3in"}
-
-![Gopher rockfish](figures/gopher_indices.png){#fig-gopher-indices width="3in"}
-
-![Vermilion rockfish](figures/vermilion_indices.png){#fig-vermilion-indices width="3in"}
-
-Indices of abundance and 95% confidence intervals for the different filtering strategies, each scaled to its mean, for the six species.
-
-:::
-
-\FloatBarrier
 
